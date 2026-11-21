@@ -1,0 +1,3772 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="author" content="مصطفی ولدی">
+  <meta name="copyright" content="© ۱۴۰۵ مصطفی ولدی؛ حقوق بخش‌های اختصاصی اثر محفوظ است.">
+  <meta name="description" content="بوستان یادگیری جزء ۳۰ قرآن کریم؛ آموزش سوره‌ها، تلاوت آیات، قصه‌های پندآموز و تمرین‌های یادگیری.">
+  <meta name="theme-color" content="#1b5e20">
+  <title>بوستان یادگیری جزء ۳۰ قرآن کریم</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Amiri+Quran&family=Vazirmatn:wght@400;600;700;800&display=swap" rel="stylesheet">
+    <style>
+    :root{--primary:#2e7d32;--primary-light:#e8f5e9;--accent:#f59e0b;--bg:#f8fafc;--card-bg:#fff;--text:#1e293b;--text-muted:#64748b;--radius:16px}
+    *{box-sizing:border-box;margin:0;padding:0;font-family:'Vazirmatn',sans-serif}
+    body{background:var(--bg);color:var(--text);line-height:1.8;padding-bottom:50px}
+    header{background:linear-gradient(135deg,#1b5e20,#388e3c);color:#fff;text-align:center;padding:28px 15px;border-radius:0 0 25px 25px;box-shadow:0 4px 15px #00000012}
+    header h1{font-size:clamp(1.3rem,4vw,1.8rem);font-weight:800;margin-bottom:5px}
+    header p{font-size:.95rem}
+    .container{max-width:900px;margin:20px auto;padding:0 15px}
+    .controls-panel{background:#fff;padding:20px;border-radius:var(--radius);box-shadow:0 4px 12px #0000000d;margin-bottom:25px;display:flex;flex-direction:column;gap:15px}
+    .filter-tabs{display:flex;justify-content:center;gap:10px;flex-wrap:wrap}
+    .btn-tab{background:#f1f5f9;border:2px solid #e2e8f0;padding:8px 16px;border-radius:30px;font-size:.92rem;font-weight:600;cursor:pointer;transition:background .2s,color .2s}
+    .btn-tab.active,.btn-tab:hover{background:var(--primary);color:#fff;border-color:var(--primary)}
+    .select-box-wrapper{display:flex;align-items:center;gap:10px;justify-content:center;flex-wrap:wrap}
+    select.surah-select{width:100%;max-width:500px;padding:10px 15px;border-radius:10px;border:2px solid #cbd5e1;font-size:1rem;background:#fff;outline:none;font-weight:600}
+    select.surah-select:focus,button:focus-visible{outline:3px solid #f59e0b;outline-offset:2px}
+    .surah-card{background:var(--card-bg);border-radius:var(--radius);padding:clamp(16px,4vw,25px);box-shadow:0 4px 15px #0000000d;border:1px solid #e2e8f0}
+    .surah-header{display:flex;justify-content:space-between;align-items:center;gap:12px;flex-wrap:wrap;border-bottom:2px dashed #cbd5e1;padding-bottom:15px;margin-bottom:20px}
+    .surah-title{font-size:clamp(1.15rem,3.5vw,1.5rem);color:var(--primary);font-weight:800}
+    .badge-info{background:var(--primary-light);color:var(--primary);padding:5px 12px;border-radius:20px;font-size:.85rem;font-weight:600}
+    .verse-card{background:#fcfcfc;border:1px solid #edf2f7;border-right:4px solid var(--primary);border-radius:12px;padding:16px;margin-bottom:14px}
+    .verse-arabic{font-family:'Amiri Quran',serif;font-size:clamp(1.55rem,4vw,1.9rem);color:#0f172a;line-height:2.35;text-align:right;margin-bottom:8px;overflow-wrap:anywhere}
+    .verse-arabic .arabic-text{font-family:'Amiri Quran',serif}
+    .verse-translation{color:var(--text-muted);font-size:1rem}
+    .verse-num{display:inline-flex;align-items:center;justify-content:center;min-width:30px;height:30px;padding:0 5px;background:#dcfce7;color:var(--primary);border-radius:50%;font-size:.8rem;font-family:'Vazirmatn',sans-serif;margin:0 7px}
+    .btn-audio{background:#e0f2fe;border:1px solid #7dd3fc;color:#0369a1;border-radius:50%;width:36px;height:36px;cursor:pointer;display:inline-flex;align-items:center;justify-content:center;font-size:.95rem;margin-left:8px;vertical-align:middle}
+    .btn-audio:hover,.btn-audio.playing{background:#0284c7;color:#fff}
+    
+    .edu-section{background:#fffbeb;border-right:5px solid var(--accent);padding:16px;border-radius:10px;margin-top:25px}
+    .edu-source{font-size:.82rem;color:#854d0e;margin-top:6px}
+
+    .story-section{background:linear-gradient(180deg,#f0fdfa,#f8fafc);border:2px dashed #0d9488;border-radius:14px;padding:20px;margin-top:25px;position:relative}
+    .story-header{display:flex;align-items:center;gap:10px;color:#0f766e;font-size:1.15rem;font-weight:800;margin-bottom:8px}
+    .story-theme{font-size:.88rem;color:#0d9488;background:#ccfbf1;padding:4px 12px;border-radius:20px;display:inline-block;margin-bottom:14px;font-weight:600}
+    .story-content{font-size:1rem;color:#334155;line-height:2.1;text-align:justify}
+    .story-content p{margin-bottom:10px}
+
+    .quiz-section{background:#f0fdf4;border:1px solid #bbf7d0;border-radius:12px;padding:20px;margin-top:25px}
+    .quiz-title{font-weight:700;color:var(--primary);margin-bottom:12px}
+    .options-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,200px),1fr));gap:10px;margin-top:12px}
+    .btn-opt{background:#fff;border:2px solid #cbd5e1;padding:12px;border-radius:10px;font-size:1rem;cursor:pointer;font-weight:600;transition:all .2s;text-align:right}
+    .btn-opt:hover:not(:disabled){border-color:var(--primary);background:#f8fafc}
+    .btn-opt:disabled{cursor:default;opacity:.9}
+    .btn-opt.correct{border-color:#16a34a;background:#dcfce7}
+    .btn-opt.incorrect{border-color:#dc2626;background:#fee2e2}
+    .feedback-box{margin-top:12px;padding:12px;border-radius:8px;font-weight:600}
+    .feedback-correct{background:#dcfce7;color:#166534}.feedback-wrong{background:#fee2e2;color:#991b1b}
+    .loading-spinner,.notice{text-align:center;padding:35px 15px;font-weight:700;color:var(--primary);background:#fff;border-radius:12px}
+    .notice.error{color:#991b1b}.retry-btn{margin-top:12px;padding:8px 16px;background:var(--primary);color:#fff;border:0;border-radius:7px;cursor:pointer}
+    .content-warning{font-size:.85rem;color:#854d0e;margin-top:10px}
+    @media(max-width:520px){.controls-panel{padding:14px}.btn-tab{width:100%}.surah-card{padding:14px}.verse-card{padding:12px}}
+  
+    .scoreboard-bar{background:linear-gradient(135deg,#15803d,#166534);color:#fff;border-radius:var(--radius);padding:14px 20px;margin-bottom:20px;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:12px;box-shadow:0 4px 14px rgba(22,101,52,0.2)}
+    .student-profile{display:flex;align-items:center;gap:10px}
+    .student-avatar{width:42px;height:42px;background:#fef08a;color:#854d0e;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:1.4rem;box-shadow:0 2px 5px rgba(0,0,0,0.15)}
+    .student-info{display:flex;flex-direction:column}
+    .student-name{font-weight:800;font-size:1.05rem;cursor:pointer;display:inline-flex;align-items:center;gap:6px;user-select:none}
+    .student-name:hover{text-decoration:underline}
+    .student-rank{font-size:.82rem;background:rgba(255,255,255,0.22);padding:2px 10px;border-radius:12px;width:fit-content;margin-top:3px;font-weight:600}
+    .score-stats{display:flex;align-items:center;gap:12px;flex-wrap:wrap}
+    .score-box{background:rgba(255,255,255,0.15);padding:6px 14px;border-radius:12px;text-align:center;backdrop-filter:blur(4px);border:1px solid rgba(255,255,255,0.2)}
+    .score-box .num{font-size:1.25rem;font-weight:800;color:#fef08a;line-height:1.2}
+    .score-box .label{font-size:.74rem;opacity:.95}
+    .btn-action-small{background:#fff;color:#166534;border:none;padding:8px 14px;border-radius:8px;font-size:.85rem;font-weight:700;cursor:pointer;transition:transform .15s,background .2s}
+    .btn-action-small:hover{background:#fef08a;transform:translateY(-2px)}
+    .progress-track{width:100%;height:8px;background:rgba(255,255,255,0.25);border-radius:4px;overflow:hidden;margin-top:6px}
+    .progress-fill{height:100%;background:#facc15;border-radius:4px;transition:width .4s ease;width:0%}
+    .quiz-score-badge{display:inline-flex;align-items:center;gap:6px;background:#dcfce7;color:#166534;padding:4px 12px;border-radius:20px;font-size:.85rem;font-weight:700;margin-bottom:10px}
+    .quiz-score-badge.already-solved{background:#fef9c3;color:#854d0e}
+    .learn-note{font-size:.8rem;color:#475569;margin:0 0 12px}
+    .score-box.learn{background:rgba(186,230,253,.2);border-color:rgba(186,230,253,.55)}
+    .score-box.learn .num{color:#bae6fd}
+
+    .modal-backdrop{position:fixed;top:0;left:0;width:100%;height:100%;background:rgba(15,23,42,0.65);backdrop-filter:blur(4px);z-index:9999;display:none;align-items:center;justify-content:center;padding:15px}
+    .modal-backdrop.active{display:flex}
+    .modal-card{background:#fff;border-radius:20px;max-width:540px;width:100%;box-shadow:0 20px 35px rgba(0,0,0,0.25);overflow:hidden;animation:slideUp .25s ease-out}
+    @keyframes slideUp{from{transform:translateY(25px);opacity:0}to{transform:translateY(0);opacity:1}}
+    .modal-header{background:linear-gradient(135deg,#1b5e20,#2e7d32);color:#fff;padding:16px 20px;display:flex;justify-content:space-between;align-items:center}
+    .modal-close{background:none;border:none;color:#fff;font-size:1.6rem;cursor:pointer;line-height:1}
+    .modal-body{padding:25px;text-align:center}
+    .trophy-icon{font-size:3rem;line-height:1;margin-bottom:10px}
+    .report-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(105px,1fr));gap:10px;margin:20px 0}
+    .report-item{background:#f8fafc;padding:12px 8px;border-radius:12px;border:1px solid #e2e8f0}
+    .report-val{display:block;font-size:1.35rem;font-weight:800;color:var(--primary)}
+    .report-lbl{display:block;font-size:.78rem;color:var(--text-muted);margin-top:4px}
+    .modal-footer{padding:14px 20px;background:#f1f5f9;display:flex;justify-content:center;gap:12px;flex-wrap:wrap}
+
+    @media print{
+      body *{visibility:hidden}
+      .modal-card, .modal-card *{visibility:visible}
+      .modal-card{position:absolute;left:0;top:0;width:100%;box-shadow:none;border:none}
+      .modal-footer,.modal-close{display:none !important}
+    }
+    .auth-panel{max-width:520px;margin:24px auto;background:#fff;padding:22px;border-radius:16px;box-shadow:0 4px 15px #00000010}
+    .auth-panel input{display:block;width:100%;padding:11px;margin:8px 0 12px;border:1px solid #cbd5e1;border-radius:9px;font-size:1rem}
+    .auth-panel button,.teacher-panel button{padding:10px 16px;border:0;border-radius:9px;background:#2e7d32;color:white;font-weight:700;cursor:pointer;margin:4px}
+    .auth-message{padding:10px;border-radius:8px;background:#f1f5f9;margin-top:10px;font-size:.9rem}
+    .hidden{display:none!important}
+    .fa-widget{background:#eff6ff;border:2px solid #93c5fd;border-radius:14px;padding:14px;margin:14px 0}
+.fa-widget.fa-done{background:#f0fdf4;border-color:#86efac}
+.fa-top{display:flex;align-items:center;gap:12px}
+.fa-btn{width:52px;height:52px;border-radius:50%;border:0;background:#0284c7;color:#fff;font-size:1.3rem;cursor:pointer;flex:none}
+.fa-done .fa-btn{background:#16a34a}
+.fa-info{display:flex;flex-direction:column;flex:1;min-width:0}
+.fa-title{font-size:1rem;color:#0f172a}.fa-sub{font-size:.85rem;color:#475569}
+.fa-pct{font-weight:800;color:#0369a1;font-size:1.05rem}.fa-done .fa-pct{color:#166534}
+.fa-track{height:14px;background:#dbeafe;border-radius:8px;overflow:hidden;margin-top:12px;pointer-events:none}
+.fa-fill{height:100%;width:0;background:linear-gradient(90deg,#38bdf8,#0284c7);transition:width .4s linear}
+.fa-done .fa-fill{background:#22c55e}
+.retry-btn:disabled{background:#94a3b8;cursor:not-allowed}
+.audio-gate{background:#fff7ed;border:1px solid #fdba74;color:#9a3412;padding:12px;border-radius:10px;margin:14px 0;font-weight:600}
+    .teacher-panel{max-width:1000px;margin:20px auto;background:#fff;padding:20px;border-radius:16px;overflow:auto}
+    .teacher-panel table{width:100%;border-collapse:collapse;margin-top:15px}
+    .teacher-panel th,.teacher-panel td{border:1px solid #e2e8f0;padding:8px;text-align:right;white-space:nowrap}
+    .teacher-panel th{background:#f1f5f9}
+    .app-credits-footer{max-width:900px;margin:28px auto 0;padding:0 15px;color:#64748b;text-align:center;font-size:.84rem}
+    .app-credits-card{background:#fff;border:1px solid #e2e8f0;border-radius:14px;padding:16px 18px;box-shadow:0 3px 12px #00000008}
+    .app-credits-title{font-weight:800;color:#166534;font-size:.95rem;margin-bottom:5px}
+    .app-credits-details{margin-top:10px;text-align:right;border-top:1px solid #e2e8f0;padding-top:10px;line-height:2}
+    .app-credits-details summary{cursor:pointer;color:#166534;font-weight:700;text-align:center}
+    .app-credits-details p{margin-top:8px}
+    .app-credits-copyright{font-size:.78rem;margin-top:10px;color:#64748b}
+
+    .welcome-art{max-width:900px;margin:16px auto 22px;padding:0 14px}
+    .welcome-art img{display:block;width:100%;height:auto;max-height:260px;object-fit:cover;object-position:center 12%;border-radius:22px;border:2px solid #dbeafe;box-shadow:0 8px 22px #0f172a12}
+    @media(max-width:600px){.welcome-art{margin:10px auto 14px}.welcome-art img{max-height:165px;border-radius:14px}}
+  </style>
+</head>
+<body>
+  <header>
+    <h1>بوستان یادگیری جزء ۳۰ قرآن کریم</h1>
+    <p>آموزش سوره‌ها، تلاوت آیات، قصه‌های پندآموز و تمرین‌های یادگیری</p>
+  </header>
+  <div class="welcome-art" aria-label="تصویر شاد و کودکانه برای یادگیری قرآن">
+    <svg viewBox="0 0 800 220" xmlns="http://www.w3.org/2000/svg" role="img" style="display:block;width:100%;height:auto;max-height:220px;border-radius:22px;background:linear-gradient(135deg,#e8f5e9,#e0f2fe);border:2px solid #bbf7d0;box-shadow:0 8px 22px #0f172a12;">
+      <defs>
+        <linearGradient id="g1" x1="0%" y1="0%" x2="100%" y2="100%"><stop offset="0%" stop-color="#4ade80"/><stop offset="100%" stop-color="#22c55e"/></linearGradient>
+        <linearGradient id="g2" x1="0%" y1="0%" x2="0%" y2="100%"><stop offset="0%" stop-color="#fef08a"/><stop offset="100%" stop-color="#f59e0b"/></linearGradient>
+      </defs>
+      <!-- soft hills -->
+      <path d="M0 180 Q200 120 400 160 T800 140 L800 220 L0 220 Z" fill="#86efac" opacity="0.6"/>
+      <path d="M0 200 Q300 150 500 180 T800 160 L800 220 L0 220 Z" fill="#4ade80" opacity="0.5"/>
+      <!-- open book -->
+      <g transform="translate(320,55)">
+        <path d="M0 30 Q40 -10 80 30 L80 110 Q40 140 0 110 Z" fill="#fff" stroke="#166534" stroke-width="3"/>
+        <path d="M80 30 Q120 -10 160 30 L160 110 Q120 140 80 110 Z" fill="#f0fdf4" stroke="#166534" stroke-width="3"/>
+        <line x1="80" y1="30" x2="80" y2="115" stroke="#166534" stroke-width="2"/>
+        <text x="40" y="75" text-anchor="middle" font-size="22" fill="#166534" font-family="Amiri Quran, serif">قرآن</text>
+        <text x="120" y="75" text-anchor="middle" font-size="18" fill="#15803d" font-family="Vazirmatn, sans-serif">جزء ۳۰</text>
+      </g>
+      <!-- stars -->
+      <circle cx="120" cy="50" r="8" fill="#facc15"/>
+      <circle cx="680" cy="40" r="6" fill="#fde047"/>
+      <circle cx="150" cy="90" r="5" fill="#fef08a"/>
+      <circle cx="650" cy="80" r="7" fill="#facc15"/>
+      <!-- kids silhouettes (simple) -->
+      <circle cx="180" cy="145" r="14" fill="#fb923c"/>
+      <rect x="168" y="158" width="24" height="28" rx="6" fill="#fdba74"/>
+      <circle cx="620" cy="140" r="14" fill="#60a5fa"/>
+      <rect x="608" y="153" width="24" height="28" rx="6" fill="#93c5fd"/>
+      <!-- title text -->
+      <text x="400" y="35" text-anchor="middle" font-size="26" font-weight="800" fill="#166534" font-family="Vazirmatn, sans-serif">بوستان یادگیری جزء ۳۰</text>
+    </svg>
+  </div>
+  <section id="auth-panel" class="auth-panel">
+    <h2 style="margin-bottom:8px">ورود به بوستان قرآن</h2>
+    <p>نام دانش‌آموز را وارد کنید. امتیازها روی همین گوشی و همین مرورگر ذخیره می‌شوند و برای گزارش به معلم می‌توان کارنامه را دریافت کرد.</p>
+    <label for="auth-name">نام و نام خانوادگی دانش‌آموز</label>
+    <input id="auth-name" autocomplete="name" placeholder="مثلاً علی رضایی">
+    <button id="login-button" type="button" onclick="window.startOfflineStudent()">شروع / ادامهٔ یادگیری</button>
+    <div id="auth-message" class="auth-message">این نسخه بدون حساب اینترنتی کار می‌کند. برای حفظ امتیازها، اطلاعات مرورگر را پاک نکنید.</div>
+    <button type="button" onclick="openLocalTeacherReport()" style="background:#475569">🔐 ورود معلم / مشاهده کارنامه‌ها</button>
+    <div id="teacher-login-box" class="hidden" style="margin-top:10px;padding:12px;border:2px solid #475569;border-radius:12px">
+      <p style="font-size:.9rem;color:#334155;margin:0 0 10px">ورود امن معلم با حساب Supabase (ایمیل و رمزی که در داشبورد ساختید)</p>
+      <label for="teacher-email"><strong>ایمیل معلم</strong></label>
+      <input id="teacher-email" type="email" autocomplete="username" placeholder="teacher@example.com" style="display:block;width:100%;padding:10px;margin:8px 0;border:2px solid #cbd5e1;border-radius:10px">
+      <label for="teacher-pass"><strong>رمز عبور</strong></label>
+      <input id="teacher-pass" type="password" autocomplete="current-password" spellcheck="false" style="display:block;width:100%;padding:10px;margin:8px 0;border:2px solid #cbd5e1;border-radius:10px" onkeydown="if(event.key==='Enter')submitTeacherLogin()">
+      <button type="button" id="teacher-login-btn" onclick="submitTeacherLogin()" style="background:#475569">ورود</button>
+      <button type="button" onclick="closeTeacherLogin()" style="background:#94a3b8">انصراف</button>
+      <div id="teacher-login-msg" role="alert" style="margin-top:8px;font-weight:700"></div>
+    </div>
+  </section>
+  <section id="teacher-panel" class="teacher-panel hidden">
+    <h2>گزارش پیشرفت دانش‌آموزان</h2>
+    <p style="background:#ecfdf5;border:1px solid #34d399;border-radius:10px;padding:12px;margin-bottom:14px">
+      <strong>🌐 نمرات از سرور:</strong> با دکمهٔ زیر، آخرین نمرات ثبت‌شده روی سرور را مستقیم ببینید.
+      دیگر لازم نیست فایل JSON از دانش‌آموز بگیرید (مگر برای پشتیبان آفلاین).
+    </p>
+    <div style="display:flex;flex-wrap:wrap;gap:8px;margin-bottom:14px">
+      <button type="button" onclick="loadReportsFromServer()" style="background:#0f766e;color:#fff;border:0;border-radius:9px;padding:10px 16px;font-weight:700;cursor:pointer">🔄 بارگذاری نمرات از سرور</button>
+      <button type="button" onclick="downloadTeacherCsv()">دانلود گزارش CSV</button>
+      <button type="button" onclick="clearTeacherReports()">پاک‌کردن لیست فعلی</button>
+      <button type="button" onclick="backToStudentLogin()">بازگشت به ورود دانش‌آموز</button>
+    </div>
+    <details style="margin:10px 0;padding:12px;border:1px solid #cbd5e1;border-radius:10px">
+      <summary><strong>ورود دستی فایل JSON (پشتیبان آفلاین)</strong></summary>
+      <p style="font-size:.9rem;color:#475569">اگر دانش‌آموزی آفلاین بوده، می‌توانید فایل کارنامه‌اش را اینجا وارد کنید.</p>
+      <label for="teacher-report-files">انتخاب فایل‌های کارنامه (JSON)</label>
+      <input id="teacher-report-files" type="file" accept=".json,application/json" multiple style="display:block;margin:12px 0">
+      <button type="button" onclick="importTeacherReports()">نمایش نمرات فایل‌های انتخاب‌شده</button>
+    </details>
+    <div style="margin:12px 0;padding:14px;border:2px solid #0d9488;border-radius:12px;background:#f0fdfa">
+      <strong style="color:#0f766e">🔐 صدور کد آزمون (ثبت روی سرور)</strong>
+      <p style="font-size:.88rem;margin:8px 0 12px;color:#334155">کد و کلمه جلسه روی سرور ذخیره می‌شود. دانش‌آموز باید هر دو را درست وارد کند.</p>
+      <select id="issue-surah" class="surah-select"></select>
+      <label for="issue-session">شمارهٔ نوبت/کلاس (۱ تا ۵):</label>
+      <input id="issue-session" type="number" min="1" max="5" value="1" style="display:block;padding:10px;margin:8px 0;width:90px">
+      <label for="issue-session-word">کلمه جلسه (۳ تا ۱۲ حرف):</label>
+      <div style="display:flex;gap:8px;flex-wrap:wrap;align-items:center;margin:8px 0">
+        <input id="issue-session-word" type="text" maxlength="12" placeholder="مثلاً: آسمان" style="padding:10px;border:2px solid #cbd5e1;border-radius:10px;flex:1;min-width:140px">
+        <button type="button" onclick="generateSessionWord()" style="background:#0d9488;color:#fff;border:0;border-radius:9px;padding:10px 14px;font-weight:700;cursor:pointer">🎲 تصادفی</button>
+      </div>
+      <button type="button" onclick="issueExamCode()" style="background:#0f766e;color:#fff;border:0;border-radius:9px;padding:10px 16px;font-weight:700;cursor:pointer">صدور و ثبت روی سرور</button>
+      <div id="issue-result" style="margin-top:12px"></div>
+    </div>
+    <details style="margin:12px 0;padding:12px;border:1px solid #cbd5e1;border-radius:10px"><summary><strong>🔑 ساخت رمز جدید برای معلم</strong></summary><p style="font-size:.85rem">رمز تازه (حداقل ۱۰ نویسه) را بنویسید تا دو مقدار ساخته شود؛ سپس در فایل برنامه، مقدار <code>TEACHER_AUTH</code> را با آن جایگزین کنید. خود رمز هیچ‌جا ذخیره نمی‌شود.</p><input id="new-teacher-pass" type="password" autocomplete="new-password" style="padding:10px;border:2px solid #cbd5e1;border-radius:10px;width:100%;margin:6px 0"><button type="button" onclick="makeTeacherHash()">ساخت مقدار جدید</button><textarea id="new-teacher-hash" readonly rows="3" dir="ltr" style="width:100%;margin-top:8px;font-size:.75rem"></textarea></details>
+<div id="teacher-report-content" style="margin-top:16px">برای دیدن نمرات، فایل‌های کارنامه را انتخاب کنید.</div>
+  </section>
+  <div id="student-app" class="hidden">
+  <div class="container">
+    <div style="display:flex;justify-content:flex-end;flex-wrap:wrap;gap:8px;margin-bottom:8px"><button type="button" class="btn-action-small" onclick="exportStudentReport()">دانلود کارنامه برای معلم</button><button type="button" class="btn-action-small" onclick="signOut()">تغییر دانش‌آموز</button></div>
+    <section class="scoreboard-bar" aria-label="وضعیت و امتیاز دانش‌آموز">
+      <div class="student-profile">
+        <div class="student-avatar" aria-hidden="true">⭐</div>
+        <div class="student-info">
+          <div class="student-name" role="button" tabindex="0" onkeydown="if(event.key==='Enter')promptStudentName()" onclick="promptStudentName()" title="برای تغییر نام کلیک کنید">
+            <span id="student-name-display">دانش‌آموز کوشا</span>
+            <span style="font-size:0.8rem;opacity:0.8;">✏️</span>
+          </div>
+          <span id="student-rank-display" class="student-rank">🌱 آغازگر مسیر نور</span>
+        </div>
+      </div>
+
+      <div class="score-stats">
+        <div class="score-box">
+          <div id="student-score-display" class="num">0</div>
+          <div class="label">امتیاز آزمون رسمی</div>
+        </div>
+        <div class="score-box learn" title="امتیاز سؤال‌های چهارگزینه‌ای بخش آموزش؛ جدا از آزمون رسمی">
+          <div id="student-learn-display" class="num">0</div>
+          <div class="label">امتیاز آموزش</div>
+        </div>
+        <div class="score-box">
+          <div id="student-count-display" class="num">0 از 37</div>
+          <div class="label">سوره‌های آزمون‌شده</div>
+        </div>
+        <button type="button" class="btn-action-small" onclick="showReportModal()">📜 کارنامه و جوایز</button>
+      </div>
+
+      <div style="width:100%;">
+        <div class="progress-track">
+          <div id="student-progress-fill" class="progress-fill" style="width: 0%;"></div>
+        </div>
+      </div>
+    </section>
+
+    <div id="mode-tabs" class="filter-tabs" style="margin-bottom:14px"><button type="button" class="btn-tab active" onclick="showMode('learn');this.classList.add('active');this.nextElementSibling.classList.remove('active')">📚 آموزش (همیشه باز)</button><button type="button" class="btn-tab" onclick="showMode('exam');this.classList.add('active');this.previousElementSibling.classList.remove('active')">📝 آزمون رسمی</button></div>
+<div id="learn-view">
+<section class="controls-panel" aria-label="انتخاب و فیلتر سوره">
+      <div class="filter-tabs" role="group" aria-label="فیلتر پایه تحصیلی">
+        <button type="button" class="btn-tab active" data-grade="all" aria-pressed="true">همهٔ ۳۷ سوره</button>
+        <button type="button" class="btn-tab" data-grade="1-3" aria-pressed="false">پایهٔ اول تا سوم</button>
+        <button type="button" class="btn-tab" data-grade="4-6" aria-pressed="false">پایهٔ چهارم تا ششم</button>
+      </div>
+      <div class="select-box-wrapper">
+        <label for="surah-select"><strong>انتخاب سوره:</strong></label>
+        <select id="surah-select" class="surah-select"></select>
+      </div>
+    </section>
+    <section id="memorization-panel" class="memorization-panel" style="margin:18px 0;padding:20px;border:2px solid #b7e4c7;border-radius:22px;background:linear-gradient(135deg,#f0fdf4,#eff6ff);">
+      <h2 style="color:#166534;margin:0 0 8px;font-size:1.25rem;">🌟 کلاس کوچولوی حفظ قرآن</h2>
+      <p style="margin:0 0 14px;color:#36534a;">با صدای قاری گوش کن، آیه را چند بار تکرار کن و بعد از حفظ، متن را پنهان کن و خودت را امتحان کن.</p>
+      <div style="display:flex;gap:10px;flex-wrap:wrap;align-items:center;margin-bottom:14px;">
+        <label for="memorize-surah"><strong>انتخاب سوره:</strong></label>
+        <select id="memorize-surah" class="surah-select" style="flex:1;min-width:220px;"></select>
+        <button type="button" onclick="loadMemorization()" style="border:0;border-radius:14px;padding:11px 18px;background:#15803d;color:white;font-weight:700;cursor:pointer;">شروع تمرین حفظ</button>
+      </div>
+      <div id="memorization-content" aria-live="polite"><p>یک سوره انتخاب کن و «شروع تمرین حفظ» را بزن.</p></div>
+    </section>
+    <main id="surah-display"><div class="loading-spinner">در حال بارگذاری اطلاعات سوره…</div></main>
+</div>
+<div id="exam-view" class="hidden">
+<section class="controls-panel">
+  <h2>📝 آزمون رسمی</h2>
+  <p>هر سوره فقط یک بار. ۵ سؤال، هر کدام ۳۰ ثانیه و ۲۰ امتیاز. برای شروع، <b>کد عددی</b> و <b>کلمه جلسه</b> را که معلم اعلام کرده وارد کنید. وسط آزمون صفحه را نبندید.</p>
+  <div id="exam-audio-gate"></div>
+  <select id="exam-surah" class="surah-select"></select>
+  <div style="display:flex;flex-wrap:wrap;gap:10px;margin:10px 0;align-items:center">
+    <input id="exam-code" inputmode="numeric" placeholder="کد عددی آزمون" style="padding:10px;border:2px solid #cbd5e1;border-radius:10px;width:140px">
+    <input id="exam-session-word" type="text" placeholder="کلمه جلسه" maxlength="12" style="padding:10px;border:2px solid #cbd5e1;border-radius:10px;width:140px">
+  </div>
+  <button type="button" id="exam-start-btn" class="retry-btn" onclick="startExam()" disabled>🔒 شروع آزمون</button>
+</section>
+<div id="exam-box"></div>
+</div>
+  </div>
+
+  <div id="report-modal" class="modal-backdrop" role="dialog" aria-modal="true" aria-labelledby="modal-student-name">
+    <div class="modal-card">
+      <div class="modal-header">
+        <h2 style="font-size:1.15rem;font-weight:800;">🏆 لوح یادگیری قرآن</h2>
+        <button type="button" class="modal-close" onclick="closeReportModal()" aria-label="بستن">&times;</button>
+      </div>
+      <div class="modal-body">
+        <div class="trophy-icon">🌟</div>
+        <h3 id="modal-student-name" style="color:var(--primary);margin-bottom:4px;">دانش‌آموز کوشا</h3>
+        <p id="modal-student-rank" style="color:var(--text-muted);font-size:.9rem;">سطح: آغازگر مسیر نور</p>
+        <div class="report-grid">
+          <div class="report-item">
+            <span id="modal-score" class="report-val">0</span>
+            <span class="report-lbl">امتیاز آزمون رسمی</span>
+          </div>
+          <div class="report-item" style="background:#f0f9ff;border-color:#bae6fd">
+            <span id="modal-learn" class="report-val" style="color:#0369a1">0</span>
+            <span class="report-lbl">امتیاز آموزش</span>
+          </div>
+          <div class="report-item">
+            <span id="modal-count" class="report-val">0</span>
+            <span class="report-lbl">سوره‌های کامل‌شده</span>
+          </div>
+          <div class="report-item">
+            <span id="modal-percent" class="report-val">0%</span>
+            <span class="report-lbl">پیشرفت جزء ۳۰</span>
+          </div>
+        </div>
+        <p style="font-size:.92rem;color:#475569;background:#f8fafc;padding:10px;border-radius:10px;">
+          «خَیْرُکُمْ مَنْ تَعَلَّمَ الْقُرْآنَ وَعَلَّمَهُ»<br>بهترین شما کسی است که قرآن را بیاموزد و به دیگران آموزش دهد.
+        </p>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn-action-small" onclick="window.print()">🖨️ چاپ یا ذخیره PDF</button>
+        <button type="button" class="btn-tab" onclick="closeReportModal()">بستن</button>
+      </div>
+    </div>
+  </div>
+
+  </div><!-- /student-app -->
+  <!-- بلوک داده‌های JSON کاملاً مستقل و امن -->
+  <script type="application/json" id="quran-data">
+{
+  "juz30Surahs": [
+    {
+      "id": 78,
+      "nameAr": "النَّبَإ",
+      "nameFa": "نبأ",
+      "versesCount": 40,
+      "grade": "4-6"
+    },
+    {
+      "id": 79,
+      "nameAr": "النَّازِعَات",
+      "nameFa": "نازعات",
+      "versesCount": 46,
+      "grade": "4-6"
+    },
+    {
+      "id": 80,
+      "nameAr": "عَبَسَ",
+      "nameFa": "عبس",
+      "versesCount": 42,
+      "grade": "4-6"
+    },
+    {
+      "id": 81,
+      "nameAr": "التَّكْوِير",
+      "nameFa": "تکویر",
+      "versesCount": 29,
+      "grade": "4-6"
+    },
+    {
+      "id": 82,
+      "nameAr": "الانفِطَار",
+      "nameFa": "انفطار",
+      "versesCount": 19,
+      "grade": "4-6"
+    },
+    {
+      "id": 83,
+      "nameAr": "المُطَفِّفِين",
+      "nameFa": "مطففین",
+      "versesCount": 36,
+      "grade": "4-6"
+    },
+    {
+      "id": 84,
+      "nameAr": "الانشِقَاق",
+      "nameFa": "انشقاق",
+      "versesCount": 25,
+      "grade": "4-6"
+    },
+    {
+      "id": 85,
+      "nameAr": "البُرُوج",
+      "nameFa": "بروج",
+      "versesCount": 22,
+      "grade": "4-6"
+    },
+    {
+      "id": 86,
+      "nameAr": "الطَّارِق",
+      "nameFa": "طارق",
+      "versesCount": 17,
+      "grade": "4-6"
+    },
+    {
+      "id": 87,
+      "nameAr": "الأَعْلَى",
+      "nameFa": "اعلی",
+      "versesCount": 19,
+      "grade": "4-6"
+    },
+    {
+      "id": 88,
+      "nameAr": "الغَاشِيَة",
+      "nameFa": "غاشیه",
+      "versesCount": 26,
+      "grade": "4-6"
+    },
+    {
+      "id": 89,
+      "nameAr": "الفَجْر",
+      "nameFa": "فجر",
+      "versesCount": 30,
+      "grade": "4-6"
+    },
+    {
+      "id": 90,
+      "nameAr": "البَلَد",
+      "nameFa": "بلد",
+      "versesCount": 20,
+      "grade": "4-6"
+    },
+    {
+      "id": 91,
+      "nameAr": "الشَّمْس",
+      "nameFa": "شمس",
+      "versesCount": 15,
+      "grade": "4-6"
+    },
+    {
+      "id": 92,
+      "nameAr": "اللَّيْل",
+      "nameFa": "لیل",
+      "versesCount": 21,
+      "grade": "4-6"
+    },
+    {
+      "id": 93,
+      "nameAr": "الضُّحَى",
+      "nameFa": "ضحی",
+      "versesCount": 11,
+      "grade": "4-6"
+    },
+    {
+      "id": 94,
+      "nameAr": "الشَّرْح",
+      "nameFa": "شرح",
+      "versesCount": 8,
+      "grade": "4-6"
+    },
+    {
+      "id": 95,
+      "nameAr": "التِّين",
+      "nameFa": "تین",
+      "versesCount": 8,
+      "grade": "4-6"
+    },
+    {
+      "id": 96,
+      "nameAr": "العَلَق",
+      "nameFa": "علق",
+      "versesCount": 19,
+      "grade": "4-6"
+    },
+    {
+      "id": 97,
+      "nameAr": "القَدْر",
+      "nameFa": "قدر",
+      "versesCount": 5,
+      "grade": "4-6"
+    },
+    {
+      "id": 98,
+      "nameAr": "البَيِّنَة",
+      "nameFa": "بینه",
+      "versesCount": 8,
+      "grade": "4-6"
+    },
+    {
+      "id": 99,
+      "nameAr": "الزَّلْزَلَة",
+      "nameFa": "زلزله",
+      "versesCount": 8,
+      "grade": "4-6"
+    },
+    {
+      "id": 100,
+      "nameAr": "العَادِيَات",
+      "nameFa": "عادیات",
+      "versesCount": 11,
+      "grade": "4-6"
+    },
+    {
+      "id": 101,
+      "nameAr": "القَارِعَة",
+      "nameFa": "قارعه",
+      "versesCount": 11,
+      "grade": "4-6"
+    },
+    {
+      "id": 102,
+      "nameAr": "التَّكَاثُر",
+      "nameFa": "تکاثر",
+      "versesCount": 8,
+      "grade": "4-6"
+    },
+    {
+      "id": 103,
+      "nameAr": "العَصْر",
+      "nameFa": "عصر",
+      "versesCount": 3,
+      "grade": "1-3"
+    },
+    {
+      "id": 104,
+      "nameAr": "الهُمَزَة",
+      "nameFa": "همزه",
+      "versesCount": 9,
+      "grade": "1-3"
+    },
+    {
+      "id": 105,
+      "nameAr": "الفِيل",
+      "nameFa": "فیل",
+      "versesCount": 5,
+      "grade": "1-3"
+    },
+    {
+      "id": 106,
+      "nameAr": "قُرَيْش",
+      "nameFa": "قریش",
+      "versesCount": 4,
+      "grade": "1-3"
+    },
+    {
+      "id": 107,
+      "nameAr": "المَاعُون",
+      "nameFa": "ماعون",
+      "versesCount": 7,
+      "grade": "1-3"
+    },
+    {
+      "id": 108,
+      "nameAr": "الكَوْثَر",
+      "nameFa": "کوثر",
+      "versesCount": 3,
+      "grade": "1-3"
+    },
+    {
+      "id": 109,
+      "nameAr": "الكَافِرُون",
+      "nameFa": "کافرون",
+      "versesCount": 6,
+      "grade": "1-3"
+    },
+    {
+      "id": 110,
+      "nameAr": "النَّصْر",
+      "nameFa": "نصر",
+      "versesCount": 3,
+      "grade": "1-3"
+    },
+    {
+      "id": 111,
+      "nameAr": "المَسَد",
+      "nameFa": "مسد",
+      "versesCount": 5,
+      "grade": "1-3"
+    },
+    {
+      "id": 112,
+      "nameAr": "الإِخْلَاص",
+      "nameFa": "توحید (اخلاص)",
+      "versesCount": 4,
+      "grade": "1-3"
+    },
+    {
+      "id": 113,
+      "nameAr": "الفَلَق",
+      "nameFa": "فلق",
+      "versesCount": 5,
+      "grade": "1-3"
+    },
+    {
+      "id": 114,
+      "nameAr": "النَّاس",
+      "nameFa": "ناس",
+      "versesCount": 6,
+      "grade": "1-3"
+    }
+  ],
+  "educationalContent": {
+    "78": {
+      "msg": "این سوره دربارهٔ خبر بزرگ قیامت است و به ما یادآوری می‌کند که روز رستاخیز حتماً می‌آید و باید برای آن آماده باشیم.",
+      "src": "آموزش قرآن کودکان"
+    },
+    "79": {
+      "msg": "سورهٔ نازعات از فرشتگان و روز قیامت سخن می‌گوید و به ما می‌گوید که خداوند قدرت دارد و همه چیز در دست اوست.",
+      "src": "آموزش قرآن کودکان"
+    },
+    "80": {
+      "msg": "این سوره به ما می‌آموزد که با همهٔ مردم مهربان باشیم و کسی را که می‌خواهد یاد بگیرد، از خود نرانیم.",
+      "src": "آموزش قرآن کودکان"
+    },
+    "81": {
+      "msg": "سورهٔ تکویر نشانه‌های قیامت را توصیف می‌کند تا بدانیم آن روز بزرگ خواهد آمد و باید کارهای خوب انجام دهیم.",
+      "src": "آموزش قرآن کودکان"
+    },
+    "82": {
+      "msg": "این سوره از شکافته‌شدن آسمان در قیامت می‌گوید و یادآوری می‌کند که خداوند از همهٔ کارهای ما آگاه است.",
+      "src": "آموزش قرآن کودکان"
+    },
+    "83": {
+      "msg": "سورهٔ مطففین به ما می‌گوید کم‌فروشی و تقلب بد است و باید در همهٔ کارها عادل و درستکار باشیم.",
+      "src": "آموزش قرآن کودکان"
+    },
+    "84": {
+      "msg": "این سوره از شکافته‌شدن آسمان و بازگشت انسان به سوی خدا سخن می‌گوید و ما را به کارهای نیک دعوت می‌کند.",
+      "src": "آموزش قرآن کودکان"
+    },
+    "85": {
+      "msg": "سورهٔ بروج داستان کسانی را می‌گوید که مؤمنان را آزار دادند و به ما می‌آموزد که در ایمان خود استوار بمانیم.",
+      "src": "آموزش قرآن کودکان"
+    },
+    "86": {
+      "msg": "این سوره با سوگند به ستارهٔ درخشان آغاز می‌شود و به ما یاد می‌دهد که خداوند ما را آفریده و از ما آگاه است.",
+      "src": "آموزش قرآن کودکان"
+    },
+    "87": {
+      "msg": "سورهٔ اعلی به ما فرمان می‌دهد نام خداوند بلندمرتبه را تسبیح کنیم و از او سپاسگزاری کنیم.",
+      "src": "آموزش قرآن کودکان"
+    },
+    "88": {
+      "msg": "این سوره ما را دعوت می‌کند به آفرینش شتر، آسمان، کوه‌ها و زمین فکر کنیم و قدرت خداوند را ببینیم.",
+      "src": "آموزش قرآن کودکان"
+    },
+    "89": {
+      "msg": "سورهٔ فجر با سوگند به سپیده‌دم آغاز می‌شود و از روز قیامت و اهمیت کمک به نیازمندان سخن می‌گوید.",
+      "src": "آموزش قرآن کودکان"
+    },
+    "90": {
+      "msg": "این سوره به ما می‌گوید کارهای سخت ولی نیکو مثل کمک به فقیر و آزاد کردن دیگران را انجام دهیم.",
+      "src": "آموزش قرآن کودکان"
+    },
+    "91": {
+      "msg": "سورهٔ شمس می‌گوید کسی رستگار است که نفس خود را پاک کند و از بدی‌ها دوری کند.",
+      "src": "آموزش قرآن کودکان"
+    },
+    "92": {
+      "msg": "این سوره بخشش و پرهیزکاری را راه خوشبختی می‌داند و بخل را نکوهش می‌کند.",
+      "src": "آموزش قرآن کودکان"
+    },
+    "93": {
+      "msg": "سورهٔ ضحی به پیامبر دلداری می‌دهد و سفارش می‌کند با یتیم مهربان باشیم و نعمت‌های خدا را فراموش نکنیم.",
+      "src": "آموزش قرآن کودکان"
+    },
+    "94": {
+      "msg": "این سوره پیام امیدبخش دارد: همراه هر سختی، آسانی هست. پس هیچ‌وقت ناامید نشویم.",
+      "src": "آموزش قرآن کودکان"
+    },
+    "95": {
+      "msg": "سورهٔ تین به آفرینش زیبای انسان اشاره می‌کند و می‌گوید بهترین انسان کسی است که ایمان و کار خوب داشته باشد.",
+      "src": "آموزش قرآن کودکان"
+    },
+    "96": {
+      "msg": "این سوره با فرمان «بخوان» آغاز می‌شود و اهمیت علم و دانش و فروتنی در برابر خداوند را یادآوری می‌کند.",
+      "src": "آموزش قرآن کودکان"
+    },
+    "97": {
+      "msg": "سورهٔ قدر از شب قدر سخن می‌گوید که از هزار ماه بهتر است و فرشتگان در آن شب فرود می‌آیند.",
+      "src": "آموزش قرآن کودکان"
+    },
+    "98": {
+      "msg": "این سوره از آمدن دلیل روشن (قرآن و پیامبر) سخن می‌گوید تا مردم راه درست را پیدا کنند.",
+      "src": "آموزش قرآن کودکان"
+    },
+    "99": {
+      "msg": "سورهٔ زلزال می‌گوید زمین در قیامت می‌لرزد و همهٔ کارهای خوب و بد ما را بازگو می‌کند.",
+      "src": "آموزش قرآن کودکان"
+    },
+    "100": {
+      "msg": "این سوره با سوگند به اسب‌های دونده آغاز می‌شود و انسان را به سپاسگزاری از نعمت‌های خدا دعوت می‌کند.",
+      "src": "آموزش قرآن کودکان"
+    },
+    "101": {
+      "msg": "سورهٔ قارعه از روز قیامت و سنگینی یا سبکی اعمال سخن می‌گوید تا بدانیم کارهایمان سنجیده می‌شود.",
+      "src": "آموزش قرآن کودکان"
+    },
+    "102": {
+      "msg": "این سوره ما را از رقابت در جمع کردن مال و فزون‌خواهی برحذر می‌دارد و یاد آخرت را زنده می‌کند.",
+      "src": "آموزش قرآن کودکان"
+    },
+    "103": {
+      "msg": "سورهٔ عصر می‌گوید انسان در زیان است مگر کسانی که ایمان دارند، کار خوب می‌کنند و به حق و صبر سفارش می‌نمایند.",
+      "src": "آموزش قرآن کودکان"
+    },
+    "104": {
+      "msg": "این سوره عیب‌جویی و مسخره کردن دیگران را بد می‌داند و به ما می‌گوید با دیگران خوب رفتار کنیم.",
+      "src": "آموزش قرآن کودکان"
+    },
+    "105": {
+      "msg": "سورهٔ فیل داستان سپاه فیل را می‌گوید که می‌خواستند خانهٔ خدا را خراب کنند ولی خداوند نقشه‌شان را ناکام گذاشت.",
+      "src": "آموزش قرآن کودکان"
+    },
+    "106": {
+      "msg": "این سوره از نعمت امنیت و سفرهای تجاری قریش سخن می‌گوید و به سپاسگزاری از پروردگار کعبه دعوت می‌کند.",
+      "src": "آموزش قرآن کودکان"
+    },
+    "107": {
+      "msg": "سورهٔ ماعون کسانی را نکوهش می‌کند که یتیم را می‌رانند و به نیازمندان کمک نمی‌کنند. ما باید مهربان و بخشنده باشیم.",
+      "src": "آموزش قرآن کودکان"
+    },
+    "108": {
+      "msg": "این سوره از عطای خیر کثیر و کوثر به پیامبر سخن می‌گوید و ما را به نماز و سپاسگزاری از نعمت‌های خدا دعوت می‌کند.",
+      "src": "آموزش قرآن کودکان"
+    },
+    "109": {
+      "msg": "سورهٔ کافرون به روشنی می‌گوید دین ما با دین دیگران فرق دارد و ما فقط خدای یکتا را می‌پرستیم.",
+      "src": "آموزش قرآن کودکان"
+    },
+    "110": {
+      "msg": "این سوره خبر از پیروزی اسلام و یاری خدا می‌دهد و به تسبیح و استغفار سفارش می‌کند.",
+      "src": "آموزش قرآن کودکان"
+    },
+    "111": {
+      "msg": "این سوره نشان می‌دهد که دشمنی با پیامبر خدا و حق، نتیجه‌ای جز شکست و خسران ندارد.",
+      "src": "آموزش قرآن کودکان"
+    },
+    "112": {
+      "msg": "سورهٔ توحید مهم‌ترین شناسنامهٔ خداوند است؛ او یکتا، بی‌نیاز و بی‌همتاست.",
+      "src": "آموزش قرآن کودکان"
+    },
+    "113": {
+      "msg": "این سوره به ما می‌آموزد که از شر تاریکی‌ها، وسوسه‌ها و حسودان به پروردگار سپیده‌دم پناه ببریم.",
+      "src": "آموزش قرآن کودکان"
+    },
+    "114": {
+      "msg": "این سوره به ما یاد می‌دهد که همواره از وسوسه‌های پنهانی شیطان به پروردگار و پادشاه انسان‌ها پناه ببریم.",
+      "src": "آموزش قرآن کودکان"
+    }
+  },
+  "surahStories": {
+    "78": {
+      "title": "راز دانه‌های زیر خاک",
+      "theme": "خبر بزرگ قیامت و نشانه‌های آفرینش",
+      "text": "پرهام در باغچه کوچک حیاط، دانه‌های لوبیا را با ناامیدی نگاه می‌کرد. شاخه‌های خشک گوجه‌فرنگی و علف‌های زرد نشان می‌داد زمستان همه‌چیز را بی‌جان کرده است. پدربزرگ دست روی شانه پرهام گذاشت و گفت: «چرا غمگینی پسرم؟» پرهام گفت: «پدربزرگ، این زمین کاملاً مرده! چطور ممکن است از دل این خاک سیاه و خشک دوباره گیاهی سبز شود؟» پدربزرگ بیلچه را برداشت، خاک را کمی نرم کرد و چند دانه را با دقت در دل زمین کاشت. سپس گفت: «به این کوه‌های بلند انتهای دشت نگاه کن؛ خدا آن‌ها را مثل میخ‌هایی محکم قرار داده تا زمین آرام بماند. همان خدایی که خواب را برای استراحت ما آفرید، خورشید درخشان را روشن کرد و باران را از ابرها بارید، می‌تواند به زمینی که خشک شده دوباره جان بدهد. بهار که بیاید، معجزه را می‌بینی.» چند هفته بعد، باران بهاری بارید و پرهام صبح یک روز تعطیل با شگفتی جوانه‌های سبز روشنی را دید که سر از خاک برآورده بودند. او دوان‌دوان پیش پدربزرگ رفت. پدربزرگ لبخند زد و گفت: «روزی که همه انسان‌ها دوباره زنده می‌شوند تا نتیجه کارهایشان را ببینند، درست مثل همین روییدن دوباره است؛ خدایی که چنین جهانی را به پا کرده، برپا کردن دوباره ما برایش آسان است.»"
+    },
+    "79": {
+      "title": "قلعه‌ای که باد برد",
+      "theme": "ارزش کارهای ماندگار و حسابرسی دقیق",
+      "text": "در زنگ هنر، بچه‌ها مأمور شدند با مقوا و وسایل بازیافتی سازه‌ای ماندگار برای تزیین کتابخانه کلاس بسازند. مانی تمام وقتش را صرف خرید وسایل پرزرق‌وبرق کرد؛ اما سازه‌اش تنها ظاهر زیبایی داشت و پایه‌هایش را سست چسبانده بود. در مقابل، کیان ساعت‌ها روی استحکام پایه‌های ماکتش تمرکز کرد و حتی برای راحتی دوستانش، راهنمای مطالعه کوچکی درون آن قرار داد. روز داوری، معلم پنجره کلاس را باز کرد. ناگهان باد تندی وزید و ماکت پرزرق‌وبرق مانی که فقط برای جلب توجه ساخته شده بود، فروریخت؛ اما کار محکم کیان استوار باقی ماند. خانم مربی روبه‌روی بچه‌ها ایستاد و گفت: «کسانی که فقط به ظاهر زودگذر دنیا دل می‌بندند و کارهایشان عمق و نیت خیری ندارد، در برابر سنجش نهایی دستشان خالی می‌ماند؛ اما کسانی که از بدی دوری می‌کنند و پایه‌های اعمالشان را بر نیکی و درستی محکم می‌گذارند، همیشه سربلند خواهند بود.» مانی یاد گرفت کارهای ارزشمند، آن‌هایی هستند که ریشه‌ای محکم دارند."
+    },
+    "80": {
+      "title": "سفر شگفت‌انگیز یک لقمه نان",
+      "theme": "تفکر در نعمت‌های الهی و غذای روزانه",
+      "text": "سامیار سر میز ناهار با بی‌میلی قاشقش را تکان می‌داد و بخش زیادی از برنج و سبزیجات را در بشقابش رها کرد تا سراغ چیپس و شکلات برود. مادرش بشقاب را پیش کشید و آرام گفت: «سامیار، تا حالا فکر کردی این تکه نان و این چند برگ سبزی چه مسیری را طی کرده‌اند تا به اینجا برسند؟» سامیار با تعجب سرش را بالا آورد. مادر ادامه داد: «خداوند ابرها را فرستاد تا آب فراوان بر زمین ببارد، سپس خاک شکافته شد تا دانه‌های گندم و زیتون و میوه‌های رنگارنگ رشد کنند. باغ‌های سرسبز با درختان پربرکت به بار نشستند تا تو و حتی حیوانات مزرعه سیر شوید. پشت هر دانه‌ای که جلویت قرار دارد، نظم بزرگ و مهربانی خدا پنهان است؛ بی‌توجهی به آن، ناسپاسی در برابر این‌همه لطف است.» سامیار برای اولین بار با دقت به بافت نان و رنگ سبزی‌ها نگاه کرد؛ لقمه‌اش را با لذت و آرامش خورد و از صمیم قلب گفت: «الحمدلله رب العالمین»."
+    },
+    "81": {
+      "title": "دفترچه ضبط خاطرات",
+      "theme": "دگرگونی جهان و آشکار شدن حقیقت اعمال",
+      "text": "کلاس چهارم قرار بود فیلم مستندی درباره فضا ببینند. در بخشی از فیلم، ستاره‌های درخشان پس از میلیون‌ها سال نور خود را از دست می‌دادند و کوه‌ها در اثر تحولات شدید زمین شناختی خرد می‌شدند. علی با هیجان گفت: «آقا، یعنی جهان روزی کاملاً تغییر می‌کند؟» آقای حسینی معلم کلاس تخته را پاک کرد و گفت: «بله بچه‌ها، خورشید روزی تاریک می‌شود، ستارگان فرومی‌ریزند و کوه‌ها جابه‌جا می‌شوند. اما در آن روز بزرگ، یک چیز از بین نمی‌رود؛ نامه‌ای که تمام کارهای کوچک و بزرگ ما در آن ثبت شده است. مثل این است که دوربینی تمام رازها و کارهای پنهانی ما را ضبط کرده باشد و در آن روز، همه حقیقت‌ها برای خودمان آشکار شود.» علی از آن روز یاد گرفت حتی وقتی کسی در خانه یا حیاط مدرسه نگاهش نمی‌کند، کاری نکند که در روز نمایان شدن حقیقت، خجالت‌زده شود."
+    },
+    "87": {
+      "title": "انتخاب کار درست در لحظه وسوسه",
+      "theme": "پاک شمردن پروردگار و ترجیح آخرت بر لذت زودگذر",
+      "text": "مسابقه دومیدانی مدرسه در حال برگزاری بود. متین و سپهر شانه به شانه هم می‌دویدند. در پیچ آخر مسیر، پای سپهر به سنگی گیر کرد و زمین خورد. متین می‌توانست بی‌توجه رد شود و به راحتی مدال طلا و جایزه بزرگ را ببرد؛ اما ایستاد، دست سپهر را گرفت و کمک کرد بلند شود. در نهایت هر دو با هم و بعد از نفرات دیگر به خط پایان رسیدند. مدیر مدرسه وقتی ماجرا را شنید، مدال اخلاق مسابقات را به متین داد و گفت: «زندگی دنیا پر از جایزه‌های کوچک و زودگذر است، اما انسان‌هایی که پروردگارشان را منزه می‌دانند، کارهای پاک و ماندگار انجام می‌دهند. پاداش آخرت و نام نیک نزد خداوند، پایدارتر و برتر از هر مدال فلزی است.» متین در دل احساس سبکی و رضایت عمیقی داشت."
+    },
+    "88": {
+      "title": "راز شتر در بیابان سوزان",
+      "theme": "تفکر در شگفتی‌های طبیعت",
+      "text": "در زنگ علوم، بچه‌ها به تماشای فیلمی درباره بیابان‌های خشک و سوزان نشستند. امیرعلی پرسید: «چطور حیوانات می‌توانند روزها زیر این آفتاب داغ و بدون آب دوام بیاورند؟» آقای باقری، معلم علوم، تصویری از شتر را روی پرده انداخت: «به چشم‌های این حیوان نگاه کنید؛ پلک‌های شفاف و مژه‌های بلندی دارد که در طوفان شن جلوی کور شدنش را می‌گیرد. پاهایش پهن است تا در شن‌های روان فرو نرود و کوهانش انرژی را ذخیره می‌کند. قرآن می‌فرماید: آیا به شتر نگاه نمی‌کنند که چگونه آفریده شده است؟ یا به آسمان که چگونه برافراشته شده و به کوه‌ها که چگونه استوار گشته‌اند؟ این‌ها تصادفی نیستند؛ بلکه نشانه‌هایی‌اند تا بدانیم خدایی با چنین تدبیر و دانشی، دادگاه عدل قیامت را هم برپا خواهد کرد.» امیرعلی از تفکر در این جزئیات شگفت‌زده شد."
+    },
+    "89": {
+      "title": "بانک نیکی‌های ماندگار",
+      "theme": "پس‌انداز نیک برای زندگی جاودان",
+      "text": "پدر شایان قلکی چوبی برایش ساخته بود که رویش نوشته شده بود: «توشه آینده». شایان هر وقت کار خوبی می‌کرد—مانند آب دادن به گلدان همسایه مسن، لبخند زدن به کارگر زحمتکش محله یا بخشیدن بخشی از پول توجیبی‌اش به کودکی نیازمند—یک برگه یادداشت کوچک داخل قلک می‌انداخت. شایان روزی از پدرش پرسید: «چرا کارها را می‌نویسیم؟» پدر گفت: «در سوره فجر آمده است که در روز قیامت بعضی افراد با حسرت می‌گویند: ای کاش برای این زندگی ابدی‌ام چیزی از پیش فرستاده بودم! چون آن روز می‌فهمند زندگی واقعی و همیشگی کجاست. ما این یادداشت‌ها را نگه می‌داریم تا یادمان باشد کارهای نیک، تنها دارایی واقعی هستند که هرگز تمام نمی‌شوند.» شایان با ذوق برگه دیگری برداشت تا نیکی امروزش را در آن ثبت کند."
+    },
+    "90": {
+      "title": "گذشتن از گردنه سخت خودخواهی",
+      "theme": "انتخاب مسیر دشوار اما افتخارآمیز بخشش",
+      "text": "روز برفی سردی بود و پارسا یک کاپشن گرم و نو داشت. در راه مدرسه، پسرکی هم‌سن‌وسال خودش را دید که با لباسی نازک و بدون کلاه، کنار خیابان دستفروشی می‌کرد و از سرما می‌لرزید. پارسا شال‌گردن پشمی و دستکش اضافه‌ای را که در کیفش داشت لمس کرد. با خودش گفت: «شاید فردا خودم سردم شود!» اما ندایی در درونش گفت: «گذشتن از این فکر، کار آدم‌های بزرگ است.» او نزدیک رفت، با احترام شال و دستکش‌ها را به پسرک بخشید و برایش یک نان داغ خرید. وقتی به خانه آمد و ماجرا را برای مادرش گفت، مادر او را بوسید و گفت: «قرآن از گذرگاهی سخت نام می‌برد؛ آن گردنه سخت، گذشتن از خواسته‌های خود برای سیر کردن گرسنگان و مهربانی با محرومان است. تو امروز با ایمان و بخشش از آن گردنه سخت با موفقیت عبور کردی.»"
+    },
+    "91": {
+      "title": "آینه‌ای که نباید غبار بگیرد",
+      "theme": "پاکیزه نگه داشتن دل و پیروزی راستی",
+      "text": "معلم پرورشی برای آزمایش کلاسی دو آینه کوچک به کلاس آورد؛ یکی شفاف و درخشان و دیگری پر از گرد و غبار و خط‌وخش. سپس چراغ‌قوه‌ای روشن کرد؛ نور از آینه شفاف به زیبایی روی دیوار بازتابید، اما آینه کثیف هیچ نوری را منعکس نکرد. معلم رو به بچه‌ها گفت: «خداوند به خورشید، ماه، روز، شب و به جان پاک انسان سوگند یاد کرده که هر کس روح و قلبش را از دروغ، حسادت و بدخواهی پاک نگه دارد، رستگار می‌شود؛ اما کسی که دلش را با کارهای زشت آلوده کند، زیان می‌بیند. دل‌های شما مثل این آینه پاک است؛ نگذارید کینه‌توزی و بی‌انصافی آن را کدر کند.» سینا همان روز تصمیم گرفت دلخوری کوچکی را که از دوستش داشت ببخشد تا آینه دلش مثل آفتاب بدرخشد."
+    },
+    "92": {
+      "title": "باغبان دست‌ودلباز و درخت گردو",
+      "theme": "پیامد بخشش و گشاده‌دستی",
+      "text": "عمو صادق در روستای پدری دو درخت گردوی پربار داشت. او هر پاییز محصول یکی از درخت‌ها را به خانواده‌های کم‌درآمد روستا و یتیمان می‌بخشید و گردوهای باقی‌مانده را با خوش‌رویی می‌فروخت. سال بعد، درختان عمو صادق بارورتر و سرسبزتر از همیشه شدند و مردم روستا به او در برداشت محصول با جان و دل کمک می‌کردند. اما همسایه روبرویی او حتی حاضر نبود یک گردو به کودکان کوچه بدهد و شاخه‌های درختش را محکم با حصار بسته بود. روزی طوفانی شدید آمد و شاخه‌های خشک درخت بخیل شکست و افتاد، در حالی که باغبان مهربان با کمک همسایه‌ها باغش را حفظ کرد. پدربزرگ به نوه‌اش گفت: «سوره لیل می‌گوید کسی که می‌بخشد و پرهیزگار است، خدا راه راحتی و موفقیت را برایش آسان می‌کند؛ اما کسی که خساست می‌ورزد و خود را بی‌نیاز می‌داند، زندگی را بر خود تنگ و سخت می‌سازد.»"
+    },
+    "93": {
+      "title": "روشنایی بعد از غروب غم‌انگیز",
+      "theme": "امیدواری به رحمت خدا و دستگیری از نیازمندان",
+      "text": "آرش به دلیل جابه‌جایی منزل، وارد مدرسه جدیدی شده بود و روزهای اول هیچ دوستی نداشت. در زنگ تفریح گوشه‌ای غریبانه می‌نشست و فکر می‌کرد همه او را فراموش کرده‌اند. مادرش که متوجه ناراحتی‌اش شد، او را در آغوش گرفت و آیاتی از سوره ضحی را برایش زمزمه کرد: «سوگند به روشنایی روز و تاریکی شب که پروردگارت هرگز تو را رها نکرده است. همان‌طور که پیامبر را در کودکی یتیم یافت و پناه داد و توانگر ساخت، هوای تو را هم دارد.» مادر ادامه داد: «فردایت از امروز بسیار روشن‌تر خواهد بود؛ پس اگر می‌خواهی دوستانی خوب پیدا کنی، به بچه‌هایی که مثل خودت تنها هستند لبخند بزن و مهربانی کن.» روز بعد آرش پیش‌قدم شد و با دانش‌آموزی که روی ویلچر نشسته بود هم‌کلام شد. تا پایان هفته، او صمیمی‌ترین جمع دوستان را پیدا کرده بود و فهمید خدا همیشه گره‌ها را باز می‌کند."
+    },
+    "94": {
+      "title": "گره سخت و پایان شیرین",
+      "theme": "همراهی آسانی با سختی و استمرار در تلاش",
+      "text": "باربد در تمرین حل مسئله‌های پیچیده هندسه درمانده شده بود. مداد را روی میز انداخت و با بغض گفت: «دیگر فایده‌ای ندارد! من اصلاً استعداد این کار را ندارم.» پدر کنارش نشست، مسئله را به سه قسمت ساده‌تر تقسیم کرد و گفت: «باربد، در دل هر سختی، آسانی پنهان شده است؛ خدا این را دوبار در قرآن تکرار کرده تا مطمئن باشیم هیچ بن‌بستی همیشگی نیست.» او ادامه داد: «هر بار که با این مسئله کلنجار می‌روی، ذهن تو قوی‌تر می‌شود. فقط تسلیم نشو.» باربد نفس عمیقی کشید، دوباره از زاویه جدیدی به شکل‌ها نگاه کرد و ناگهان راه حل پدیدار شد! او با خوشحالی فریاد زد و آن را حل کرد. پدر لبخند زد و گفت: «یادت باشد، وقتی یک کار سخت را تمام کردی، بی‌هدف متوقف نشو؛ بلافاصله سراغ کار مفید بعدی برو تا همیشه پرانرژی و موفق بمانی.»"
+    },
+    "95": {
+      "title": "بهترین شاهکار نقاشی",
+      "theme": "کرامت انسان و ارزش ایمان و عمل شایسته",
+      "text": "در کلاس هنر، معلم تصویری از کهکشان‌ها، گل‌ها و طاووس‌های زیبا نشان داد و سپس گفت: «به نظر شما زیباترین و کامل‌ترین آفریده جهان چیست؟» هر یک از بچه‌ها پاسخی دادند. معلم آینه‌ای روی میز گذاشت و از آن‌ها خواست در آن نگاه کنند. معلم گفت: «خداوند در سوره تین به زیتون و انجیر و کوه طور سوگند یاد می‌کند و می‌فرماید: ما انسان را در بهترین و زیباترین شکل آفریدیم. اما انسان‌ها اگر از عقل و دلشان استفاده نکنند و کارهای زشت انجام دهند، ممکن است از هر موجودی پست‌تر شوند؛ تنها کسانی که ایمان دارند و کارهای شایسته می‌کنند، در این جایگاه بلند انسانی باقی می‌مانند.» بچه‌ها یاد گرفتند که زیبایی واقعی یک انسان، به افکار پاک و دست‌های یاری‌رسان اوست."
+    },
+    "96": {
+      "title": "قلمی که از تاریکی نجات می‌دهد",
+      "theme": "آموختن علم، شکرگزاری و دوری از خودخواهی",
+      "text": "هنگام بازدید از موزه کتاب‌های خطی قدیمی، راهنما بچه‌ها را به سالنی با نسخه‌های خطی بسیار ارزشمند برد. راهنما گفت: «اولین سخنی که از آسمان بر قلب پیامبر مهربان ما نازل شد، فرمان خواندن بود؛ بخوان به نام پروردگارت که انسان را آفرید و با قلم به او آنچه را نمی‌دانست آموخت.» سپس راهنما به تندیس دانشمندان اشاره کرد و گفت: «اما بچه‌ها، علم باید همراه با تواضع باشد. گاهی انسان‌ها وقتی احساس ثروت یا بی‌نیازی می‌کنند، سرکشی پیشه می‌گیرند و خدا را از یاد می‌برند. علم واقعی آن است که هرچه بیشتر می‌آموزیم، در برابر خداوند و خدمت به مردم فروتن‌تر شویم.» علی در دفترچه یادداشتش نوشت: «همیشه با نام خدا می‌خوانم تا راه درست را گم نکنم.»"
+    },
+    "97": {
+      "title": "شبی بهتر از هزار ماه",
+      "theme": "عظمت شب قدر و برکت نزول قرآن",
+      "text": "در شب بیست‌وسوم ماه رمضان، محمد همراه پدرش به مسجد رفته بود. چراغ‌ها کم‌نور بود و صدای مناجات با طراوت خاصی در فضا می‌پیچید. محمد پرسید: «پدر، چرا این شب انقدر مهم است که همه بیدار می‌مانند؟» پدر قرآن کوچکی را گشود و گفت: «در سوره قدر می‌خوانیم که قرآن در شبی پربرکت و آرام نازل شد؛ شبی که از هزار ماه—یعنی بیش از هشتاد سال زندگی معمولی—ارزشمندتر و بافضیلت‌تر است. فرشتگان در این شب به فرمان خدا فرود می‌آیند و تا طلوع صبحگاه، سرشار از سلام و آرامش و رحمت است. امشب اگر دلی را شاد کنیم، دعایی برای دیگران بخوانیم یا تصمیمی برای اصلاح اخلاقمان بگیریم، پاداشی بی‌اندازه دارد.» محمد دست‌های کوچکش را بالا برد و برای سلامتی بیماران و صلح برای همه کودکان جهان دعا کرد."
+    },
+    "98": {
+      "title": "دو باجه در پایان مسیر مسابقه",
+      "theme": "راستی در ایمان و همراهی باور با عمل نیک",
+      "text": "در بازی فکری مدرسه، دو گروه شرکت داشتند. گروه اول همیشه از قوانین صحبت می‌کردند اما در عمل تقلب می‌کردند و زباله‌ها را روی زمین می‌انداختند. گروه دوم نه تنها تمام مقررات را با دقت رعایت می‌کردند، بلکه به اعضای تیم مقابل هم در صورت نیاز کمک می‌رساندند. در خط پایان، داور مدال‌ها را بر گردن گروه دوم انداخت و گفت: «شعار دادن و ادعا کردن آسان است؛ اما خداوند در سوره بینه می‌فرماید که بندگان واقعی، دین خود را خالص می‌کنند، نماز را به پا می‌دارند و کار نیک انجام می‌دهند. آن‌ها بهترین آفریدگان خدا هستند. ایمان بدون عمل پاک، مثل درختی بی‌میوه است.» بچه‌ها تفاوت ادعا و عمل را در عمل دیدند."
+    },
+    "99": {
+      "title": "ذره‌بین جادویی و سنگ‌ریزه در کفش",
+      "theme": "اثر کوچک‌ترین کارها در ترازوی عدل",
+      "text": "امیر با اکراه یک پوست شکلات بسیار کوچک را روی زمین انداخت و گفت: «این انقدر کوچک است که به چشم هم نمی‌آید!» همان لحظه سنگی بسیار ریز وارد کفشش شد. بعد از چند قدم راه رفتن، پایش به شدت درد گرفت و مجبور شد بایستد و سنگ‌ریزه را درآورد. معلم که همراه بچه‌ها در حیاط بود، با لبخند گفت: «دیدی امیر جان؟ یک سنگ‌ریزه ذره‌بینی می‌تواند کل راه رفتنت را به هم بریزد. در روز قیامت زمین با لرزشی بزرگ آنچه در دل دارد بیرون می‌ریزد و انسان‌ها گروه‌گروه می‌آیند تا نتیجه کارهایشان را ببینند؛ هرکس به اندازه یک ذره غبار کار خوب کند، آن را می‌بیند و هرکس به اندازه ذره‌ای کار بد کند، آن را خواهد دید. هیچ کار خوبی هرچند به کوچکی یک لبخند، بی‌ارزش نیست و هیچ کار نادرستی نباید بی‌اهمیت شمرده شود.» امیر فورا خم شد و پوست شکلات را در سطل انداخت."
+    },
+    "100": {
+      "title": "وفاداری اسب تیزرو",
+      "theme": "شجاعت، وفاداری و دوری از ناسپاسی و وابستگی به مال",
+      "text": "امید همراه دایی‌اش به تماشای مسابقه سوارکاری رفت. اسب‌های چابک با شتاب می‌دویدند و از برخورد سم‌هایشان با سنگ‌ها، جرقه‌های آتش جهش می‌کرد. آن‌ها در میان غبار با وفاداری به سوی هدف پیش می‌رفتند بدون اینکه از موانع بترسند. دایی امید گفت: «خداوند در سوره عادیات به این اسب‌های دونده و باوفا سوگند یاد می‌کند که با شجاعت در راه هدف می‌تازند. اما بلافاصله می‌فرماید: شگفتا که انسان گاهی در برابر پروردگار بخشنده‌اش بسیار ناسپاس و حریص می‌شود و عشق به مال دنیا چشمش را می‌بندد! اسب به صاحبش که فقط به او آب و علف داده این‌چنین وفادار است؛ چگونه انسان به خدایی که همه‌چیز به او بخشیده بی‌وفایی می‌کند؟» امید تصمیم گرفت هرگز نعمت‌های خدا را فراموش نکند."
+    },
+    "101": {
+      "title": "ترازوی دو کفه‌ای در انبار غله",
+      "theme": "سنگینی ترازوی نیکی‌ها در روز واقعه",
+      "text": "پرهام در مزرعه به وزن کردن کیسه‌های جو نگاه می‌کرد. دو کفه ترازو روبه‌روی هم بودند؛ هر کیسه‌ای که پر از دانه بود کفه را سنگین می‌کرد و پایین می‌برد، اما کیسه‌های توخالی که فقط کاه سبک داشتند، بالا می‌ماندند و ارزشی نداشتند. پدربزرگ گفت: «روز قارعه—همان حادثه کوبنده—مردم مثل پروانه‌های پراکنده سرگردان می‌شوند و کوه‌ها مثل پشم رنگینِ زده‌شده سبک می‌شوند. در آن روز، ترازوی اعمال برپا می‌شود؛ هرکس کفه کارهای نیکش سنگین باشد، زندگی سراسر رضایت و شیرینی خواهد داشت و هرکس ترازوی نیکی‌هایش سبک و توخالی باشد، جایگاهش سقوط است. باید سعی کنیم با ادب، نماز و کمک به دیگران، کفه خوبی‌هایمان را سنگین کنیم.» پرهام دست پدربزرگ را بوسید و با اشتیاق در حمل کیسه‌ها به او کمک کرد."
+    },
+    "102": {
+      "title": "شمارش درپوش‌های بی‌ارزش",
+      "theme": "پرهیز از چشم‌وهم‌چشمی و تفاخر",
+      "text": "دو هم‌کلاسی در زنگ تفریح با یکدیگر بحث می‌کردند؛ یکی می‌گفت: «من صد و پنجاه کارت بازی دارم!» دیگری می‌گفت: «ولی من دویست تا دارم و خانه ما هم یک اتاق بیشتر دارد!» کار آن‌ها به غرور و مسخره کردن همدیگر کشیده شده بود. معلم آن‌ها را صدا زد و هر دو را کنار باغچه برد. گفت: «سوره تکاثر به ما هشدار می‌دهد که چشم‌وهم‌چشمی و مسابقه در جمع کردن چیزهای بیشتر، انسان را تا دم مرگ غافل می‌کند. آیا این کارت‌ها یا تعداد اتاق‌ها باعث شده اخلاق شما بهتر شود یا دانشتان زیادتر؟ خداوند در پایان این سوره می‌فرماید در روز قیامت از همه نعمت‌هایی که به شما داده شده—مثل چشم، عقل، امنیت و توانایی—سؤال خواهد شد که چگونه از آن‌ها استفاده کردید؛ نه اینکه چه کسی اسباب‌بازی بیشتری داشته است.» هر دو دوست خجالت کشیدند و دست از فخرفروشی برداشتند."
+    },
+    "103": {
+      "title": "یخ‌هایی که زیر آفتاب آب می‌شوند",
+      "theme": "ارزش گران‌بهای زمان و سرمایه زندگی",
+      "text": "در یک روز گرم تابستانی، احسان یک قطعه یخ قالبی خرید تا با آن شربت خنک درست کند، اما در مسیر بازگشت سرگرم تماشای مغازه‌ها و بازی با گربه کوچه شد. وقتی به خانه رسید، جز آبی گرم در ته نایلون چیزی باقی نمانده بود! پدر با مهربانی گفت: «احسان، زمان زندگی ما درست مثل این قطعه یخ است؛ هر دقیقه‌ای که می‌گذرد، بخشی از سرمایه عمرمان ذوب می‌شود. خداوند در سوره عصر به زمان سوگند می‌خورد که تمام انسان‌ها در خسارت و زیان هستند، مگر کسانی که چهار ویژگی دارند: ایمان دارند، کارهای شایسته می‌کنند، همدیگر را به راستی و درستی سفارش می‌کنند و در برابر مشکلات صبورند. این چهار کار نمی‌گذارد سرمایه عمرت هدر برود.» احسان از آن روز برای ساعات درس، بازی و کمک در خانه برنامه‌ریزی دقیقی نوشت."
+    },
+    "104": {
+      "title": "طعنه‌ای که دل را شکست",
+      "theme": "زشتی بدگویی، تمسخر و دلبستگی بیمارگونه به ثروت",
+      "text": "کیارش در کلاس زبان، کلمه‌ای را با لهجه خنده‌داری تلفظ کرد. دو نفر از بچه‌های ردیف عقب شروع به خندیدن و با چشم و ابرو شکلک درآوردن کردند تا او را تحقیر کنند؛ آن‌ها حتی لباس‌های ساده کیارش را مسخره می‌کردند و با کفش‌های گران‌قیمت خود پز می‌دادند. معلم بلافاصله درس را متوقف کرد و پای تخته نوشت: «وَیْلٌ لِکُلِّ هُمَزَةٍ لُمَزَةٍ: وای بر هر عیب‌جوی مسخره‌کننده‌ای!» سپس گفت: «وای بر کسانی که با نیش‌زبان، طعنه و اشاره چشم دیگران را کوچک می‌کنند و گمان می‌برند ثروتشان آن‌ها را جاودانه می‌کند. شکستن دل یک انسان از هر خطایی بزرگ‌تر است.» آن دو دانش‌آموز متوجه زشتی رفتارشان شدند، صمیمانه از کیارش عذرخواهی کردند و قول دادند دیگر هرگز کسی را به خاطر ظاهر یا اشتباهش آزار ندهند."
+    },
+    "105": {
+      "title": "پرندگان کوچک در برابر لشکریان مغرور",
+      "theme": "شکست ستمگران و قدرت بی‌پایان خداوند",
+      "text": "بردیا از پدرش پرسید: «آیا انسان‌های بدجنس که ارتش‌های بزرگ دارند همیشه پیروز می‌شوند؟» پدر داستان عام‌الفیل را تعریف کرد: «قراردادهای نظامی و فیل‌های عظیم‌الجثه ابرهه آماده بودند تا کعبه، خانه امن خدا را با خاک یکسان کنند. ابرهه چنان مغرور بود که فکر می‌کرد هیچ نیرویی جلودارش نیست. اما خداوند لشکری از فیل نفرستاد؛ پرندگانی کوچک به نام ابابیل را فرستاد که دانه‌هایی از سنگ‌ریزه‌های سجیل به منقار داشتند. پرندگان آن سنگ‌ها را بر سر ارتش فروریختند و آن سپاه بزرگ مانند ساقه‌های خردشده و جویده‌شده گیاهان توسط دام‌ها تارومار شد. این یادآوری است که هر چقدر ستمگر مغرور باشد، در برابر قدرت پروردگار هیچ است و خداوند از خانه‌اش و انسان‌های پاک محافظت می‌کند.»"
+    },
+    "106": {
+      "title": "سفره گرم در شب سرد",
+      "theme": "قدردانی از نعمت امنیت و روزی",
+      "text": "در یک شب بارانی و بسیار سرد، خانواده ماهان دور کرسی نشسته بودند و سوپ داغ می‌خوردند. برق کوچه به دلیل طوفان قطع شده بود، اما خانه آن‌ها گرم، روشن با چراغ اضطراری و بسیار امن بود. پدر دست‌هایش را رو به آسمان گرفت و گفت: «چقدر نعمت امنیت و سفره پربرکت بزرگ است! سوره قریش یادآوری می‌کند که خداوند به کاروان‌های تجاری در زمستان و تابستان امنیت و آسایش بخشید، آن‌ها را از گرسنگی نجات داد و از ترس و هراس در امان نگه داشت؛ به همین خاطر آن‌ها باید پروردگار این خانه کعبه را خالصانه عبادت کنند. ما هم وقتی در خانه‌ای امن و با شکمی سیر زندگی می‌کنیم، وظیفه داریم از صمیم قلب شکر خدا را بگوییم و هوای کسانی را که خانه امنی ندارند داشته باشیم.» ماهان صمیمانه گفت: «خدایا شکرت برای این سقف و این امنیت.»"
+    },
+    "108": {
+      "title": "کوثر؛ چشمهٔ مهربانی و هدیهٔ آسمانی",
+      "theme": "احترام به والدین و نعمت فرزند",
+      "text": "در دوران پیامبر اکرم (ص)، برخی از بدخواهان ایشان را به خاطر نداشتن فرزند پسر سرزنش می‌کردند. خداوند متعال سورهٔ کوثر را نازل کرد و فرمود: ما به تو کوثر (خیر فراوان و دختر گرامی‌ات فاطمه سلام‌الله‌علیها) را عطا کردیم. این سوره به همه یاد داد که دختران نعمتی ارزشمند و مایهٔ برکت زندگی هستند."
+    },
+    "112": {
+      "title": "گفت‌وگوی پیامبر دربارهٔ خدای یکتا",
+      "theme": "یکتایی و بی‌نیازی پروردگار",
+      "text": "روزی جمعی نزد پیامبر آمدند و گفتند: پروردگارت را برای ما توصیف کن؛ آیا از طلا یا نقره است؟ پیامبر فرمود: سبحان الله! در همین هنگام سوره اخلاص نازل شد: بگو او خدای یکتاست، خدایی که همه به او نیازمندند و او به هیچ‌کس نیاز ندارد، نه زاده شده و نه فرزندی دارد و هیچ‌کس همتای او نیست."
+    },
+    "82": {
+      "title": "دفتر حساب‌های کوچک",
+      "theme": "آگاهی خداوند از رفتارهای پنهان و آشکار",
+      "text": "نیما در فروشگاه پدرش کمک می‌کرد. یک روز دید چند سکه اضافه در صندوق مانده است. می‌توانست آن‌ها را بی‌خبر بردارد، اما به پدرش گفت: «شاید پول مشتری‌ای باشد که اشتباه حساب کرده‌ایم.» پدر با خوشحالی حساب‌ها را بررسی کرد و پول را به صاحبش برگرداند. او گفت: «سوره انفطار یادمان می‌دهد که روزی آسمان دگرگون می‌شود و هرکس می‌فهمد چه کارهایی انجام داده است. پس حتی وقتی کسی ما را نمی‌بیند، باید درستکار باشیم.» نیما فهمید که امانت‌داری در کارهای کوچک هم ارزشمند است."
+    },
+    "83": {
+      "title": "ترازوی درستکار",
+      "theme": "پرهیز از کم‌فروشی و رعایت حق دیگران",
+      "text": "سارا همراه مادرش به بازار رفت. فروشنده‌ای میوه‌ها را وزن کرد، اما متوجه شد چند سیب از کفه ترازو افتاده است. او می‌توانست چیزی نگوید، ولی خودش سیب‌ها را برگرداند و وزن را دوباره حساب کرد. مادر گفت: «سوره مطففین کسانی را نکوهش می‌کند که هنگام گرفتن حق خود، کامل می‌خواهند اما هنگام دادن حق دیگران کم می‌گذارند. درستکاری یعنی حق دیگران را همان‌طور رعایت کنیم که دوست داریم حق ما رعایت شود.» سارا تصمیم گرفت در بازی و درس هم منصف باشد."
+    },
+    "84": {
+      "title": "نامه‌ای برای روزهای آینده",
+      "theme": "بازگشت به سوی خدا و دیدن نتیجه کارها",
+      "text": "آرمان برای خودش دفتر کوچکی داشت و هر شب کارهای روزش را می‌نوشت؛ هم کارهای خوبی مثل کمک به خواهرش و هم اشتباه‌هایی مثل تندی با دوستش. یک شب از پدربزرگ پرسید: «چرا باید به اشتباه‌هایم فکر کنم؟» پدربزرگ گفت: «سوره انشقاق یادآوری می‌کند که انسان به سوی پروردگارش در حرکت است و نتیجه تلاش‌هایش را خواهد دید. مرور رفتارها کمک می‌کند فردا بهتر باشیم.» آرمان از دوستش عذرخواهی کرد و تصمیم گرفت هر روز یک قدم به اخلاق خوب نزدیک‌تر شود."
+    },
+    "85": {
+      "title": "دوستی که از باورش دست نکشید",
+      "theme": "پایداری در برابر آزار و دفاع از کار درست",
+      "text": "در مدرسه، چند دانش‌آموز به هانیه می‌خندیدند چون حاضر نبود در امتحان تقلب کند. او ناراحت شد، اما به یاد حرف مادرش افتاد که می‌گفت درستکاری را برای خشنودی دیگران کنار نگذار. معلم وقتی ماجرا را فهمید، درباره سوره بروج و مؤمنانی صحبت کرد که به خاطر ایمانشان آزار دیدند و با این حال بر باور درست خود ایستادگی کردند. هانیه فهمید شجاعت همیشه به معنای زور بازو نیست؛ گاهی یعنی آرام و محکم کار درست را انتخاب کنیم."
+    },
+    "86": {
+      "title": "ستاره‌ای در آسمان شب",
+      "theme": "اندیشیدن به آفرینش و به یاد داشتن مراقبت خداوند",
+      "text": "یک شب صاف، امیر با پدرش به آسمان نگاه کرد. ستاره‌ای درخشان چشمک می‌زد و امیر پرسید: «چه کسی این همه ستاره را آفریده است؟» پدر گفت: «سوره طارق ما را به نشانه‌های آسمان توجه می‌دهد و یادآوری می‌کند که خداوند از انسان آگاه است. همان‌طور که آسمان پر از شگفتی است، زندگی ما هم ارزشمند است و باید از فرصت‌هایمان برای کار خوب استفاده کنیم.» امیر تصمیم گرفت روز بعد به هم‌کلاسی تازه‌واردشان کمک کند."
+    },
+    "107": {
+      "title": "یک کمک کوچک، یک شادی بزرگ",
+      "theme": "مهربانی با یتیمان و نیازمندان و دوری از ریا",
+      "text": "در راه مدرسه، مریم دید همسایه سالمندشان برای بردن خریدها مشکل دارد. او خریدها را تا خانه برد و بعد به مدرسه رفت. دوستش پرسید: «چرا این کار را کردی؟ مگر کسی به تو جایزه می‌دهد؟» مریم گفت: «لازم نیست کسی تشویقم کند؛ کمک کردن خودش کار خوبی است.» آموزگار در کلاس از سوره ماعون گفت که کسانی را نکوهش می‌کند که نیازمندان را کنار می‌زنند و دیگران را به کمک تشویق نمی‌کنند. بچه‌ها تصمیم گرفتند برای کمک به کتابخانه مدرسه و همسایه‌ها برنامه‌ای ساده ترتیب دهند."
+    },
+    "109": {
+      "title": "با احترام، با باور خود",
+      "theme": "پایبندی به یکتاپرستی همراه با رفتار محترمانه",
+      "text": "در کلاس، دو دانش‌آموز درباره باورهای دینی خانواده‌هایشان صحبت می‌کردند. یکی از آن‌ها خواست دیگری را مجبور کند مانند او فکر کند. معلم گفت: «ما باید باور خود را بشناسیم و بر آن پایدار بمانیم، اما با دیگران نیز با ادب و احترام رفتار کنیم.» سپس درباره پیام سوره کافرون توضیح داد؛ این سوره مرز روشن میان یکتاپرستی و پرستش خدایان دروغین را بیان می‌کند. بچه‌ها فهمیدند که می‌توانند بر باورشان استوار باشند و در عین حال از توهین و بدرفتاری دوری کنند."
+    },
+    "110": {
+      "title": "پیروزی همراه با سپاس",
+      "theme": "شکرگزاری و فروتنی پس از موفقیت",
+      "text": "تیم فوتبال مدرسه بعد از تمرین‌های بسیار در مسابقه برنده شد. بعضی بازیکنان می‌خواستند تیم مقابل را مسخره کنند، اما کاپیتان گفت: «ما با تلاش و کمک مربی موفق شدیم؛ نباید مغرور شویم.» مربی به آن‌ها گفت سوره نصر از یاری خدا و پیروزی سخن می‌گوید و پس از آن به تسبیح، حمد و استغفار سفارش می‌کند. بازیکنان به تیم مقابل دست دادند و از مربی و کسانی که کمکشان کرده بودند تشکر کردند."
+    },
+    "111": {
+      "title": "غروری که دوستی را از بین برد",
+      "theme": "پیامد دشمنی با حق و خودخواهی",
+      "text": "در یک کار گروهی، بهنام می‌خواست همه کارها فقط طبق نظر خودش انجام شود. وقتی دوستانش پیشنهاد دیگری دادند، آن‌ها را تحقیر کرد و در پایان گروه از هم پاشید. معلم با او درباره سوره مسد صحبت کرد و توضیح داد که این سوره از سرانجام ابولهب و همسرش سخن می‌گوید؛ دشمنی و خودبزرگ‌بینی انسان را به زیان می‌کشاند. بهنام پذیرفت که رفتارش نادرست بوده و از دوستانش عذرخواهی کرد. او یاد گرفت که غرور به جای ساختن، رابطه‌ها را خراب می‌کند."
+    },
+    "113": {
+      "title": "چراغی در دل تاریکی",
+      "theme": "پناه بردن به خدا از آسیب‌ها و حسادت",
+      "text": "پریسا از تاریکی شب می‌ترسید و گاهی نگران حرف‌های حسادت‌آمیز دیگران می‌شد. مادرش کنارش نشست و سوره فلق را خواند: در این سوره از خداوند، پروردگار سپیده‌دم، می‌خواهیم ما را از شر آفریده‌ها، تاریکی و حسادت حفظ کند. مادر گفت: «وقتی می‌ترسی، به خدا پناه ببر و در کنار آن، کارهای عاقلانه‌ای انجام بده؛ مثلاً چراغ خواب را روشن کن و نگرانی‌ات را با بزرگ‌تر مورد اعتمادت در میان بگذار.» پریسا آرام‌تر شد و فهمید دعا و رفتار درست می‌توانند در کنار هم باشند."
+    },
+    "114": {
+      "title": "صدای وسوسه‌گر درون",
+      "theme": "پناه بردن به خدا از وسوسه و انتخاب کار درست",
+      "text": "سامان هنگام انجام تکالیفش وسوسه شد جواب‌ها را از دفتر دوستش رونویسی کند. صدایی در ذهنش می‌گفت: «این‌طوری زودتر تمام می‌کنی!» اما سامان می‌دانست که یاد نمی‌گیرد و کار درستی نیست. به یاد سوره ناس افتاد که به ما می‌آموزد از شر وسوسه‌گر پنهانکار به پروردگار و پادشاه و معبود مردم پناه ببریم. او از خدا کمک خواست، دفتر را بست و مسئله‌ها را خودش حل کرد. شاید بیشتر طول کشید، اما از یادگیری واقعی‌اش خوشحال بود."
+    }
+  },
+  "surahQuizzes": {
+    "78": [
+      {
+        "q": "پرهام در باغچه چه چیزی را با ناامیدی نگاه می‌کرد؟",
+        "opts": [
+          "دانه‌های لوبیا و شاخه‌های خشک",
+          "اسباب‌بازی‌های شکسته",
+          "پرندگان آسمان",
+          "ابرهای بارانی"
+        ],
+        "ans": 0
+      },
+      {
+        "q": "پدربزرگ برای توضیح قیامت از چه مثالی استفاده کرد؟",
+        "opts": [
+          "ساختن خانه با آجر",
+          "روییدن دوباره دانه‌ها در بهار",
+          "پرواز هواپیما",
+          "رفتن به مدرسه"
+        ],
+        "ans": 1
+      },
+      {
+        "q": "پیام اصلی داستان «راز دانه‌های زیر خاک» چیست؟",
+        "opts": [
+          "باید همیشه دانه کاشت",
+          "زمستان بد است",
+          "فقط پدربزرگ‌ها می‌دانند",
+          "خداوند که زمین خشک را زنده می‌کند، انسان‌ها را هم در قیامت زنده می‌کند"
+        ],
+        "ans": 3
+      },
+      {
+        "q": "چه چیزی به پرهام نشان داد که معجزه روییدن ممکن است؟",
+        "opts": [
+          "فروختن میوه",
+          "ساخت گلخانه",
+          "جوانه‌های سبز بعد از باران بهاری",
+          "خرید کود شیمیایی"
+        ],
+        "ans": 2
+      }
+    ],
+    "79": [
+      {
+        "q": "مانی برای ساخت سازه چه اشتباهی کرد؟",
+        "opts": [
+          "از مقوا استفاده نکرد",
+          "فقط به ظاهر زیبا توجه کرد و پایه‌ها را سست چسباند",
+          "رنگ نزد",
+          "کمک خواست"
+        ],
+        "ans": 1
+      },
+      {
+        "q": "چرا ماکت کیان در برابر باد استوار ماند؟",
+        "opts": [
+          "چون روی استحکام پایه‌ها تمرکز کرده بود",
+          "چون رنگ روشن داشت",
+          "چون بزرگ‌تر بود",
+          "چون معلم کمک کرد"
+        ],
+        "ans": 0
+      },
+      {
+        "q": "خانم مربی چه درسی از فروریختن ماکت مانی گرفت؟",
+        "opts": [
+          "باد همیشه بد است",
+          "باید پنجره را بست",
+          "کارهای سطحی و بدون عمق در سنجش نهایی دوام نمی‌آورند",
+          "مقوا ضعیف است"
+        ],
+        "ans": 2
+      },
+      {
+        "q": "موضوع اصلی داستان «قلعه‌ای که باد برد» چیست؟",
+        "opts": [
+          "ساختن قلعه با مقوا",
+          "مسابقه هنر",
+          "خرید وسایل گران",
+          "ارزش کارهای ماندگار و حسابرسی دقیق"
+        ],
+        "ans": 3
+      }
+    ],
+    "80": [
+      {
+        "q": "سامیار سر میز ناهار چه رفتاری داشت؟",
+        "opts": [
+          "همه غذا را می‌خورد",
+          "به مادر کمک می‌کرد",
+          "با بی‌میلی غذا می‌خورد و سراغ چیپس و شکلات می‌رفت",
+          "برای فقرا غذا می‌برد"
+        ],
+        "ans": 2
+      },
+      {
+        "q": "مادر سامیار از او خواست به چه چیزی فکر کند؟",
+        "opts": [
+          "مسیر طولانی نان و سبزی تا رسیدن به سفره",
+          "قیمت غذا",
+          "رنگ بشقاب",
+          "ساعت ناهار"
+        ],
+        "ans": 0
+      },
+      {
+        "q": "سامیار بعد از شنیدن حرف مادر چه کرد؟",
+        "opts": [
+          "غذا را دور ریخت",
+          "با دقت و لذت غذا خورد و الحمدلله گفت",
+          "چیپس بیشتری خواست",
+          "از میز بلند شد"
+        ],
+        "ans": 1
+      },
+      {
+        "q": "پیام داستان «سفر شگفت‌انگیز یک لقمه نان» چیست؟",
+        "opts": [
+          "خوردن چیپس بهتر است",
+          "نان بی‌ارزش است",
+          "فقط سبزی بخورید",
+          "تفکر در نعمت‌های الهی و شکرگزاری از غذای روزانه"
+        ],
+        "ans": 3
+      }
+    ],
+    "81": [
+      {
+        "q": "فیلم مستند کلاس درباره چه بود؟",
+        "opts": [
+          "حیوانات جنگل",
+          "تاریخ ایران",
+          "ورزش‌های المپیک",
+          "فضا و تغییر ستاره‌ها و کوه‌ها"
+        ],
+        "ans": 3
+      },
+      {
+        "q": "آقای حسینی چه چیزی را مثال زد که در قیامت از بین نمی‌رود؟",
+        "opts": [
+          "ستاره‌های آسمان",
+          "نامه‌ای که تمام کارهای ما در آن ثبت شده",
+          "کوه‌های زمین",
+          "فیلم سینمایی"
+        ],
+        "ans": 1
+      },
+      {
+        "q": "علی از داستان چه درسی گرفت؟",
+        "opts": [
+          "حتی وقتی کسی نگاه نمی‌کند، کاری نکند که بعداً خجالت‌زده شود",
+          "باید بیشتر فیلم ببیند",
+          "ستاره‌ها همیشه می‌درخشند",
+          "کوه نباید جابه‌جا شود"
+        ],
+        "ans": 0
+      },
+      {
+        "q": "موضوع داستان «دفترچه ضبط خاطرات» چیست؟",
+        "opts": [
+          "نوشتن خاطرات روزانه",
+          "ساخت دوربین",
+          "دگرگونی جهان و آشکار شدن حقیقت اعمال",
+          "رفتن به سینما"
+        ],
+        "ans": 2
+      }
+    ],
+    "82": [
+      {
+        "q": "نیما در فروشگاه پدرش چه کاری کرد؟",
+        "opts": [
+          "سکه‌ها را برای خودش برداشت",
+          "سکه‌ها را دور ریخت",
+          "به مشتری دروغ گفت",
+          "سکه‌های اضافه را به پدرش خبر داد تا به صاحبش برگردانند"
+        ],
+        "ans": 3
+      },
+      {
+        "q": "پدر نیما چه گفت؟",
+        "opts": [
+          "سکه‌ها مال خودمان است",
+          "فروشگاه را ببند",
+          "حتی وقتی کسی ما را نمی‌بیند باید درستکار باشیم",
+          "دیگر کمک نکن"
+        ],
+        "ans": 2
+      },
+      {
+        "q": "سوره انفطار چه چیزی را یادآوری می‌کند؟",
+        "opts": [
+          "روزی آسمان دگرگون می‌شود و هرکس کارهایش را می‌بیند",
+          "باید همیشه سکه جمع کرد",
+          "فروشگاه‌ها باید بسته شوند",
+          "آسمان همیشه آبی است"
+        ],
+        "ans": 0
+      },
+      {
+        "q": "پیام داستان «دفتر حساب‌های کوچک» چیست؟",
+        "opts": [
+          "جمع کردن پول",
+          "آگاهی خداوند از رفتارهای پنهان و آشکار و ارزش امانت‌داری",
+          "کار در فروشگاه",
+          "حسابداری"
+        ],
+        "ans": 1
+      }
+    ],
+    "83": [
+      {
+        "q": "سارا در بازار چه کار درستی انجام داد؟",
+        "opts": [
+          "سیب‌ها را برداشت و رفت",
+          "به فروشنده دروغ گفت",
+          "سیب‌هایی که از ترازو افتاده بود را برگرداند و دوباره وزن کرد",
+          "ترازو را خراب کرد"
+        ],
+        "ans": 2
+      },
+      {
+        "q": "مادر سارا درباره سوره مطففین چه گفت؟",
+        "opts": [
+          "باید میوه ارزان خرید",
+          "ترازو همیشه خراب است",
+          "بازار رفتن خوب نیست",
+          "کسانی را نکوهش می‌کند که هنگام دادن حق دیگران کم می‌گذارند"
+        ],
+        "ans": 3
+      },
+      {
+        "q": "درستکاری یعنی چه؟",
+        "opts": [
+          "همیشه بیشتر بگیریم",
+          "حق دیگران را همان‌طور رعایت کنیم که دوست داریم حق ما رعایت شود",
+          "کمتر بدهیم",
+          "سکوت کنیم"
+        ],
+        "ans": 1
+      },
+      {
+        "q": "موضوع داستان «ترازوی درستکار» چیست؟",
+        "opts": [
+          "پرهیز از کم‌فروشی و رعایت حق دیگران",
+          "خرید میوه",
+          "رفتن به بازار",
+          "وزن کردن سیب"
+        ],
+        "ans": 0
+      }
+    ],
+    "84": [
+      {
+        "q": "آرمان هر شب چه کاری می‌کرد؟",
+        "opts": [
+          "فقط بازی می‌کرد",
+          "کارهای خوب و اشتباه‌های روزش را در دفتر می‌نوشت",
+          "تلویزیون می‌دید",
+          "می‌خوابید بدون فکر"
+        ],
+        "ans": 1
+      },
+      {
+        "q": "پدربزرگ درباره سوره انشقاق چه گفت؟",
+        "opts": [
+          "نوشتن بی‌فایده است",
+          "اشتباه کردن خوب است",
+          "دفتر لازم نیست",
+          "انسان به سوی پروردگارش در حرکت است و نتیجه تلاش‌هایش را می‌بیند"
+        ],
+        "ans": 3
+      },
+      {
+        "q": "آرمان بعد از حرف پدربزرگ چه کرد؟",
+        "opts": [
+          "دفتر را دور انداخت",
+          "دیگر ننوشت",
+          "از دوستش عذرخواهی کرد و تصمیم گرفت بهتر شود",
+          "با پدربزرگ دعوا کرد"
+        ],
+        "ans": 2
+      },
+      {
+        "q": "پیام داستان «نامه‌ای برای روزهای آینده» چیست؟",
+        "opts": [
+          "بازگشت به سوی خدا و دیدن نتیجه کارها و اصلاح رفتار",
+          "نوشتن نامه",
+          "داشتن دفتر",
+          "خوابیدن زود"
+        ],
+        "ans": 0
+      }
+    ],
+    "85": [
+      {
+        "q": "چرا چند دانش‌آموز به هانیه می‌خندیدند؟",
+        "opts": [
+          "چون حاضر نبود در امتحان تقلب کند",
+          "چون نمره بالایی گرفته بود",
+          "چون لباس قشنگی داشت",
+          "چون دیر آمده بود"
+        ],
+        "ans": 0
+      },
+      {
+        "q": "مادر هانیه چه سفارشی کرده بود؟",
+        "opts": [
+          "همیشه تقلب کن",
+          "با دیگران بخند",
+          "درستکاری را برای خشنودی دیگران کنار نگذار",
+          "ساکت باش"
+        ],
+        "ans": 2
+      },
+      {
+        "q": "معلم درباره سوره بروج چه گفت؟",
+        "opts": [
+          "باید تقلب کرد",
+          "خندیدن خوب است",
+          "امتحان آسان است",
+          "مؤمنانی که به خاطر ایمانشان آزار دیدند بر باور درست ایستادگی کردند"
+        ],
+        "ans": 3
+      },
+      {
+        "q": "شجاعت در این داستان یعنی چه؟",
+        "opts": [
+          "زور بازو داشتن",
+          "آرام و محکم کار درست را انتخاب کردن",
+          "بلند فریاد زدن",
+          "از مدرسه فرار کردن"
+        ],
+        "ans": 1
+      }
+    ],
+    "86": [
+      {
+        "q": "امیر و پدرش در شب صاف به چه چیزی نگاه کردند؟",
+        "opts": [
+          "ستاره‌ای درخشان در آسمان",
+          "ماه‌ کامل",
+          "ابرهای بارانی",
+          "هواپیما"
+        ],
+        "ans": 0
+      },
+      {
+        "q": "پدر درباره سوره طارق چه گفت؟",
+        "opts": [
+          "ستاره‌ها تصادفی هستند",
+          "خداوند از انسان آگاه است و زندگی ما ارزشمند است",
+          "شب ترسناک است",
+          "باید زود خوابید"
+        ],
+        "ans": 1
+      },
+      {
+        "q": "امیر روز بعد چه تصمیمی گرفت؟",
+        "opts": [
+          "دیگر به آسمان نگاه نکند",
+          "ستاره‌شناسی بخواند",
+          "شب بیدار بماند",
+          "به هم‌کلاسی تازه‌وارد کمک کند"
+        ],
+        "ans": 3
+      },
+      {
+        "q": "موضوع داستان «ستاره‌ای در آسمان شب» چیست؟",
+        "opts": [
+          "شمردن ستاره‌ها",
+          "ترس از تاریکی",
+          "اندیشیدن به آفرینش و به یاد داشتن مراقبت خداوند",
+          "خوابیدن در شب"
+        ],
+        "ans": 2
+      }
+    ],
+    "87": [
+      {
+        "q": "در مسابقه دومیدانی متین چه کار اخلاقی کرد؟",
+        "opts": [
+          "بدون توجه دوید و اول شد",
+          "ایستاد و به سپهر که زمین خورده بود کمک کرد",
+          "سپهر را هل داد",
+          "مسابقه را ترک کرد"
+        ],
+        "ans": 1
+      },
+      {
+        "q": "مدیر مدرسه چه مدالی به متین داد؟",
+        "opts": [
+          "مدال اخلاق مسابقات",
+          "مدال طلای سرعت",
+          "مدال نقره",
+          "هیچ مدالی"
+        ],
+        "ans": 0
+      },
+      {
+        "q": "مدیر چه درسی داد؟",
+        "opts": [
+          "باید همیشه اول شد",
+          "کمک کردن اشتباه است",
+          "پاداش آخرت و نام نیک پایدارتر از مدال فلزی است",
+          "مسابقه فقط برای برنده است"
+        ],
+        "ans": 2
+      },
+      {
+        "q": "موضوع داستان «انتخاب کار درست در لحظه وسوسه» چیست؟",
+        "opts": [
+          "دویدن سریع",
+          "برنده شدن",
+          "مدال گرفتن",
+          "پاک شمردن پروردگار و ترجیح آخرت بر لذت زودگذر"
+        ],
+        "ans": 3
+      }
+    ],
+    "88": [
+      {
+        "q": "بچه‌ها در زنگ علوم فیلمی درباره چه دیدند؟",
+        "opts": [
+          "اقیانوس‌ها",
+          "جنگل‌های بارانی",
+          "بیابان‌های خشک و سوزان",
+          "کوه‌های یخی"
+        ],
+        "ans": 2
+      },
+      {
+        "q": "آقای باقری درباره شتر چه ویژگی‌هایی گفت؟",
+        "opts": [
+          "پلک شفاف، مژه بلند، پای پهن و کوهان ذخیره‌کننده انرژی",
+          "فقط سریع می‌دود",
+          "در آب زندگی می‌کند",
+          "بال دارد"
+        ],
+        "ans": 0
+      },
+      {
+        "q": "قرآن درباره شتر چه می‌فرماید؟",
+        "opts": [
+          "شتر حیوان بی‌ارزشی است",
+          "آیا به شتر نگاه نمی‌کنند که چگونه آفریده شده است؟",
+          "فقط در باغ زندگی می‌کند",
+          "شتر پرواز می‌کند"
+        ],
+        "ans": 1
+      },
+      {
+        "q": "پیام داستان «راز شتر در بیابان سوزان» چیست؟",
+        "opts": [
+          "ترس از بیابان",
+          "نگه‌داری شتر",
+          "سفر به صحرا",
+          "تفکر در شگفتی‌های طبیعت و قدرت خداوند"
+        ],
+        "ans": 3
+      }
+    ],
+    "89": [
+      {
+        "q": "روی قلک شایان چه نوشته شده بود؟",
+        "opts": [
+          "پول من",
+          "بازی",
+          "مدرسه",
+          "توشه آینده"
+        ],
+        "ans": 3
+      },
+      {
+        "q": "شایان چه وقت برگه داخل قلک می‌انداخت؟",
+        "opts": [
+          "فقط وقتی پول داشت",
+          "هر وقت کار خوبی می‌کرد مثل کمک به همسایه یا بخشیدن پول",
+          "هر روز صبح",
+          "وقتی نمره بد می‌گرفت"
+        ],
+        "ans": 1
+      },
+      {
+        "q": "پدر شایان از سوره فجر چه نقل کرد؟",
+        "opts": [
+          "بعضی در قیامت می‌گویند ای کاش برای زندگی ابدی چیزی از پیش فرستاده بودم",
+          "قلک جمع کردن بد است",
+          "کار خوب لازم نیست",
+          "فقط پول مهم است"
+        ],
+        "ans": 0
+      },
+      {
+        "q": "موضوع داستان «بانک نیکی‌های ماندگار» چیست؟",
+        "opts": [
+          "جمع کردن پول",
+          "ساختن قلک",
+          "پس‌انداز نیک برای زندگی جاودان",
+          "کمک به همسایه فقط"
+        ],
+        "ans": 2
+      }
+    ],
+    "90": [
+      {
+        "q": "پارسا در روز برفی چه کسی را دید؟",
+        "opts": [
+          "دوستانش را",
+          "معلم را",
+          "پدرش را",
+          "پسرکی که با لباس نازک دستفروشی می‌کرد و می‌لرزید"
+        ],
+        "ans": 3
+      },
+      {
+        "q": "پارسا در نهایت چه کرد؟",
+        "opts": [
+          "رد شد و رفت",
+          "فقط نگاه کرد",
+          "شال و دستکش و نان داغ به پسرک بخشید",
+          "از او خرید کرد بدون بخشش"
+        ],
+        "ans": 2
+      },
+      {
+        "q": "مادر پارسا درباره گردنه سخت چه گفت؟",
+        "opts": [
+          "گذشتن از خواسته‌های خود برای سیر کردن گرسنگان و مهربانی با محرومان",
+          "گردنه کوه است",
+          "سخت دویدن است",
+          "درس خواندن سخت است"
+        ],
+        "ans": 0
+      },
+      {
+        "q": "پیام داستان «گذشتن از گردنه سخت خودخواهی» چیست؟",
+        "opts": [
+          "پوشیدن کاپشن گرم",
+          "انتخاب مسیر دشوار اما افتخارآمیز بخشش",
+          "نرفتن به مدرسه در برف",
+          "دستفروشی"
+        ],
+        "ans": 1
+      }
+    ],
+    "91": [
+      {
+        "q": "معلم پرورشی دو آینه آورد؛ تفاوت آن‌ها چه بود؟",
+        "opts": [
+          "یکی بزرگ و یکی کوچک",
+          "یکی رنگی و یکی بی‌رنگ",
+          "یکی شفاف و درخشان و دیگری پر از گرد و غبار",
+          "یکی شکسته بود"
+        ],
+        "ans": 2
+      },
+      {
+        "q": "نور چراغ‌قوه از کدام آینه بازتابید؟",
+        "opts": [
+          "از آینه کثیف",
+          "از هیچ‌کدام",
+          "از هر دو به یک اندازه",
+          "از آینه شفاف و پاک"
+        ],
+        "ans": 3
+      },
+      {
+        "q": "معلم دل انسان را به چه چیز تشبیه کرد؟",
+        "opts": [
+          "شیشه پنجره",
+          "آینه که باید از دروغ و حسادت پاک نگه داشته شود",
+          "کاغذ سفید",
+          "سنگ سخت"
+        ],
+        "ans": 1
+      },
+      {
+        "q": "سینا چه تصمیمی گرفت؟",
+        "opts": [
+          "دلخوری از دوستش را ببخشد تا آینه دلش بدرخشد",
+          "آینه بخرد",
+          "دیگر به کلاس نرود",
+          "با معلم بحث کند"
+        ],
+        "ans": 0
+      }
+    ],
+    "92": [
+      {
+        "q": "عمو صادق با محصول درخت گردو چه می‌کرد؟",
+        "opts": [
+          "همه را برای خودش نگه می‌داشت",
+          "یکی را به خانواده‌های کم‌درآمد و یتیمان می‌بخشید",
+          "دور می‌ریخت",
+          "فقط می‌فروخت"
+        ],
+        "ans": 1
+      },
+      {
+        "q": "همسایه بخیل چه کار می‌کرد؟",
+        "opts": [
+          "بیشتر می‌بخشید",
+          "کمک می‌کرد",
+          "درخت نداشت",
+          "حتی یک گردو به کودکان نمی‌داد و شاخه‌ها را حصار بسته بود"
+        ],
+        "ans": 3
+      },
+      {
+        "q": "بعد از طوفان چه اتفاقی افتاد؟",
+        "opts": [
+          "هر دو درخت از بین رفتند",
+          "فقط باغ عمو آسیب دید",
+          "شاخه‌های درخت بخیل شکست اما باغ عمو صادق حفظ شد",
+          "هیچ‌کس آسیب ندید"
+        ],
+        "ans": 2
+      },
+      {
+        "q": "پیام سوره لیل در این داستان چیست؟",
+        "opts": [
+          "کسی که می‌بخشد خدا راه راحتی را برایش آسان می‌کند",
+          "باید درخت کاشت",
+          "طوفان بد است",
+          "همسایه مهم نیست"
+        ],
+        "ans": 0
+      }
+    ],
+    "93": [
+      {
+        "q": "آرش چرا در مدرسه جدید ناراحت بود؟",
+        "opts": [
+          "چون هیچ دوستی نداشت و احساس فراموشی می‌کرد",
+          "چون نمره بد گرفته بود",
+          "چون معلم سخت‌گیر بود",
+          "چون درس‌ها سخت بود"
+        ],
+        "ans": 0
+      },
+      {
+        "q": "مادر از سوره ضحی چه خواند؟",
+        "opts": [
+          "باید تنها ماند",
+          "مدرسه جدید بد است",
+          "پروردگارت هرگز تو را رها نکرده و آینده روشن‌تر است",
+          "دوستی لازم نیست"
+        ],
+        "ans": 2
+      },
+      {
+        "q": "آرش برای پیدا کردن دوست چه کرد؟",
+        "opts": [
+          "تنها نشست",
+          "به خانه برگشت",
+          "با دیگران دعوا کرد",
+          "پیش‌قدم شد و با دانش‌آموزی که روی ویلچر بود هم‌کلام شد"
+        ],
+        "ans": 3
+      },
+      {
+        "q": "موضوع داستان «روشنایی بعد از غروب غم‌انگیز» چیست؟",
+        "opts": [
+          "تعویض مدرسه",
+          "امیدواری به رحمت خدا و دستگیری از نیازمندان",
+          "تنهایی",
+          "غمگین بودن"
+        ],
+        "ans": 1
+      }
+    ],
+    "94": [
+      {
+        "q": "باربد در حل مسئله هندسه چه احساسی داشت؟",
+        "opts": [
+          "درمانده شده و فکر می‌کرد استعداد ندارد",
+          "خیلی خوشحال بود",
+          "مسئله را فوری حل کرد",
+          "کمک نمی‌خواست"
+        ],
+        "ans": 0
+      },
+      {
+        "q": "پدر مسئله را چگونه کمک کرد؟",
+        "opts": [
+          "جواب را داد",
+          "به سه قسمت ساده‌تر تقسیم کرد و گفت در دل هر سختی آسانی است",
+          "گفت دیگر نخوان",
+          "مسئله را پاره کرد"
+        ],
+        "ans": 1
+      },
+      {
+        "q": "خداوند در قرآن درباره سختی چه فرموده؟",
+        "opts": [
+          "سختی همیشه می‌ماند",
+          "آسانی وجود ندارد",
+          "فقط دعا کن",
+          "همراه هر سختی، آسانی هست (و آن را تکرار کرده)"
+        ],
+        "ans": 3
+      },
+      {
+        "q": "پدر در پایان چه سفارشی کرد؟",
+        "opts": [
+          "دیگر درس نخوان",
+          "فقط استراحت کن",
+          "وقتی کار سخت تمام شد سراغ کار مفید بعدی برو",
+          "بازی کن"
+        ],
+        "ans": 2
+      }
+    ],
+    "95": [
+      {
+        "q": "معلم در کلاس هنر چه سؤالی پرسید؟",
+        "opts": [
+          "رنگ مورد علاقه‌تان چیست؟",
+          "زیباترین و کامل‌ترین آفریده جهان چیست؟",
+          "نقاشی می‌کشید؟",
+          "طاووس دیده‌اید؟"
+        ],
+        "ans": 1
+      },
+      {
+        "q": "معلم آینه را برای چه آورد؟",
+        "opts": [
+          "تا بچه‌ها خودشان را ببینند و بفهمند انسان بهترین شکل آفریده شده",
+          "برای نقاشی",
+          "برای بازی",
+          "برای شکستن"
+        ],
+        "ans": 0
+      },
+      {
+        "q": "بر اساس سوره تین، چه کسانی در جایگاه بلند انسانی می‌مانند؟",
+        "opts": [
+          "کسانی که زیبا هستند",
+          "کسانی که پول دارند",
+          "کسانی که ایمان دارند و کارهای شایسته می‌کنند",
+          "کسانی که قوی هستند"
+        ],
+        "ans": 2
+      },
+      {
+        "q": "زیبایی واقعی انسان به چیست؟",
+        "opts": [
+          "لباس قشنگ",
+          "صورت زیبا",
+          "قد بلند",
+          "افکار پاک و دست‌های یاری‌رسان"
+        ],
+        "ans": 3
+      }
+    ],
+    "96": [
+      {
+        "q": "اولین سخن نازل‌شده بر پیامبر چه بود؟",
+        "opts": [
+          "فرمان جنگ",
+          "فرمان سکوت",
+          "فرمان خواندن (اقرأ)",
+          "فرمان دویدن"
+        ],
+        "ans": 2
+      },
+      {
+        "q": "راهنمای موزه درباره علم چه گفت؟",
+        "opts": [
+          "علم باید همراه با تواضع باشد و انسان را فروتن‌تر کند",
+          "علم برای فخر فروشی است",
+          "علم بی‌فایده است",
+          "فقط پول مهم است"
+        ],
+        "ans": 0
+      },
+      {
+        "q": "علی در دفترچه‌اش چه نوشت؟",
+        "opts": [
+          "دیگر نمی‌خوانم",
+          "همیشه با نام خدا می‌خوانم تا راه درست را گم نکنم",
+          "علم سخت است",
+          "موزه جالب نبود"
+        ],
+        "ans": 1
+      },
+      {
+        "q": "موضوع داستان «قلمی که از تاریکی نجات می‌دهد» چیست؟",
+        "opts": [
+          "بازدید از موزه",
+          "نوشتن با قلم",
+          "تاریکی شب",
+          "آموختن علم، شکرگزاری و دوری از خودخواهی"
+        ],
+        "ans": 3
+      }
+    ],
+    "97": [
+      {
+        "q": "محمد در شب بیست‌وسوم رمضان کجا بود؟",
+        "opts": [
+          "در خانه خوابیده بود",
+          "در پارک بازی می‌کرد",
+          "در مدرسه",
+          "همراه پدرش در مسجد"
+        ],
+        "ans": 3
+      },
+      {
+        "q": "شب قدر از چه نظر بافضیلت است؟",
+        "opts": [
+          "فقط یک شب معمولی است",
+          "از هزار ماه (بیش از هشتاد سال) بهتر و پربرکت‌تر است",
+          "فقط برای بزرگ‌ترهاست",
+          "خوابیدن در آن بهتر است"
+        ],
+        "ans": 1
+      },
+      {
+        "q": "در شب قدر فرشتگان چه می‌کنند؟",
+        "opts": [
+          "به فرمان خدا فرود می‌آیند و تا صبح سرشار از سلام و رحمت است",
+          "می‌خوابند",
+          "به آسمان برمی‌گردند",
+          "هیچ کاری نمی‌کنند"
+        ],
+        "ans": 0
+      },
+      {
+        "q": "محمد در آن شب چه دعایی کرد؟",
+        "opts": [
+          "برای اسباب‌بازی",
+          "برای نمره امتحان",
+          "برای سلامتی بیماران و صلح برای کودکان جهان",
+          "برای تعطیلات"
+        ],
+        "ans": 2
+      }
+    ],
+    "98": [
+      {
+        "q": "تفاوت دو گروه در بازی فکری مدرسه چه بود؟",
+        "opts": [
+          "هر دو یکسان بودند",
+          "گروه اول بهتر بود",
+          "هیچ گروهی نبود",
+          "یکی فقط شعار می‌داد و تقلب می‌کرد، دیگری مقررات را رعایت و کمک می‌کرد"
+        ],
+        "ans": 3
+      },
+      {
+        "q": "داور مدال را به کدام گروه داد؟",
+        "opts": [
+          "گروهی که بیشتر حرف زدند",
+          "گروهی که تقلب کردند",
+          "گروهی که عمل پاک داشتند نه فقط ادعا",
+          "هیچ‌کس"
+        ],
+        "ans": 2
+      },
+      {
+        "q": "سوره بینه بندگان واقعی را چگونه توصیف می‌کند؟",
+        "opts": [
+          "دین خود را خالص می‌کنند، نماز می‌خوانند و کار نیک انجام می‌دهند",
+          "فقط حرف می‌زنند",
+          "تقلب می‌کنند",
+          "زباله می‌ریزند"
+        ],
+        "ans": 0
+      },
+      {
+        "q": "ایمان بدون عمل پاک مثل چیست؟",
+        "opts": [
+          "درختی پرمیوه",
+          "درختی بی‌میوه",
+          "گل زیبا",
+          "کوه بلند"
+        ],
+        "ans": 1
+      }
+    ],
+    "99": [
+      {
+        "q": "امیر چه کار کوچکی کرد که فکر می‌کرد بی‌اهمیت است؟",
+        "opts": [
+          "زباله را در سطل انداخت",
+          "به دوستش کمک کرد",
+          "پوست شکلات را روی زمین انداخت",
+          "درس خواند"
+        ],
+        "ans": 2
+      },
+      {
+        "q": "چه چیزی به پای امیر فشار آورد؟",
+        "opts": [
+          "کفش تنگ",
+          "راه طولانی",
+          "درد عضله",
+          "یک سنگ‌ریزه بسیار ریز داخل کفشش"
+        ],
+        "ans": 3
+      },
+      {
+        "q": "معلم چه تشبیهی کرد؟",
+        "opts": [
+          "شکلات خوردن بد است",
+          "کارهای کوچک مثل سنگ‌ریزه می‌توانند تأثیر بزرگ داشته باشند",
+          "کفش باید بزرگ باشد",
+          "حیاط کثیف است"
+        ],
+        "ans": 1
+      },
+      {
+        "q": "در قیامت چه چیزی دیده می‌شود؟",
+        "opts": [
+          "حتی به اندازه ذره غبار کار خوب یا بد",
+          "فقط کارهای بزرگ",
+          "فقط گناهان بزرگ",
+          "هیچ‌چیز"
+        ],
+        "ans": 0
+      }
+    ],
+    "100": [
+      {
+        "q": "امید به تماشای چه مسابقه‌ای رفت؟",
+        "opts": [
+          "فوتبال",
+          "مسابقه سوارکاری با اسب‌های چابک",
+          "شنا",
+          "دوچرخه‌سواری"
+        ],
+        "ans": 1
+      },
+      {
+        "q": "خداوند در سوره عادیات به چه سوگند یاد می‌کند؟",
+        "opts": [
+          "ماشین‌های سریع",
+          "پرندگان",
+          "باد",
+          "اسب‌های دونده و باوفا که با شجاعت می‌تازند"
+        ],
+        "ans": 3
+      },
+      {
+        "q": "انسان گاهی در برابر خدا چگونه است؟",
+        "opts": [
+          "همیشه شاکر",
+          "بی‌نیاز از همه چیز",
+          "ناسپاس و حریص و وابسته به مال دنیا",
+          "فراموش‌کار نیست"
+        ],
+        "ans": 2
+      },
+      {
+        "q": "امید چه تصمیمی گرفت؟",
+        "opts": [
+          "هرگز نعمت‌های خدا را فراموش نکند",
+          "اسب بخرد",
+          "سوارکار شود",
+          "دیگر به مسابقه نرود"
+        ],
+        "ans": 0
+      }
+    ],
+    "101": [
+      {
+        "q": "پرهام در مزرعه به چه چیزی نگاه می‌کرد؟",
+        "opts": [
+          "وزن کردن کیسه‌های جو با ترازوی دو کفه‌ای",
+          "کاشت درخت",
+          "دوشیدن گاو",
+          "چیدن میوه"
+        ],
+        "ans": 0
+      },
+      {
+        "q": "کیسه‌های پر از دانه چه می‌کردند؟",
+        "opts": [
+          "بالا می‌ماندند",
+          "می‌شکستند",
+          "کفه ترازو را سنگین و پایین می‌بردند",
+          "سبک بودند"
+        ],
+        "ans": 2
+      },
+      {
+        "q": "روز قارعه چگونه توصیف شده؟",
+        "opts": [
+          "روز عادی",
+          "روز جشن",
+          "روز بارانی",
+          "مردم مثل پروانه‌های پراکنده و کوه‌ها مثل پشم زده‌شده"
+        ],
+        "ans": 3
+      },
+      {
+        "q": "چگونه می‌توان کفه نیکی‌ها را سنگین کرد؟",
+        "opts": [
+          "با جمع کردن مال",
+          "با ادب، نماز و کمک به دیگران",
+          "با خوابیدن زیاد",
+          "با بازی کردن"
+        ],
+        "ans": 1
+      }
+    ],
+    "102": [
+      {
+        "q": "دو هم‌کلاسی درباره چه چیزی بحث و فخر می‌فروختند؟",
+        "opts": [
+          "تعداد کارت بازی و تعداد اتاق خانه",
+          "نمره‌های امتحان",
+          "دوستان مشترک",
+          "کتاب‌های درسی"
+        ],
+        "ans": 0
+      },
+      {
+        "q": "معلم آن‌ها را کجا برد؟",
+        "opts": [
+          "به دفتر مدیر",
+          "کنار باغچه تا درباره سوره تکاثر صحبت کند",
+          "به خانه",
+          "به زمین فوتبال"
+        ],
+        "ans": 1
+      },
+      {
+        "q": "سوره تکاثر درباره چه هشدار می‌دهد؟",
+        "opts": [
+          "جمع کردن کارت خوب است",
+          "اتاق بیشتر بهتر است",
+          "فخر فروشی مفید است",
+          "چشم‌وهم‌چشمی و مسابقه در جمع کردن چیزهای بیشتر تا دم مرگ"
+        ],
+        "ans": 3
+      },
+      {
+        "q": "در قیامت از چه چیزهایی سؤال می‌شود؟",
+        "opts": [
+          "چند کارت داشتید",
+          "خانه چند اتاق داشت",
+          "چگونه از نعمت‌هایی مثل چشم، عقل و امنیت استفاده کردید",
+          "چقدر پول جمع کردید"
+        ],
+        "ans": 2
+      }
+    ],
+    "103": [
+      {
+        "q": "احسان با قطعه یخ چه کرد که آب شد؟",
+        "opts": [
+          "سریع به خانه برد",
+          "در مسیر سرگرم تماشا و بازی شد و دیر به خانه رسید",
+          "در یخچال گذاشت",
+          "به کسی بخشید"
+        ],
+        "ans": 1
+      },
+      {
+        "q": "پدر زمان زندگی را به چه تشبیه کرد؟",
+        "opts": [
+          "قطعه یخ که هر دقیقه ذوب می‌شود",
+          "سنگ سخت",
+          "آب روان",
+          "درخت سبز"
+        ],
+        "ans": 0
+      },
+      {
+        "q": "بر اساس سوره عصر، چه کسانی در زیان نیستند؟",
+        "opts": [
+          "کسانی که فقط پول دارند",
+          "کسانی که زیاد می‌خوابند",
+          "کسانی که ایمان دارند، کار شایسته می‌کنند، به حق و صبر سفارش می‌کنند",
+          "کسانی که بازی می‌کنند"
+        ],
+        "ans": 2
+      },
+      {
+        "q": "احسان بعد از حرف پدر چه کرد؟",
+        "opts": [
+          "دیگر یخ نخرید",
+          "همه وقت را بازی کرد",
+          "از پدر عصبانی شد",
+          "برای ساعات درس، بازی و کمک برنامه‌ریزی نوشت"
+        ],
+        "ans": 3
+      }
+    ],
+    "104": [
+      {
+        "q": "کیارش چرا مسخره شد؟",
+        "opts": [
+          "چون نمره عالی گرفت",
+          "چون زود آمد",
+          "چون کلمه‌ای را با لهجه خنده‌دار تلفظ کرد و لباس ساده‌ای داشت",
+          "چون کمک کرد"
+        ],
+        "ans": 2
+      },
+      {
+        "q": "معلم چه آیه‌ای روی تخته نوشت؟",
+        "opts": [
+          "وَیْلٌ لِکُلِّ هُمَزَةٍ لُمَزَةٍ (وای بر هر عیب‌جوی مسخره‌کننده)",
+          "آیه درباره دوستی",
+          "آیه درباره علم",
+          "آیه درباره نماز"
+        ],
+        "ans": 0
+      },
+      {
+        "q": "شکستن دل یک انسان چگونه است؟",
+        "opts": [
+          "بی‌اهمیت است",
+          "از هر خطایی بزرگ‌تر است",
+          "فقط شوخی است",
+          "خوب است"
+        ],
+        "ans": 1
+      },
+      {
+        "q": "آن دو دانش‌آموز در پایان چه کردند؟",
+        "opts": [
+          "باز هم مسخره کردند",
+          "از کلاس رفتند",
+          "با معلم بحث کردند",
+          "صمیمانه عذرخواهی کردند و قول دادند دیگر کسی را آزار ندهند"
+        ],
+        "ans": 3
+      }
+    ],
+    "105": [
+      {
+        "q": "ابرهه می‌خواست چه کاری بکند؟",
+        "opts": [
+          "به مکه کمک کند",
+          "فیل‌ها را بفروشد",
+          "صلح برقرار کند",
+          "کعبه، خانه امن خدا را با خاک یکسان کند"
+        ],
+        "ans": 3
+      },
+      {
+        "q": "خداوند چه لشکری فرستاد؟",
+        "opts": [
+          "لشکر انسان‌ها",
+          "پرندگان ابابیل با سنگ‌ریزه‌های سجیل",
+          "فیل‌های بزرگ‌تر",
+          "باد شدید"
+        ],
+        "ans": 1
+      },
+      {
+        "q": "سرانجام سپاه ابرهه چه شد؟",
+        "opts": [
+          "مانند ساقه‌های خردشده گیاهان تارومار شد",
+          "پیروز شد",
+          "به خانه برگشت",
+          "صلح کرد"
+        ],
+        "ans": 0
+      },
+      {
+        "q": "پیام داستان «پرندگان کوچک در برابر لشکریان مغرور» چیست؟",
+        "opts": [
+          "نگه‌داری فیل",
+          "سفر به مکه",
+          "شکست ستمگران و قدرت بی‌پایان خداوند",
+          "ساختن ارتش"
+        ],
+        "ans": 2
+      }
+    ],
+    "106": [
+      {
+        "q": "خانواده ماهان در شب سرد بارانی کجا نشسته بودند؟",
+        "opts": [
+          "در خیابان",
+          "در مسجد",
+          "در مدرسه",
+          "دور کرسی با سوپ داغ در خانه‌ای گرم و امن"
+        ],
+        "ans": 3
+      },
+      {
+        "q": "پدر درباره سوره قریش چه گفت؟",
+        "opts": [
+          "سفر تجاری بد است",
+          "سرما خوب است",
+          "خداوند به کاروان‌ها امنیت و آسایش داد پس باید شکر کنند",
+          "برق همیشه قطع می‌شود"
+        ],
+        "ans": 2
+      },
+      {
+        "q": "ما وقتی در خانه امن هستیم چه وظیفه‌ای داریم؟",
+        "opts": [
+          "شکر خدا بگوییم و هوای کسانی که خانه امن ندارند را داشته باشیم",
+          "فقط خودمان را خوشحال کنیم",
+          "در را ببندیم",
+          "تلویزیون ببینیم"
+        ],
+        "ans": 0
+      },
+      {
+        "q": "موضوع داستان «سفره گرم در شب سرد» چیست؟",
+        "opts": [
+          "خوردن سوپ",
+          "قدردانی از نعمت امنیت و روزی",
+          "قطع برق",
+          "شب سرد"
+        ],
+        "ans": 1
+      }
+    ],
+    "107": [
+      {
+        "q": "مریم در راه مدرسه چه کمکی کرد؟",
+        "opts": [
+          "فقط سلام کرد",
+          "رد شد",
+          "خریدهای همسایه سالمند را تا خانه برد",
+          "از او پول گرفت"
+        ],
+        "ans": 2
+      },
+      {
+        "q": "دوست مریم چه سؤالی پرسید؟",
+        "opts": [
+          "کمک کردی؟",
+          "همسایه کیست؟",
+          "مدرسه کجاست؟",
+          "چرا این کار را کردی؟ مگر کسی جایزه می‌دهد؟"
+        ],
+        "ans": 3
+      },
+      {
+        "q": "سوره ماعون چه کسانی را نکوهش می‌کند؟",
+        "opts": [
+          "کسانی که کمک می‌کنند",
+          "کسانی که نیازمندان را کنار می‌زنند و به کمک تشویق نمی‌کنند",
+          "دانش‌آموزان",
+          "همسایه‌ها"
+        ],
+        "ans": 1
+      },
+      {
+        "q": "بچه‌ها در پایان چه تصمیمی گرفتند؟",
+        "opts": [
+          "برای کمک به کتابخانه مدرسه و همسایه‌ها برنامه ترتیب دهند",
+          "دیگر کمک نکنند",
+          "فقط درس بخوانند",
+          "بازی کنند"
+        ],
+        "ans": 0
+      }
+    ],
+    "108": [
+      {
+        "q": "بدخواهان پیامبر را به چه خاطر سرزنش می‌کردند؟",
+        "opts": [
+          "به خاطر داشتن فرزند",
+          "به خاطر نداشتن فرزند پسر",
+          "به خاطر ثروت",
+          "به خاطر علم"
+        ],
+        "ans": 1
+      },
+      {
+        "q": "خداوند در سوره کوثر چه عطا کرد؟",
+        "opts": [
+          "پسر",
+          "ثروت زیاد",
+          "سپاه بزرگ",
+          "کوثر (خیر فراوان و فاطمه سلام‌الله‌علیها)"
+        ],
+        "ans": 3
+      },
+      {
+        "q": "این سوره درباره دختران چه یاد داد؟",
+        "opts": [
+          "دختران بی‌ارزش‌اند",
+          "فقط پسر مهم است",
+          "دختران نعمتی ارزشمند و مایه برکت زندگی هستند",
+          "فرزند لازم نیست"
+        ],
+        "ans": 2
+      },
+      {
+        "q": "موضوع داستان «کوثر؛ چشمهٔ مهربانی و هدیهٔ آسمانی» چیست؟",
+        "opts": [
+          "احترام به والدین و نعمت فرزند (به‌ویژه دختر)",
+          "داشتن پسر",
+          "سرزنش دیگران",
+          "ثروت"
+        ],
+        "ans": 0
+      }
+    ],
+    "109": [
+      {
+        "q": "در کلاس دو دانش‌آموز درباره چه صحبت می‌کردند؟",
+        "opts": [
+          "باورهای دینی خانواده‌هایشان",
+          "بازی فوتبال",
+          "نمره امتحان",
+          "تعطیلات"
+        ],
+        "ans": 0
+      },
+      {
+        "q": "یکی از آن‌ها چه خواست؟",
+        "opts": [
+          "دوست شوند",
+          "با هم درس بخوانند",
+          "دیگری را مجبور کند مانند او فکر کند",
+          "بازی کنند"
+        ],
+        "ans": 2
+      },
+      {
+        "q": "معلم درباره سوره کافرون چه گفت؟",
+        "opts": [
+          "باید دیگران را مجبور کرد",
+          "همه باورها یکی است",
+          "بحث بی‌فایده است",
+          "مرز روشن میان یکتاپرستی و پرستش خدایان دروغین را بیان می‌کند"
+        ],
+        "ans": 3
+      },
+      {
+        "q": "چگونه باید بر باور خود استوار باشیم؟",
+        "opts": [
+          "با زور و توهین",
+          "با ادب و احترام به دیگران و دوری از توهین",
+          "با سکوت کامل",
+          "با تغییر باور"
+        ],
+        "ans": 1
+      }
+    ],
+    "110": [
+      {
+        "q": "تیم فوتبال مدرسه بعد از پیروزی چه خواستند بکنند؟",
+        "opts": [
+          "بعضی می‌خواستند تیم مقابل را مسخره کنند",
+          "همه تشکر کردند",
+          "بازی را ادامه دادند",
+          "به خانه رفتند"
+        ],
+        "ans": 0
+      },
+      {
+        "q": "کاپیتان چه گفت؟",
+        "opts": [
+          "ما بهترینیم",
+          "با تلاش و کمک مربی موفق شدیم؛ نباید مغرور شویم",
+          "تیم مقابل بد بازی کرد",
+          "جایزه مال ماست"
+        ],
+        "ans": 1
+      },
+      {
+        "q": "سوره نصر بعد از پیروزی به چه سفارش می‌کند؟",
+        "opts": [
+          "جشن مادی بزرگ",
+          "مسخره کردن دیگران",
+          "ترک تلاش",
+          "تسبیح، حمد و استغفار"
+        ],
+        "ans": 3
+      },
+      {
+        "q": "بازیکنان در پایان چه کردند؟",
+        "opts": [
+          " festivities برگزار کردند",
+          "دعوا کردند",
+          "به تیم مقابل دست دادند و از مربی تشکر کردند",
+          "مغرور شدند"
+        ],
+        "ans": 2
+      }
+    ],
+    "111": [
+      {
+        "q": "بهنام در کار گروهی چه رفتاری داشت؟",
+        "opts": [
+          "به نظرات دیگران گوش داد",
+          "می‌خواست همه کارها فقط طبق نظر خودش باشد و دیگران را تحقیر کرد",
+          "کمک کرد",
+          "ساکت بود"
+        ],
+        "ans": 1
+      },
+      {
+        "q": "نتیجه رفتار بهنام چه شد؟",
+        "opts": [
+          "گروه از هم پاشید",
+          "گروه موفق شد",
+          "همه خوشحال شدند",
+          "کار تمام شد"
+        ],
+        "ans": 0
+      },
+      {
+        "q": "سوره مسد از سرانجام چه کسانی سخن می‌گوید؟",
+        "opts": [
+          "دوستان خوب",
+          "پیامبر",
+          "ابولهب و همسرش که دشمنی و خودبزرگ‌بینی کردند",
+          "مؤمنان"
+        ],
+        "ans": 2
+      },
+      {
+        "q": "بهنام در پایان چه کرد؟",
+        "opts": [
+          "باز هم تحقیر کرد",
+          "گروه را ترک کرد",
+          "با معلم بحث کرد",
+          "پذیرفت رفتارش نادرست بوده و از دوستانش عذرخواهی کرد"
+        ],
+        "ans": 3
+      }
+    ],
+    "112": [
+      {
+        "q": "جمعی نزد پیامبر آمدند و چه خواستند؟",
+        "opts": [
+          "داستان جنگ بگو",
+          "نماز یاد بده",
+          "پروردگارت را برای ما توصیف کن؛ آیا از طلا یا نقره است؟",
+          "غذا بده"
+        ],
+        "ans": 2
+      },
+      {
+        "q": "سوره اخلاص چگونه خداوند را توصیف می‌کند؟",
+        "opts": [
+          "خدای یکتا، بی‌نیاز، نه زاده و نه زاده‌شده و بی‌همتا",
+          "از طلا ساخته شده",
+          "فرزند دارد",
+          "چندین خدا وجود دارد"
+        ],
+        "ans": 0
+      },
+      {
+        "q": "پیامبر وقتی سؤال را شنید چه گفت؟",
+        "opts": [
+          "بله از طلا است",
+          "سبحان الله!",
+          "نمی‌دانم",
+          "بعداً جواب می‌دهم"
+        ],
+        "ans": 1
+      },
+      {
+        "q": "موضوع داستان «گفت‌وگوی پیامبر دربارهٔ خدای یکتا» چیست؟",
+        "opts": [
+          "طلا و نقره",
+          "سؤال کردن",
+          "جمع شدن مردم",
+          "یکتایی و بی‌نیازی پروردگار"
+        ],
+        "ans": 3
+      }
+    ],
+    "113": [
+      {
+        "q": "پریسا از چه چیزهایی می‌ترسید؟",
+        "opts": [
+          "مدرسه",
+          "غذا",
+          "بازی",
+          "تاریکی شب و حرف‌های حسادت‌آمیز دیگران"
+        ],
+        "ans": 3
+      },
+      {
+        "q": "مادر سوره فلق را خواند و از چه چیزهایی پناه برد؟",
+        "opts": [
+          "از نور",
+          "از شر آفریده‌ها، تاریکی و حسادت",
+          "از روز",
+          "از دوستان"
+        ],
+        "ans": 1
+      },
+      {
+        "q": "مادر علاوه بر دعا چه پیشنهادی داد؟",
+        "opts": [
+          "چراغ خواب روشن کن و نگرانی را با بزرگ‌تر در میان بگذار",
+          "فقط دعا کن",
+          "در تاریکی بمان",
+          "با حسودان دعوا کن"
+        ],
+        "ans": 0
+      },
+      {
+        "q": "پیام داستان «چراغی در دل تاریکی» چیست؟",
+        "opts": [
+          "ترس از تاریکی",
+          "چراغ خواب",
+          "پناه بردن به خدا از آسیب‌ها و حسادت همراه با رفتار عاقلانه",
+          "شب‌بیداری"
+        ],
+        "ans": 2
+      }
+    ],
+    "114": [
+      {
+        "q": "سامان هنگام تکالیف به چه وسوسه‌ای دچار شد؟",
+        "opts": [
+          "بیشتر درس بخواند",
+          "کمک بخواهد",
+          "زود تمام کند با تلاش خود",
+          "جواب‌ها را از دفتر دوستش رونویسی کند"
+        ],
+        "ans": 3
+      },
+      {
+        "q": "سوره ناس به ما می‌آموزد از شر چه کسی پناه ببریم؟",
+        "opts": [
+          "دوستان",
+          "معلم",
+          "وسوسه‌گر پنهانکار (خناس)",
+          "خانواده"
+        ],
+        "ans": 2
+      },
+      {
+        "q": "سامان در نهایت چه کرد؟",
+        "opts": [
+          "از خدا کمک خواست و مسئله‌ها را خودش حل کرد",
+          "از روی دفتر رونویسی کرد",
+          "تکلیف را رها کرد",
+          "با دوست دعوا کرد"
+        ],
+        "ans": 0
+      },
+      {
+        "q": "موضوع داستان «صدای وسوسه‌گر درون» چیست؟",
+        "opts": [
+          "رونویسی کردن",
+          "پناه بردن به خدا از وسوسه و انتخاب کار درست",
+          "تکالیف سخت",
+          "دوست داشتن"
+        ],
+        "ans": 1
+      }
+    ]
+  }
+}
+</script>
+
+<script>
+// عیب‌یابی زودهنگام: خطاهای جاوااسکریپت را به کاربر نشان بده.
+window.__quranAppBooted = false;
+window.addEventListener('error', function (event) {
+  const el = document.getElementById('auth-message');
+  if (el) {
+    el.textContent = 'مشکلی پیش آمد. صفحه را دوباره باز کنید.';
+    el.style.background = '#fee2e2'; el.style.color = '#991b1b';
+  }
+});
+window.addEventListener('unhandledrejection', function (event) {
+  const el = document.getElementById('auth-message');
+  if (el) { el.textContent = 'مشکلی پیش آمد. صفحه را دوباره باز کنید.'; el.style.background = '#fee2e2'; el.style.color = '#991b1b'; }
+});
+</script>
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+<script>
+'use strict';
+
+/* ========== اتصال به Supabase ========== */
+const SUPABASE_URL = 'https://nsznexzvtufvyukkwtmi.supabase.co';
+const SUPABASE_ANON_KEY = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Im5zem5leHp2dHVmdnl1a2t3dG1pIiwicm9sZSI6ImFub24iLCJpYXQiOjE3OTMzNDUxMTUsImV4cCI6MjEwODkyMTExNX0.u4MUIqOzLrzXs6NQJOHqH7WdKi3lPclMArrH2v-sxUM';
+const supabaseClient = window.supabase.createClient(SUPABASE_URL, SUPABASE_ANON_KEY);
+
+function normName(n){
+  return String(n||'')
+    .replace(/ي/g,'ی').replace(/ك/g,'ک')
+    .replace(/\s+/g,' ')
+    .trim()
+    .toLocaleLowerCase('fa-IR');
+}
+
+function createDefaultProgress(name){
+  return {
+    name: name || 'دانش‌آموز',
+    score: 0,
+    solved: {},
+    heardVerses: {},
+    exams: {},
+    fullAudio: {},
+    memorizationQuizScore: 0,
+    memorizationQuizAttempts: {},
+    learn: {},
+    learnWrong: {},
+    learnMem: {},
+    studentId: null
+  };
+}
+
+async function ensureStudentOnServer(name){
+  const normalized = normName(name);
+  try {
+    let { data, error } = await supabaseClient
+      .from('students')
+      .select('id, name')
+      .eq('name_normalized', normalized)
+      .maybeSingle();
+    if(error) throw error;
+    if(data) return data.id;
+    const insert = await supabaseClient
+      .from('students')
+      .insert({ name: name.trim(), name_normalized: normalized })
+      .select('id')
+      .single();
+    if(insert.error) throw insert.error;
+    return insert.data.id;
+  } catch(e){
+    console.error('ensureStudentOnServer:', e);
+    return null;
+  }
+}
+
+async function saveExamResultToServer(studentId, sid, score, interrupted, answered, results, takenAt){
+  if(!studentId) return false;
+  try {
+    // فقط INSERT — بدون UPDATE (نمره بعد از ثبت قفل است)
+    const { error } = await supabaseClient.from('exam_results').insert({
+      student_id: studentId,
+      surah_id: Number(sid),
+      score: Number(score),
+      interrupted: !!interrupted,
+      answered: Number(answered)||0,
+      results: results||[],
+      taken_at: takenAt
+    });
+    if(error){
+      // اگر قبلاً ثبت شده (unique violation) یعنی نمره اول معتبر است
+      if(error.code === '23505' || /duplicate|unique/i.test(error.message||'')){
+        return true;
+      }
+      throw error;
+    }
+    return true;
+  } catch(e){ console.error('saveExamResultToServer:', e); return false; }
+}
+
+async function saveFullAudioToServer(studentId, sid, done){
+  if(!studentId) return false;
+  try {
+    const { error } = await supabaseClient.from('full_audio_progress').upsert({
+      student_id: studentId,
+      surah_id: Number(sid),
+      done: !!done,
+      completed_at: done ? new Date().toISOString() : null
+    }, { onConflict: 'student_id,surah_id' });
+    if(error) throw error;
+    return true;
+  } catch(e){ console.error('saveFullAudioToServer:', e); return false; }
+}
+
+async function loadProgressFromServer(studentId){
+  if(!studentId) return null;
+  try {
+    const [examsRes, audioRes] = await Promise.all([
+      supabaseClient.from('exam_results').select('*').eq('student_id', studentId),
+      supabaseClient.from('full_audio_progress').select('*').eq('student_id', studentId)
+    ]);
+    if(examsRes.error) throw examsRes.error;
+    if(audioRes.error) throw audioRes.error;
+    const exams = {};
+    (examsRes.data||[]).forEach(r => {
+      exams[String(r.surah_id)] = {
+        score: r.score, at: r.taken_at, status: 'completed',
+        interrupted: r.interrupted, answered: r.answered,
+        results: r.results||[], fromServer: true
+      };
+    });
+    const fullAudio = {};
+    (audioRes.data||[]).forEach(r => {
+      fullAudio[String(r.surah_id)] = { done: r.done, at: r.completed_at };
+    });
+    return { exams, fullAudio };
+  } catch(e){ console.error('loadProgressFromServer:', e); return null; }
+}
+
+const appData = JSON.parse(document.getElementById('quran-data').textContent);
+const juz30Surahs = appData.juz30Surahs;
+const educationalContent = appData.educationalContent;
+const surahStories = appData.surahStories;
+const surahQuizzes = appData.surahQuizzes;
+let currentSurahId = 112;
+let audioPlayer = null;
+let currentPlayingBtn = null;
+let currentUser = null;
+let currentRole = 'student';
+let userProgress = createDefaultProgress();
+
+function authMessage(msg, isError=false, status='info'){const el=document.getElementById('auth-message'); if(el){el.textContent=msg;el.style.background=isError?'#fee2e2':status==='success'?'#dcfce7':status==='loading'?'#fef08a':'#f1f5f9';el.style.color=isError?'#991b1b':status==='success'?'#166534':status==='loading'?'#854d0e':'#1f2937';el.setAttribute('role', isError?'alert':'status');el.setAttribute('aria-live','polite');}}
+function showOnly(id){['auth-panel','student-app','teacher-panel'].forEach(x=>document.getElementById(x).classList.toggle('hidden',x!==id));}
+function stripBasmala(t){t=String(t||'').trim();const n=x=>x.replace(/[\u064B-\u065F\u0670\u0640\u06D6-\u06ED]/g,'').replace(/[ٱأإآ]/g,'ا').replace(/ي/g,'ی'),w=t.split(/\s+/);return(w.length>4&&n(w[0])==='بسم'&&n(w[1])==='الله'&&n(w[2])==='الرحمن'&&n(w[3])==='الرحیم')?w.slice(4).join(' '):t;}
+function offlineStorageKey(name){return 'boostanQuranProgress_v1_'+String(name||'دانش‌آموز').replace(/ي/g,'ی').replace(/ك/g,'ک').replace(/\s+/g,' ').trim().toLocaleLowerCase('fa-IR');}
+async function saveUserData(){
+  updateScoreboardUI();
+  const payload = { ...userProgress, updatedAt: new Date().toISOString() };
+  // همیشه یک نسخه محلی نگه می‌داریم (پشتیبان و حالت آفلاین)
+  try {
+    const key = (currentUser && currentUser.storageKey)
+      ? currentUser.storageKey
+      : offlineStorageKey(userProgress.name || 'دانش‌آموز');
+    localStorage.setItem(key, JSON.stringify(payload));
+    if (currentUser && !currentUser.storageKey) currentUser.storageKey = key;
+    return true;
+  } catch (e) {
+    console.error('Local progress save failed:', e);
+    alert('⚠️ ذخیرهٔ پیشرفت انجام نشد. فضای ذخیره‌سازی مرورگر را بررسی کنید و اطلاعات برنامه را پاک نکنید.');
+    return false;
+  }
+}
+function getRank(count){if(count>=30)return '👑 قهرمان آزمون‌های بوستان';if(count>=20)return '⭐ ستاره درخشان جزء ۳۰';if(count>=10)return '📖 پژوهشگر پر تلاش';if(count>=5)return '🌿 جوانه معرفت';return '🌱 آغازگر مسیر نور';}
+function updateScoreboardUI(){
+ const v=verifyExams(userProgress.exams,userProgress.name),count=completedExamCount(userProgress.exams,userProgress.name);userProgress.score=v.sum;
+ document.getElementById('student-name-display').textContent=userProgress.name||'دانش‌آموز';
+ document.getElementById('student-score-display').textContent=v.sum;
+ const lv=verifyLearn(userProgress.learn,userProgress.learnMem,userProgress.name);userProgress.learnScore=lv.sum;
+ const le=document.getElementById('student-learn-display');if(le)le.textContent=lv.sum;
+ document.getElementById('student-count-display').textContent=`${count} از 37`;
+ document.getElementById('student-rank-display').textContent=getRank(count);
+ document.getElementById('student-progress-fill').style.width=`${Math.min(100,Math.round(count/37*100))}%`;
+}
+function promptStudentName(){if(Object.keys(userProgress.exams||{}).length||Object.keys(userProgress.learn||{}).length||Object.keys(userProgress.learnMem||{}).length){alert('بعد از شرکت در آزمون یا ثبت امتیاز آموزش، تغییر نام ممکن نیست.');return;}const n=prompt('نام دانش‌آموز را وارد کنید:',userProgress.name||'');if(n&&n.trim()){const oldKey=currentUser?.storageKey;const newKey=offlineStorageKey(n);if(newKey!==oldKey&&localStorage.getItem(newKey)){alert('این نام قبلاً در همین دستگاه ثبت شده است. نام دیگری انتخاب کنید.');return;}userProgress.name=n.trim();if(currentUser)currentUser.storageKey=offlineStorageKey(n);if(oldKey&&oldKey!==currentUser.storageKey){try{localStorage.removeItem(oldKey);}catch(e){}}saveUserData();updateScoreboardUI();}}
+function showReportModal(){const count=completedExamCount(userProgress.exams,userProgress.name);document.getElementById('modal-student-name').textContent=userProgress.name;document.getElementById('modal-student-rank').textContent=`رتبهٔ کسب‌شده: ${getRank(count)}`;document.getElementById('modal-score').textContent=userProgress.score;document.getElementById('modal-learn').textContent=verifyLearn(userProgress.learn,userProgress.learnMem,userProgress.name).sum;document.getElementById('modal-count').textContent=count;document.getElementById('modal-percent').textContent=`${Math.round(count/37*100)}%`;document.getElementById('report-modal').classList.add('active');}
+function closeReportModal(){document.getElementById('report-modal').classList.remove('active');}
+let memorizationData = null;
+let memorizationHidden = {};
+function initMemorizationSelect(){
+ const sel=document.getElementById('memorize-surah');if(!sel||!Array.isArray(juz30Surahs))return;
+ sel.innerHTML='';
+ juz30Surahs.forEach(s=>{const o=document.createElement('option');o.value=s.id;o.textContent=`${s.nameFa} — ${s.versesCount} آیه`;sel.appendChild(o);});
+ sel.value=String(currentSurahId);
+}
+async function loadMemorization(){
+  const sid = Number(document.getElementById('memorize-surah').value);
+  const target = document.getElementById('memorization-content');
+  target.innerHTML = '<p>در حال آماده‌کردن آیات و صوت قاری…</p>';
+  try {
+    let data = getCachedSurah(sid, 'editions');
+    if(!data || data.length < 2){
+      const response = await fetch(`https://api.alquran.cloud/v1/surah/${sid}/editions/quran-uthmani,fa.ansarian`);
+      if(!response.ok) throw new Error('network');
+      const payload = await response.json();
+      if(payload.code !== 200 || !payload.data || payload.data.length < 2) throw new Error('data');
+      data = payload.data;
+      setCachedSurah(sid, 'editions', data);
+    }
+    memorizationData = {
+      sid,
+      arabic: data[0].ayahs || data[0].verses || [],
+      translation: data[1].ayahs || data[1].verses || []
+    };
+    memorizationHidden[sid] = memorizationHidden[sid] || {};
+    renderMemorization();
+  } catch(e){
+    target.innerHTML = '<p style="color:#b91c1c">دریافت آیات ممکن نشد. یک‌بار با اینترنت باز کنید تا ذخیره شود.</p>';
+  }
+}
+
+let memoryQuizState=null;
+function startMemorizationQuiz(){
+ if(memoryQuizState){alert('آزمون حفظ در حال اجراست. ابتدا آن را تمام کن.');return;}
+ if(!memorizationData||!memorizationData.arabic||!memorizationData.arabic.length){alert('ابتدا یک سوره را بارگذاری کن و «شروع تمرین حفظ» را بزن.');return;}
+ const attemptedSid=String(memorizationData.sid);
+ const prevMem=userProgress.learnMem&&userProgress.learnMem[attemptedSid];
+ // اگر قبلاً با نمره صفر نیمه‌کاره مانده (باگ نسخه قبل)، اجازهٔ یک‌بار تلاش دوباره می‌دهیم
+ if(prevMem&&isValidMem(prevMem,userProgress.name,attemptedSid)&&Number(prevMem.pts)>0){
+  alert('آزمون حفظ این سوره را قبلاً انجام داده‌ای و هر سوره فقط یک بار امتیاز دارد.');
+  return;
+ }
+ if(prevMem&&Number(prevMem.pts)===0){
+  try{delete userProgress.learnMem[attemptedSid];}catch(e){}
+ }
+ // همه آیات را می‌گیریم (حتی کوتاه‌ها) و بسم‌الله را از آیه اول جدا می‌کنیم
+ const verses=memorizationData.arabic.map((v,i)=>{
+  let t=String(v.text||'').trim();
+  if(i===0&&attemptedSid!=='1'&&attemptedSid!=='9') t=stripBasmala(t);
+  return {text:t,i,numberInSurah:v.numberInSurah||(i+1)};
+ }).filter(v=>v.text&&v.text.replace(/\s+/g,'').length>=3);
+ if(!verses.length){alert('برای این سوره آیه مناسب برای آزمون پیدا نشد.');return;}
+ const wordPool=[...new Set(verses.flatMap(x=>x.text.split(/\s+/).map(w=>w.trim()).filter(w=>w.length>1)))];
+ if(wordPool.length<2){alert('واژه‌های کافی برای ساخت سؤال در این سوره نیست.');return;}
+ const qs=[];
+ const maxQ=Math.min(5,Math.max(1,verses.length*2));
+ const usedKeys=new Set();
+ let attempts=0;
+ while(qs.length<maxQ&&attempts<40){
+  attempts++;
+  const v=verses[Math.floor(Math.random()*verses.length)];
+  const words=v.text.split(/\s+/).map((word,originalIndex)=>({word,originalIndex})).filter(x=>x.word&&x.word.length>1);
+  if(words.length<2) continue;
+  const chosen=words[Math.floor(Math.random()*words.length)];
+  const answer=chosen.word, originalIndex=chosen.originalIndex;
+  const key=v.i+':'+originalIndex+':'+answer;
+  if(usedKeys.has(key)) continue;
+  usedKeys.add(key);
+  const distractors=[...wordPool].filter(w=>w!==answer);
+  distractors.sort(()=>Math.random()-.5);
+  const opts=[answer,...distractors.slice(0,Math.min(3,distractors.length))];
+  if(opts.length<2) continue;
+  opts.sort(()=>Math.random()-.5);
+  const display=v.text.split(/\s+/).map((w,i)=>i===originalIndex?'ـــــــ':w).join(' ');
+  qs.push({prompt:'جای خالی آیه '+v.numberInSurah+' را کامل کن:',text:display,answer,opts});
+ }
+ if(!qs.length){alert('برای این سوره سؤال مناسبی ساخته نشد. سوره دیگری را امتحان کن.');return;}
+ if(!confirm('آزمون حفظ هر سوره فقط یک بار برگزار می‌شود و نتیجه‌اش در پایان ثبت می‌شود. شروع کنیم؟'))return;
+ memoryQuizState={qs,index:0,score:0,answered:false,sid:attemptedSid};
+ showMemoryQuizQuestion();
+}
+function ensureMemoryQuizPanel(){
+ let host=document.getElementById('memory-quiz-panel');
+ if(host) return host;
+ const target=document.getElementById('memorization-content');
+ if(!target) return null;
+ host=document.createElement('div');
+ host.id='memory-quiz-panel';
+ target.appendChild(host);
+ return host;
+}
+function showMemoryQuizQuestion(){
+ if(!memoryQuizState) return;
+ const host=ensureMemoryQuizPanel();
+ if(!host){alert('محل نمایش آزمون پیدا نشد. صفحه را رفرش کن و دوباره سوره را بارگذاری کن.');memoryQuizState=null;return;}
+ const q=memoryQuizState.qs[memoryQuizState.index];
+ if(!q){alert('سؤال آزمون موجود نیست.');memoryQuizState=null;return;}
+ const optsHtml=q.opts.map(function(o){
+  return '<button type="button" class="mem-opt-btn" data-ans="'+encodeURIComponent(o)+'" style="border:1px solid #fbbf24;border-radius:12px;padding:10px;background:#fffbeb;cursor:pointer;font-family:\'Amiri Quran\',serif;font-size:1.2rem" lang="ar">'+escapeHtml(o)+'</button>';
+ }).join('');
+ host.innerHTML='<div style="background:#fff;border:2px solid #fde68a;border-radius:16px;padding:15px;margin-top:14px">'+
+  '<div style="display:flex;justify-content:space-between;gap:8px;color:#92400e;font-weight:700"><span>سؤال '+(memoryQuizState.index+1)+' از '+memoryQuizState.qs.length+'</span><span>امتیاز: '+memoryQuizState.score+' از '+(memoryQuizState.qs.length*20)+'</span></div>'+
+  '<h3 style="margin:12px 0 8px;color:#713f12">'+escapeHtml(q.prompt)+'</h3>'+
+  '<p dir="rtl" lang="ar" style="font-size:1.45rem;line-height:2;text-align:right;font-family:\'Amiri Quran\',serif">'+escapeHtml(q.text)+'</p>'+
+  '<div class="mem-opts" style="display:grid;grid-template-columns:repeat(auto-fit,minmax(120px,1fr));gap:8px">'+optsHtml+'</div>'+
+  '<p id="memory-quiz-feedback" style="font-weight:700;margin-top:10px"></p></div>';
+ host.querySelectorAll('.mem-opt-btn').forEach(function(btn){
+  btn.addEventListener('click',function(){answerMemoryQuiz(btn.getAttribute('data-ans'));});
+ });
+ try{host.scrollIntoView({behavior:'smooth',block:'nearest'});}catch(e){}
+}
+function answerMemoryQuiz(encoded){
+ if(!memoryQuizState||memoryQuizState.answered)return;
+ let chosen='';
+ try{chosen=decodeURIComponent(encoded);}catch(e){chosen=String(encoded||'');}
+ const q=memoryQuizState.qs[memoryQuizState.index];
+ const fb=document.getElementById('memory-quiz-feedback');
+ memoryQuizState.answered=true;
+ if(chosen===q.answer){
+  memoryQuizState.score+=20;
+  if(fb){fb.textContent='آفرین! پاسخ درست است 🌟 +۲۰ امتیاز';fb.style.color='#15803d';}
+ }else{
+  if(fb){fb.textContent='اشکالی ندارد؛ پاسخ درست: '+q.answer;fb.style.color='#b91c1c';}
+ }
+ const host=ensureMemoryQuizPanel();
+ if(!host)return;
+ host.querySelectorAll('.mem-opt-btn').forEach(function(b){b.disabled=true;b.style.opacity='0.85';});
+ const next=document.createElement('button');
+ next.type='button';
+ next.textContent=memoryQuizState.index===memoryQuizState.qs.length-1?'ثبت نتیجه':'سؤال بعدی';
+ next.style.cssText='margin-top:10px;background:#15803d;color:white;border:0;border-radius:12px;padding:10px 16px;cursor:pointer;font-weight:700';
+ next.onclick=function(){advanceMemoryQuiz();};
+ const box=host.querySelector('div')||host;
+ box.appendChild(next);
+}
+async function advanceMemoryQuiz(){
+ if(!memoryQuizState)return;
+ if(memoryQuizState.index<memoryQuizState.qs.length-1){
+  memoryQuizState.index++;
+  memoryQuizState.answered=false;
+  showMemoryQuizQuestion();
+  return;
+ }
+ const st=memoryQuizState;
+ memoryQuizState=null;
+ await recordMemorizationScore(st.sid,st.score);
+ updateScoreboardUI();
+ const note=st.score>0?('+'+st.score+' امتیاز آموزش برای همیشه ثبت شد 🌟'):'این بار امتیازی نگرفتی؛ سوره‌های دیگر را امتحان کن.';
+ const host=ensureMemoryQuizPanel();
+ if(host){
+  host.innerHTML='<div style="background:#ecfdf5;border:2px solid #86efac;border-radius:16px;padding:16px;margin-top:14px;text-align:center"><h3>🎉 آزمون حفظ این سوره تمام شد</h3><p>نتیجه: <strong>'+st.score+' از '+(st.qs.length*20)+'</strong></p><p style="color:#166534;font-weight:700">'+note+'</p><p style="font-size:.85rem;color:#475569">این آزمون برای این سوره فقط یک بار برگزار می‌شود و امتیازش جدا از آزمون رسمی حساب می‌شود.</p></div>';
+ }
+ const memBtn=document.querySelector('#memorization-content button[onclick="startMemorizationQuiz()"]');
+ if(memBtn){memBtn.textContent='✅ آزمون حفظ این سوره انجام شده';}
+}
+function renderMemorization(){
+ if(!memorizationData)return;const {sid,arabic,translation}=memorizationData,target=document.getElementById('memorization-content'),hidden=memorizationHidden[sid]||{};
+ let html=`<div style="display:flex;gap:8px;flex-wrap:wrap;margin-bottom:12px;"><button type="button" onclick="startMemorizationQuiz()" style="background:#f59e0b;color:#422006;border:0;border-radius:12px;padding:9px 14px;font-weight:700;cursor:pointer">${(userProgress.learnMem&&userProgress.learnMem[sid]&&isValidMem(userProgress.learnMem[sid],userProgress.name,String(sid))&&Number(userProgress.learnMem[sid].pts)>0)?'✅ آزمون حفظ این سوره انجام شده':'📝 آزمون حفظ (فقط یک‌بار)'}</button><button type="button" onclick="repeatMemorizationAudio()" style="background:#0284c7;color:white;border:0;border-radius:12px;padding:9px 14px;cursor:pointer">🔁 پخش دوبارهٔ آیات</button><button type="button" onclick="hideMemorizationText()" style="background:#7c3aed;color:white;border:0;border-radius:12px;padding:9px 14px;cursor:pointer">🙈 پنهان‌کردن متن برای آزمون حفظ</button><button type="button" onclick="showMemorizationText()" style="background:#64748b;color:white;border:0;border-radius:12px;padding:9px 14px;cursor:pointer">👀 نمایش متن</button></div><div style="display:grid;gap:10px;">`;
+ arabic.forEach((v,i)=>{let txt=v.text||'';if(sid!==1&&sid!==9&&i===0)txt=stripBasmala(txt);
+ const audioUrl=`https://cdn.islamic.network/quran/audio/128/ar.alafasy/${v.number}.mp3`;
+ html+=`<article style="background:white;border:1px solid #d1fae5;border-radius:16px;padding:13px;"><div style="display:flex;justify-content:space-between;align-items:center;gap:10px;"><strong style="color:#15803d">آیه ${v.numberInSurah||i+1}</strong><button type="button" onclick="playMemorizationAudio('${audioUrl}')" style="border:0;border-radius:50%;background:#dbeafe;padding:10px;cursor:pointer" aria-label="پخش آیه">🔊 گوش کن</button></div><p style="font-size:1.45rem;line-height:2.1;text-align:right;margin:10px 0;color:#172554;font-family:'Amiri Quran',serif" lang="ar">${hidden[i]?'••••••••••••••••••••':escapeHtml(txt)}</p><p style="color:#475569;margin:0">${hidden[i]?'ترجمه هم پنهان شده':escapeHtml(translation[i]?.text||'')}</p></article>`;
+ });html+='</div><div id="memory-quiz-panel"></div>';target.innerHTML=html;
+}
+function playMemorizationAudio(url){if(audioPlayer)audioPlayer.pause();audioPlayer=new Audio(url);audioPlayer.play().catch(()=>alert('پخش صوت ممکن نشد. اتصال اینترنت را بررسی کنید.'));}
+function repeatMemorizationAudio(){if(!memorizationData)return;const urls=memorizationData.arabic.map(v=>`https://cdn.islamic.network/quran/audio/128/ar.alafasy/${v.number}.mp3`);let i=0;const next=()=>{if(i>=urls.length)return;if(audioPlayer)audioPlayer.pause();audioPlayer=new Audio(urls[i++]);audioPlayer.onended=next;audioPlayer.play().catch(()=>alert('پخش صوت ممکن نشد. اتصال اینترنت را بررسی کنید.'));};next();}
+function hideMemorizationText(){if(!memorizationData)return;memorizationHidden[memorizationData.sid]={};memorizationData.arabic.forEach((_,i)=>memorizationHidden[memorizationData.sid][i]=true);renderMemorization();}
+function showMemorizationText(){if(!memorizationData)return;memorizationHidden[memorizationData.sid]={};renderMemorization();}
+function populateSelect(filter='all'){const sel=document.getElementById('surah-select');sel.innerHTML='';const filtered=juz30Surahs.filter(s=>filter==='all'||s.grade===filter);filtered.forEach(s=>{const opt=document.createElement('option');opt.value=s.id;opt.textContent=`${s.id}. سورهٔ ${s.nameFa} (${s.nameAr}) - ${s.versesCount} آیه`;if(s.id===currentSurahId)opt.selected=true;sel.appendChild(opt);});if(!filtered.some(s=>s.id===currentSurahId)&&filtered.length){currentSurahId=filtered[0].id;sel.value=currentSurahId;}}
+const SURAH_CACHE_PREFIX = 'boostanSurahCache_v1_';
+
+function getCachedSurah(surahId, kind){
+  try {
+    const raw = localStorage.getItem(SURAH_CACHE_PREFIX + kind + '_' + surahId);
+    if(!raw) return null;
+    const obj = JSON.parse(raw);
+    if(!obj || !obj.data || !obj.savedAt) return null;
+    // اعتبار کش: ۹۰ روز
+    if(Date.now() - obj.savedAt > 90 * 24 * 60 * 60 * 1000) return null;
+    return obj.data;
+  } catch(e){ return null; }
+}
+
+function setCachedSurah(surahId, kind, data){
+  try {
+    localStorage.setItem(SURAH_CACHE_PREFIX + kind + '_' + surahId, JSON.stringify({
+      savedAt: Date.now(),
+      data
+    }));
+  } catch(e){ console.warn('surah cache write failed', e); }
+}
+
+async function fetchSurahData(surahId){
+  stopFullAudio();
+  const disp = document.getElementById('surah-display');
+  disp.innerHTML = '<div class="loading-spinner">در حال دریافت متن و ترجمه آیات…</div>';
+  if(audioPlayer){ audioPlayer.pause(); if(currentPlayingBtn) currentPlayingBtn.classList.remove('playing'); }
+
+  // اول از کش
+  const cached = getCachedSurah(surahId, 'editions');
+  if(cached && cached.length >= 2){
+    renderSurah(
+      surahId,
+      cached[0].verses || cached[0].ayahs,
+      cached[1].verses || cached[1].ayahs
+    );
+    return;
+  }
+
+  try {
+    const res = await fetch(`https://api.alquran.cloud/v1/surah/${surahId}/editions/quran-uthmani,fa.ansarian`);
+    if(!res.ok) throw new Error('ارتباط با سرور قرآن برقرار نشد');
+    const data = await res.json();
+    if(data.code !== 200 || !data.data || data.data.length < 2) throw new Error('داده‌های سوره معتبر نیستند');
+    setCachedSurah(surahId, 'editions', data.data);
+    renderSurah(surahId, data.data[0].verses || data.data[0].ayahs, data.data[1].verses || data.data[1].ayahs);
+  } catch(err){
+    disp.innerHTML = `<div class="notice error"><p>دریافت اطلاعات سوره ممکن نشد. یک‌بار با اینترنت باز کنید تا برای دفعات بعد ذخیره شود.</p><button class="retry-btn" onclick="fetchSurahData(${surahId})">تلاش مجدد</button></div>`;
+  }
+}
+function isAudioComplete(sid, verseCount){return Array.isArray(userProgress.heardVerses?.[sid])&&new Set(userProgress.heardVerses[sid]).size>=verseCount;}
+function renderSurah(surahId,arList,faList){
+ const meta=juz30Surahs.find(s=>s.id===surahId)||{nameFa:'',nameAr:'',versesCount:arList.length};const sid=String(surahId);const edu=educationalContent[sid],story=surahStories[sid],quiz=surahQuizzes[sid];const heard=new Set(userProgress.heardVerses?.[sid]||[]);const audioDone=isFullAudioDone(sid);
+ let html=`<article class="surah-card"><header class="surah-header"><div><h2 class="surah-title">سورهٔ ${meta.nameFa} (${meta.nameAr})</h2></div><div><span class="badge-info">${meta.versesCount} آیه شریفه</span></div></header>${fullAudioHTML(sid)}<div class="verses-list">`;
+ arList.forEach((v,idx)=>{const farsi=faList[idx]?faList[idx].text:'';let arText=v.text;if(surahId!==1&&surahId!==9&&idx===0)arText=stripBasmala(arText);const url=`https://cdn.islamic.network/quran/audio/128/ar.alafasy/${v.number}.mp3`;html+=`<div class="verse-card"><div class="verse-arabic"><button type="button" class="btn-audio ${heard.has(v.numberInSurah)?'audio-heard':''}" data-verse="${v.numberInSurah}" onclick="playAudio('${url}',this,${v.numberInSurah})" aria-label="پخش صوت آیه ${v.numberInSurah}">${heard.has(v.numberInSurah)?'✓':'🔊'}</button><span class="arabic-text" lang="ar">${escapeHtml(arText)}</span><span class="verse-num">${v.numberInSurah}</span></div><p class="verse-translation">${escapeHtml(farsi)}</p></div>`;});html+='</div>';
+ if(edu)html+=`<section class="edu-section" aria-label="پیام کلیدی سوره"><strong>💡 پیام کلیدی و آموزندهٔ سوره:</strong><p style="margin-top:6px;">${edu.msg}</p><div class="edu-source">منبع: ${edu.src}</div></section>`;
+ if(story)html+=`<section class="story-section" aria-label="داستان سوره"><div class="story-header">📖 ${story.title}</div><span class="story-theme">موضوع: ${story.theme}</span><div class="story-content"><p>${story.text}</p></div></section>`;
+ if(quiz){const qs=Array.isArray(quiz)?quiz:[quiz];const solvedCount=qs.filter((_,i)=>userProgress.learn?.[sid+'_'+i]).length;const allSolved=solvedCount===qs.length;html+=`<section class="quiz-section" id="quiz-section" aria-label="آزمون یادگیری سوره"><div class="quiz-score-badge ${allSolved?'already-solved':''}">${learnBadgeText(sid,qs.length)}</div><p class="learn-note">هر سؤال فقط <b>یک بار</b> پاسخ داده می‌شود و اولین انتخاب نهایی است: پاسخ درست ۱۰ امتیاز دارد. این امتیازها جدا از امتیاز «آزمون رسمی» حساب می‌شوند.</p>${!audioDone?'<p class="audio-gate quiz-lock-msg">🔒 اول صوت کامل این سوره را (بالای صفحه) تا آخر گوش کن؛ سؤال‌ها بعد از آن باز می‌شوند.</p>':''}`;
+ qs.forEach((q,i)=>{const key=sid+'_'+i,rec=userProgress.learn?.[key],done=!!rec||!!userProgress.solved?.[key];html+=`<div class="quiz-item" style="margin-bottom:18px;padding-bottom:12px;border-bottom:1px dashed #bbf7d0;" data-qindex="${i}"><div id="q-head-${i}" style="font-size:.85rem;color:#166534;font-weight:700;margin-bottom:6px;">سؤال ${i+1} از ${qs.length}${learnQLabel(key)}</div><h4 class="quiz-title">${q.q}</h4><div class="options-grid">${q.opts.map((opt,j)=>`<button type="button" class="btn-opt ${done&&j===q.ans?'correct':''} ${done&&rec&&rec.ch===j&&j!==q.ans?'incorrect':''}" onclick="checkQuizAnswer(${surahId},${i},${j},${q.ans},this)" ${done||!audioDone?'disabled':''}>${opt}</button>`).join('')}</div><div id="quiz-feedback-${i}" class="feedback-box" style="display:none;"></div></div>`;});html+='</section>';}
+ html+='</article>';document.getElementById('surah-display').innerHTML=html;updateFullAudioUI();
+}
+
+/* ===== صوت کامل سوره: قفل اجباری آزمون ===== */
+let fa={el:null,sid:null,max:0},faErr=null;
+function isFullAudioDone(sid){return !!userProgress.fullAudio?.[String(sid)]?.done;}
+function fullAudioHTML(sid){return `<div class="fa-widget" data-sid="${sid}"><div class="fa-top"><button type="button" class="fa-btn" onclick="toggleFullAudio('${sid}')" aria-label="پخش یا توقف صوت کامل سوره"></button><div class="fa-info"><strong class="fa-title"></strong><span class="fa-sub"></span></div><span class="fa-pct"></span></div><div class="fa-track" role="progressbar" aria-valuemin="0" aria-valuemax="100"><div class="fa-fill"></div></div></div>`;}
+function updateFullAudioUI(){
+ document.querySelectorAll('.fa-widget').forEach(w=>{
+  const sid=w.dataset.sid,done=isFullAudioDone(sid),active=!!fa.el&&fa.sid===sid,playing=active&&!fa.el.paused;
+  const pct=done?100:(active&&fa.el.duration?Math.min(99,Math.floor(fa.max/fa.el.duration*100)):0);
+  w.classList.toggle('fa-done',done);
+  w.querySelector('.fa-btn').textContent=playing?'⏸':(done?'🔁':'▶');
+  w.querySelector('.fa-title').textContent=done?'✅ صوت کامل این سوره را شنیده‌ای':'🎧 اول باید صوت کامل سوره را گوش کنی';
+  w.querySelector('.fa-sub').textContent=faErr===sid?'⚠️ پخش صوت ممکن نشد. اینترنت را بررسی کن و دوباره دکمه را بزن.':done?'آزمون این سوره برایت باز شد. اگر خواستی دوباره هم می‌توانی گوش کنی.':playing?'در حال پخش… نمی‌شود جلو رفت یا رد شد؛ تا آخر گوش کن.':pct?'متوقف شد. دکمه را بزن تا از همان‌جا ادامه دهد.':'دکمهٔ ▶ را بزن. آزمون فقط بعد از پایان کامل صوت باز می‌شود.';
+  w.querySelector('.fa-pct').textContent=pct.toLocaleString('fa-IR')+'٪';
+  w.querySelector('.fa-fill').style.width=pct+'%';
+  w.querySelector('.fa-track').setAttribute('aria-valuenow',pct);
+ });
+}
+function stopFullAudio(){if(fa.el){const el=fa.el;fa={el:null,sid:null,max:0};el.pause();el.removeAttribute('src');el.load();}updateFullAudioUI();}
+function toggleFullAudio(sid){
+ sid=String(sid);faErr=null;
+ if(fa.el&&fa.sid===sid){if(fa.el.paused)fa.el.play().catch(()=>{faErr=sid;stopFullAudio();});else fa.el.pause();updateFullAudioUI();return;}
+ stopFullAudio();
+ if(audioPlayer){audioPlayer.pause();if(currentPlayingBtn)currentPlayingBtn.classList.remove('playing');}
+ const el=new Audio(`https://cdn.islamic.network/quran/audio-surah/128/ar.alafasy/${sid}.mp3`);
+ el.preload='auto';fa={el,sid,max:0};
+ el.addEventListener('timeupdate',()=>{if(fa.el!==el)return;if(!el.seeking&&el.currentTime<=fa.max+1.5)fa.max=Math.max(fa.max,el.currentTime);updateFullAudioUI();});
+ el.addEventListener('seeking',()=>{if(fa.el===el&&el.currentTime>fa.max+1.5)el.currentTime=fa.max;});
+ el.addEventListener('ratechange',()=>{if(el.playbackRate!==1)el.playbackRate=1;});
+ el.addEventListener('play',updateFullAudioUI);el.addEventListener('pause',updateFullAudioUI);el.addEventListener('loadedmetadata',updateFullAudioUI);
+ el.addEventListener('error',()=>{if(fa.el!==el)return;faErr=sid;stopFullAudio();});
+ el.addEventListener('ended',()=>{if(fa.el!==el)return;if(el.duration&&fa.max>=el.duration-3)markFullAudioDone(sid);else{el.currentTime=fa.max;updateFullAudioUI();}});
+ el.play().catch(()=>{if(fa.el===el){faErr=sid;stopFullAudio();}});
+ updateFullAudioUI();
+}
+async function markFullAudioDone(sid){
+  userProgress.fullAudio = userProgress.fullAudio || {};
+  if(!userProgress.fullAudio[sid] || !userProgress.fullAudio[sid].done){
+    userProgress.fullAudio[sid] = { done: true, at: new Date().toISOString() };
+    await saveUserData();
+    if(userProgress.studentId){
+      await saveFullAudioToServer(userProgress.studentId, sid, true);
+    }
+  }
+  stopFullAudio();
+  if(String(currentSurahId) === sid){
+    document.querySelectorAll('.quiz-lock-msg').forEach(e => e.remove());
+    document.querySelectorAll('#quiz-section .quiz-item').forEach(it => {
+      if(!userProgress.learn?.[sid + '_' + it.dataset.qindex] && !userProgress.solved?.[sid + '_' + it.dataset.qindex]){
+        it.querySelectorAll('.btn-opt').forEach(b => b.disabled = false);
+      }
+    });
+  }
+  refreshExamGate();
+}
+function refreshExamGate(){
+  const sel = document.getElementById('exam-surah');
+  if(!sel) return;
+  [...sel.options].forEach(o => {
+    const s = juz30Surahs.find(x => String(x.id) === o.value);
+    o.textContent = (isFullAudioDone(o.value) ? '✅ ' : '🔒 ') + o.value + '. ' + (s ? s.nameFa : '');
+  });
+  const sid = sel.value, ok = isFullAudioDone(sid), g = document.getElementById('exam-audio-gate');
+  if(g) g.innerHTML = fullAudioHTML(sid) + (ok ? '' : '<p class="audio-gate">🔒 دکمهٔ «شروع آزمون» قفل است. اول صوت کامل همین سوره را تا آخر گوش کن.</p>');
+  const b = document.getElementById('exam-start-btn');
+  const c = document.getElementById('exam-code');
+  const w = document.getElementById('exam-session-word');
+  if(b){ b.disabled = !ok; b.textContent = ok ? 'شروع آزمون' : '🔒 شروع آزمون'; }
+  if(c) c.disabled = !ok;
+  if(w) w.disabled = !ok;
+  updateFullAudioUI();
+}
+function updateAudioGateUI(){}
+function playAudio(url,btn,verseNo){if(fa.el&&!fa.el.paused){fa.el.pause();updateFullAudioUI();}
+ if(audioPlayer&&!audioPlayer.paused&&currentPlayingBtn===btn){audioPlayer.pause();btn.classList.remove('playing');currentPlayingBtn=null;return;}
+ if(audioPlayer){audioPlayer.pause();if(currentPlayingBtn)currentPlayingBtn.classList.remove('playing');}
+ audioPlayer=new Audio(url);currentPlayingBtn=btn;btn.classList.add('playing');audioPlayer.play().catch(()=>{btn.classList.remove('playing');currentPlayingBtn=null;});
+ audioPlayer.onended=async()=>{btn.classList.remove('playing');btn.classList.add('audio-heard');btn.textContent='✓';currentPlayingBtn=null;const sid=String(currentSurahId);if(!userProgress.heardVerses)userProgress.heardVerses={};if(!Array.isArray(userProgress.heardVerses[sid]))userProgress.heardVerses[sid]=[];if(!userProgress.heardVerses[sid].includes(verseNo))userProgress.heardVerses[sid].push(verseNo);const meta=juz30Surahs.find(s=>s.id===currentSurahId);await saveUserData();updateAudioGateUI(currentSurahId,meta?.versesCount||userProgress.heardVerses[sid].length);};
+}
+async function checkQuizAnswer(surahId,qIndex,chosenIdx,correctIdx,btn){
+ const sid=String(surahId),key=sid+'_'+qIndex;
+ const buttons=btn.parentElement.querySelectorAll('.btn-opt'),fb=document.getElementById('quiz-feedback-'+qIndex);
+ // هر سؤال فقط یک‌بار: اگر قبلاً پاسخ داده شده، هیچ اتفاقی نمی‌افتد
+ if(!isFullAudioDone(sid)||userProgress.learn?.[key]||userProgress.solved?.[key])return;
+ buttons.forEach(b=>b.disabled=true); // قفل فوری، پیش از هر کار ناهمگام
+ const ok=chosenIdx===correctIdx,pts=ok?LEARN_PTS_FIRST:0,at=new Date().toISOString();
+ userProgress.solved=userProgress.solved||{};userProgress.learn=userProgress.learn||{};
+ userProgress.solved[key]=true;
+ userProgress.learn[key]={pts,ch:chosenIdx,at,sig:learnSig(userProgress.name,key,pts,at)};
+ if(ok){btn.classList.add('correct');fb.className='feedback-box feedback-correct';fb.textContent='✨ آفرین! درست است. +'+pts+' امتیاز آموزش';}
+ else{btn.classList.add('incorrect');if(buttons[correctIdx])buttons[correctIdx].classList.add('correct');fb.className='feedback-box feedback-wrong';fb.textContent='❌ این بار درست نبود؛ پاسخ درست با رنگ سبز مشخص شد. هر سؤال فقط یک‌بار امتیاز دارد.';}
+ fb.style.display='block';
+ const saved=await saveUserData();
+ const quiz=surahQuizzes[sid],total=(Array.isArray(quiz)?quiz:[quiz]).length;
+ const badge=document.querySelector('#quiz-section .quiz-score-badge');
+ if(badge){badge.textContent=learnBadgeText(sid,total);if(Array.from({length:total},(_,i)=>userProgress.learn[sid+'_'+i]).every(Boolean))badge.classList.add('already-solved');}
+ const head=document.getElementById('q-head-'+qIndex);if(head)head.textContent='سؤال '+(qIndex+1)+' از '+total+learnQLabel(key);
+ if(!saved)fb.textContent+=' (ذخیره‌سازی ناموفق ماند؛ فضای مرورگر را بررسی کن.)';
+}
+window.checkQuizAnswer=checkQuizAnswer;
+
+async function startOfflineStudent(){
+  const name = document.getElementById('auth-name').value.trim();
+  if(!name){ authMessage('لطفاً نام و نام خانوادگی دانش‌آموز را وارد کنید.', true); return; }
+
+  authMessage('در حال اتصال...', false, 'loading');
+
+  const key = offlineStorageKey(name);
+  let saved = null;
+  try { saved = JSON.parse(localStorage.getItem(key) || 'null'); } catch(e){ saved = null; }
+
+  currentUser = { storageKey: key };
+  currentRole = 'student';
+
+  // پایه از localStorage
+  userProgress = saved ? {
+    ...createDefaultProgress(name),
+    name: saved.name || name,
+    score: Number(saved.score) || 0,
+    solved: saved.solved || {},
+    heardVerses: saved.heardVerses || {},
+    exams: saved.exams || {},
+    fullAudio: saved.fullAudio || {},
+    memorizationQuizScore: Number(saved.memorizationQuizScore) || 0,
+    memorizationQuizAttempts: saved.memorizationQuizAttempts || {},
+    learn: saved.learn || {},
+    learnWrong: saved.learnWrong || {},
+    learnMem: saved.learnMem || {},
+    studentId: saved.studentId || null
+  } : createDefaultProgress(name);
+
+  migrateLegacyLearn();
+
+  // اتصال به سرور و همگام‌سازی
+  try {
+    const studentId = await ensureStudentOnServer(name);
+    if(studentId){
+      userProgress.studentId = studentId;
+      currentUser.studentId = studentId;
+      const serverData = await loadProgressFromServer(studentId);
+      if(serverData){
+        // اولویت با داده‌های سرور برای آزمون و صوت
+        userProgress.exams = { ...userProgress.exams, ...serverData.exams };
+        userProgress.fullAudio = { ...userProgress.fullAudio, ...serverData.fullAudio };
+      }
+      authMessage('متصل به سرور ✓', false, 'success');
+    } else {
+      authMessage('حالت آفلاین (سرور در دسترس نیست)', false, 'info');
+    }
+  } catch(e){
+    console.error(e);
+    authMessage('حالت آفلاین', false, 'info');
+  }
+
+  showOnly('student-app');
+  updateScoreboardUI();
+  populateSelect('all');
+  fetchSurahData(currentSurahId);
+  saveUserData();
+}
+
+async function signOut(){
+  if(examState){ alert('آزمون در حال اجراست؛ ابتدا آزمون را به پایان برسانید.'); return; }
+  await saveUserData();
+  if(audioPlayer){ audioPlayer.pause(); audioPlayer = null; }
+  if(fa && fa.el){ fa.el.pause(); fa.el = null; }
+  currentPlayingBtn = null;
+  currentUser = null;
+  currentRole = 'student';
+  userProgress = createDefaultProgress();
+  const nameInput = document.getElementById('auth-name');
+  if(nameInput) nameInput.value = '';
+  showOnly('auth-panel');
+  authMessage('از حساب دانش‌آموز قبلی خارج شدید. دانش‌آموز بعدی می‌تواند با نام خودش وارد شود.');
+}
+window.signOut=signOut;
+
+function exportStudentReport(){
+ const report={app:'بوستان قرآن',studentName:userProgress.name||'دانش‌آموز',score:verifyExams(userProgress.exams,userProgress.name).sum,exams:userProgress.exams||{},completedSurahs:completedExamCount(userProgress.exams,userProgress.name),completedExams:completedExamCount(userProgress.exams,userProgress.name),fullAudioCompletedCount:fullAudioCount(userProgress.fullAudio),reportVersion:3,learnScore:verifyLearn(userProgress.learn,userProgress.learnMem,userProgress.name).sum,learn:userProgress.learn||{},learnMem:userProgress.learnMem||{},learnWrong:userProgress.learnWrong||{},solved:userProgress.solved||{},heardVerses:userProgress.heardVerses||{},fullAudio:userProgress.fullAudio||{},memorizationQuizScore:userProgress.memorizationQuizScore||0,memorizationQuizAttempts:userProgress.memorizationQuizAttempts||{},exportedAt:new Date().toISOString(),note:'این گزارش از حافظهٔ همین دستگاه صادر شده است.'};
+ const blob=new Blob([JSON.stringify(report,null,2)],{type:'application/json;charset=utf-8'});const url=URL.createObjectURL(blob);const a=document.createElement('a');a.href=url;a.download='کارنامه-'+String(report.studentName).replace(/[\\/:*?"<>|]/g,'_')+'.json';document.body.appendChild(a);a.click();a.remove();setTimeout(()=>URL.revokeObjectURL(url),1000);
+ alert('کارنامه دانلود شد. فایل را برای معلم بفرستید تا امتیاز و پیشرفت دانش‌آموز را ببیند.');
+}
+window.startOfflineStudent=startOfflineStudent;window.exportStudentReport=exportStudentReport;
+
+const EXAM_SECRET='boostan-1405-x9K',EXAM_SECONDS=30;
+const LEARN_PTS_FIRST=10,LEARN_PTS_RETRY=5; // امتیاز سؤال‌های بخش آموزش (جدا از آزمون رسمی)
+function h53(str){let h1=0xdeadbeef,h2=0x41c6ce57;for(let i=0;i<str.length;i++){const c=str.charCodeAt(i);h1=Math.imul(h1^c,2654435761);h2=Math.imul(h2^c,1597334677);}h1=Math.imul(h1^(h1>>>16),2246822507)^Math.imul(h2^(h2>>>13),3266489909);h2=Math.imul(h2^(h2>>>16),2246822507)^Math.imul(h1^(h1>>>13),3266489909);return(4294967296*(2097151&h2)+(h1>>>0)).toString(36);}
+function examSig(name,sid,score,at){return h53(EXAM_SECRET+'|'+normName(name)+'|'+sid+'|'+score+'|'+at);}
+function isValidCompletedExam(r,name,sid){
+  if(!r || r.status !== 'completed') return false;
+  if(!Number.isFinite(Number(r.score))) return false;
+  if(![0,20,25,40,50,60,75,80,100].includes(Number(r.score))) return false;
+  if(typeof r.at !== 'string') return false;
+  // نتایج آمده از سرور معتبرند
+  if(r.fromServer) return true;
+  // نتایج محلی باید امضا داشته باشند
+  return r.sig === examSig(name, sid, Number(r.score), r.at);
+}
+function registeredExamCount(ex,name){return Object.entries(ex||{}).filter(([sid,r])=>isValidCompletedExam(r,name,sid)).length;}
+function completedExamCount(ex,name){return Object.entries(ex||{}).filter(([sid,r])=>isValidCompletedExam(r,name,sid)&&!r.interrupted).length;}
+function fullAudioCount(fullAudio){return Object.values(fullAudio||{}).filter(x=>x&&x.done===true).length;}
+function verifyExams(ex,name){let sum=0;const bad=[];for(const sid of Object.keys(ex||{})){const r=ex[sid]||{};if(isValidCompletedExam(r,name,sid))sum+=Number(r.score);else bad.push(sid);}return{sum,bad};}
+
+/* ===== امتیاز آموزش (جدا از امتیاز آزمون رسمی) ===== */
+function learnSig(name,key,pts,at){return h53(EXAM_SECRET+'|learn|'+normName(name)+'|'+key+'|'+pts+'|'+at);}
+function memSig(name,sid,pts,at){return h53(EXAM_SECRET+'|learnmem|'+normName(name)+'|'+sid+'|'+pts+'|'+at);}
+function isValidLearn(r,name,key){return !!r&&[0,LEARN_PTS_RETRY,LEARN_PTS_FIRST].includes(Number(r.pts))&&r.sig===learnSig(name,key,Number(r.pts),r.at);}
+function isValidMem(r,name,sid){return !!r&&Number.isInteger(Number(r.pts))&&Number(r.pts)>=0&&Number(r.pts)<=100&&Number(r.pts)%20===0&&r.sig===memSig(name,sid,Number(r.pts),r.at);}
+function verifyLearn(learn,mem,name){let quiz=0,memo=0,count=0,bad=0;
+ for(const k of Object.keys(learn||{})){if(isValidLearn(learn[k],name,k)){quiz+=Number(learn[k].pts);count++;}else bad++;}
+ for(const k of Object.keys(mem||{})){if(isValidMem(mem[k],name,k))memo+=Number(mem[k].pts);else bad++;}
+ return{quiz,memo,sum:quiz+memo,count,bad};}
+function migrateLegacyLearn(){ // سؤال‌هایی که قبل از این نسخه حل شده‌اند، ۵ امتیاز می‌گیرند
+ userProgress.learn=userProgress.learn||{};
+ for(const k of Object.keys(userProgress.solved||{})){
+  if(userProgress.solved[k]&&!userProgress.learn[k])userProgress.learn[k]={pts:LEARN_PTS_RETRY,wrong:null,at:'legacy',sig:learnSig(userProgress.name,k,LEARN_PTS_RETRY,'legacy')};
+ }
+}
+function learnQLabel(key){const r=userProgress.learn?.[key];if(!isValidLearn(r,userProgress.name,key))return userProgress.solved?.[key]?' ✓':'';return Number(r.pts)>0?' ✓ '+Number(r.pts)+' امتیاز':' ✗ بدون امتیاز';}
+function learnBadgeText(sid,total){let pts=0,cnt=0;for(let i=0;i<total;i++){const k=sid+'_'+i,r=userProgress.learn?.[k];if(isValidLearn(r,userProgress.name,k)){pts+=Number(r.pts);cnt++;}}
+ return '⭐ امتیاز آموزش این سوره: '+pts+' از '+(total*LEARN_PTS_FIRST)+(cnt===total?' ✓':'');}
+async function recordMemorizationScore(sid,score){sid=String(sid);userProgress.learnMem=userProgress.learnMem||{};const at=new Date().toISOString();userProgress.learnMem[sid]={pts:score,at,sig:memSig(userProgress.name,sid,score,at)};await saveUserData();return{prev:0,best:score};}
+function mergeLearnRecs(a,b,mode){const out={};for(const k of new Set([...Object.keys(a||{}),...Object.keys(b||{})])){const x=a?.[k],y=b?.[k];if(x&&y){out[k]=mode==='mem'?(Number(y.pts)>Number(x.pts)?y:x):(String(x.at)<=String(y.at)?x:y);}else out[k]=x||y;}return out;}
+function statusBadge(r){return(r.bad&&r.bad.length?' <span style="color:#b91c1c">⚠️ مشکوک ('+r.bad.length+')</span>':'')+(r.dup&&r.dup.length?' <span style="color:#b45309">🔁 تکرار آزمون ('+r.dup.length+')، نخستین نتیجه حساب شد</span>':'');}
+function examDay(){const d=new Date();return d.getFullYear()+'-'+(d.getMonth()+1)+'-'+d.getDate();}
+function examDayISO(){const d=new Date();return d.toISOString().slice(0,10);} // YYYY-MM-DD for DB
+
+function normSessionWord(w){
+  return String(w||'')
+    .replace(/ي/g,'ی').replace(/ك/g,'ک')
+    .replace(/[آأإٱ]/g,'ا')
+    .replace(/\s+/g,'')
+    .trim()
+    .toLocaleLowerCase('fa-IR');
+}
+
+const SESSION_WORD_POOL = ['آسمان','نور','صبر','ایمان','مهربانی','دانش','قرآن','امید','صداقت','تلاش','رحمت','هدایت','سپیده','ستاره','بهار','آرامش','یاری','شکر','دعا','خیر'];
+
+function generateSessionWord(){
+  const w = SESSION_WORD_POOL[Math.floor(Math.random()*SESSION_WORD_POOL.length)];
+  const el = document.getElementById('issue-session-word');
+  if(el) el.value = w;
+}
+window.generateSessionWord = generateSessionWord;
+
+/** کد محلی (پشتیبان آفلاین) — وابسته به کلمه جلسه */
+function examCode(sid, session, sessionWord){
+  const word = normSessionWord(sessionWord || '');
+  const key = (typeof EXAM_CODE_KEY !== 'undefined') ? EXAM_CODE_KEY : '';
+  return String(parseInt(h53(EXAM_SECRET + key + '|' + sid + '|' + examDay() + '|' + session + '|' + word).slice(-6), 36) % 1000000).padStart(6, '0');
+}
+
+function fillExamSelects(){['exam-surah','issue-surah'].forEach(id=>{const el=document.getElementById(id);if(el&&!el.options.length)juz30Surahs.forEach(x=>{const o=document.createElement('option');o.value=x.id;o.textContent=`${x.id}. ${x.nameFa}`;el.appendChild(o);});});}
+
+async function issueExamCode(){
+  if(!teacherOK()) return;
+  const sid = document.getElementById('issue-surah').value;
+  const n = Math.min(5, Math.max(1, parseInt(document.getElementById('issue-session').value) || 1));
+  const nm = document.getElementById('issue-surah').selectedOptions[0].textContent;
+  let word = (document.getElementById('issue-session-word').value || '').trim();
+  if(word.length < 3){
+    generateSessionWord();
+    word = document.getElementById('issue-session-word').value.trim();
+  }
+  if(word.length < 3 || word.length > 12){
+    document.getElementById('issue-result').innerHTML = '<span style="color:#b91c1c">کلمه جلسه باید بین ۳ تا ۱۲ حرف باشد.</span>';
+    return;
+  }
+
+  const code = examCode(sid, n, word);
+  const resultEl = document.getElementById('issue-result');
+  resultEl.innerHTML = '<span style="color:#854d0e">⏳ در حال ثبت روی سرور...</span>';
+
+  let serverOk = false;
+  try {
+    const { error } = await supabaseClient.from('exam_codes').insert({
+      surah_id: Number(sid),
+      session_number: n,
+      session_word: normSessionWord(word),
+      code: code,
+      valid_date: examDayISO(),
+      created_by: 'teacher'
+    });
+    if(error) throw error;
+    serverOk = true;
+  } catch(e){
+    console.error('issueExamCode server:', e);
+  }
+
+  resultEl.innerHTML = `
+    <div style="background:#ecfdf5;border:2px solid #34d399;border-radius:12px;padding:16px;margin-top:8px">
+      <div style="font-size:1.05rem;margin-bottom:10px">آزمون «<strong>${escapeHtml(nm)}</strong>» — نوبت ${n}</div>
+      <div style="display:flex;flex-wrap:wrap;gap:18px;align-items:center;justify-content:center">
+        <div style="text-align:center">
+          <div style="font-size:.85rem;color:#047857">کد عددی</div>
+          <div style="font-size:2.1rem;font-weight:800;letter-spacing:5px;color:#065f46">${code}</div>
+        </div>
+        <div style="text-align:center">
+          <div style="font-size:.85rem;color:#047857">کلمه جلسه</div>
+          <div style="font-size:2.1rem;font-weight:800;color:#065f46">${escapeHtml(word)}</div>
+        </div>
+      </div>
+      <p style="margin-top:12px;font-size:.9rem;color:#334155;text-align:center">
+        ${serverOk ? '✓ روی سرور ثبت شد.' : '⚠ ثبت روی سرور ناموفق بود؛ فقط همین لحظه معتبر است (حالت آفلاین).'}<br>
+        هر دو را روی تخته بنویسید. فقط برای <b>امروز</b> معتبر است.
+      </p>
+    </div>`;
+}
+window.issueExamCode = issueExamCode;
+const shuf=a=>{a=[...a];for(let i=a.length-1;i>0;i--){const j=Math.floor(Math.random()*(i+1));[a[i],a[j]]=[a[j],a[i]];}return a;};
+function examBank(sid){const id=+sid,m=juz30Surahs.find(x=>x.id===id),b=surahQuizzes[sid],base=(Array.isArray(b)?b:[b]).map(q=>({q:q.q,o:q.opts.map((t,i)=>({t,c:i===q.ans}))}));
+ const mk=(q,ans,wr)=>({q,o:[{t:String(ans),c:true},...shuf([...new Set(wr.map(String))].filter(x=>x!==String(ans))).slice(0,3).map(t=>({t,c:false}))]});
+ const nx=juz30Surahs.find(x=>x.id===id+1),pv=juz30Surahs.find(x=>x.id===id-1),others=juz30Surahs.filter(x=>Math.abs(x.id-id)>1).map(x=>x.nameFa),n=m.versesCount;
+ const gen=[mk(`سورهٔ ${m.nameFa} چند آیه دارد؟`,n,[n+1,n+2,n-1,n+3,n-2].filter(x=>x>=2)),mk(`سورهٔ ${m.nameFa} چندمین سوره در قرآن کریم است؟`,id,[id-1,id+1,id+2,id-2])];
+ if(nx)gen.push(mk(`بعد از سورهٔ ${m.nameFa} کدام سوره می‌آید؟`,nx.nameFa,others));
+ if(pv)gen.push(mk(`قبل از سورهٔ ${m.nameFa} کدام سوره است؟`,pv.nameFa,others));
+ return base.concat(gen);}
+let examState=null;
+function showMode(m){if(examState)return;document.getElementById('learn-view').classList.toggle('hidden',m!=='learn');document.getElementById('exam-view').classList.toggle('hidden',m!=='exam');if(m==='exam'){fillExamSelects();refreshExamGate();}}
+const examLearningActions={
+'78':['برای روز حساب آماده شوم و کارهای نیک انجام دهم','فقط به خوشی امروز فکر کنم و آخرت را فراموش کنم'],
+'79':['قدرت خدا را به یاد داشته باشم و برای حسابرسی آماده باشم','خودم را بی‌نیاز از پاسخ‌گویی درباره رفتارم بدانم'],
+'80':['با همه مهربان باشم و کسی را که می‌خواهد یاد بگیرد نرانم','کسی را که برای یادگیری سؤال می‌پرسد مسخره کنم'],
+'81':['کارهای خوب انجام دهم و از یاد قیامت غافل نشوم','کارهای خوب را بی‌اهمیت بدانم و فقط به ظاهر توجه کنم'],
+'82':['حتی وقتی کسی مرا نمی‌بیند درستکار باشم','فکر کنم کارهای پنهانی من از خدا پنهان می‌ماند'],
+'83':['حق دیگران را کامل بدهم و در معامله تقلب نکنم','هنگام خریدوفروش از حق دیگران کم کنم'],
+'84':['به نتیجه کارهایم فکر کنم و کار نیک انجام دهم','تصور کنم هیچ‌وقت نتیجه رفتارم را نمی‌بینم'],
+'85':['در راه درست پایدار بمانم، حتی اگر دیگران مخالفت کنند','به خاطر تمسخر دیگران از کار درست دست بکشم'],
+'86':['به آفرینش فکر کنم و بدانم خدا از کارهایم آگاه است','خودم را از آفرینش و آگاهی خدا بی‌نیاز بدانم'],
+'87':['خدا را تسبیح کنم و نعمت‌هایش را شکر بگویم','از یاد خدا و سپاسگزاری غافل شوم'],
+'88':['در طبیعت به نشانه‌های قدرت خداوند توجه کنم','به آسمان و زمین و شگفتی‌های آفرینش بی‌توجه باشم'],
+'89':['به نیازمندان کمک کنم و از یتیمان حمایت کنم','نیازمندان را از کمک خود محروم کنم'],
+'90':['از توان و دارایی خود برای کارهای دشوار و نیک استفاده کنم','چون کمک به دیگران سخت است از آن فرار کنم'],
+'91':['از بدی دوری کنم و دل و رفتارم را پاک نگه دارم','به بدی‌ها اجازه دهم در رفتارم باقی بمانند'],
+'92':['بخشش و پرهیزکاری را انتخاب کنم و بخیل نباشم','از کمک و بخشش خودداری کنم و بخل بورزم'],
+'93':['با یتیم و نیازمند مهربان باشم و کمکشان کنم','با یتیم و نیازمند بی‌مهری کنم'],
+'94':['در سختی ناامید نشوم و به تلاش ادامه دهم','با دیدن نخستین دشواری ناامید شوم'],
+'95':['ایمان را با کارهای خوب همراه کنم','کار نیک را بی‌اهمیت بدانم و کنار بگذارم'],
+'96':['دانش بیاموزم و در برابر خداوند فروتن باشم','از یادگیری دوری کنم و به دانایی خود مغرور شوم'],
+'97':['قدر شب قدر و برکت نزول قرآن را بدانم','شب قدر و ارزش قرآن را بی‌اهمیت بدانم'],
+'98':['باور درست را با رفتار و کار نیک همراه کنم','فقط ادعای ایمان کنم و در رفتارم به آن پایبند نباشم'],
+'99':['بدانم کارهای کوچک هم اهمیت دارند و حساب می‌شوند','کارهای کوچک خوب و بد را بی‌اهمیت بدانم'],
+'100':['نعمت‌های خدا را بشناسم و سپاسگزار باشم','نعمت‌ها را فراموش کنم و ناسپاسی کنم'],
+'101':['برای سنگین شدن ترازوی نیکی‌ها کار خوب انجام دهم','به کارهای خوب بی‌اعتنا باشم'],
+'102':['به دارایی خود فخر نفروشم و گرفتار چشم‌وهم‌چشمی نشوم','با دارایی خود به دیگران فخر بفروشم'],
+'103':['زمان را با ایمان، کار خوب و صبر ارزشمند کنم','وقت خود را بیهوده تلف کنم و از کار خوب دور شوم'],
+'104':['از عیب‌جویی و مسخره کردن دیگران دوری کنم','دیگران را به خاطر ظاهر یا اشتباهشان مسخره کنم'],
+'105':['به قدرت خداوند اعتماد کنم و از او یاری بخواهم','قدرت خدا را نادیده بگیرم و به ستمگران تکیه کنم'],
+'106':['نعمت امنیت و روزی را بشناسم و شکرگزار باشم','نعمت امنیت و روزی را نادیده بگیرم'],
+'107':['به یتیم و نیازمند کمک کنم و از ریا دوری کنم','به نیازمندان کمک نکنم و فقط ظاهر کار خوب را نشان دهم'],
+'108':['نماز بخوانم و برای نعمت‌های خدا سپاسگزار باشم','از نماز و شکرگزاری غافل شوم'],
+'109':['به یکتاپرستی پایبند باشم و با دیگران محترمانه رفتار کنم','برای جلب رضایت دیگران باور خود را کنار بگذارم'],
+'110':['پس از موفقیت خدا را شکر کنم و فروتن بمانم','پس از موفقیت مغرور شوم و شکرگزاری را فراموش کنم'],
+'111':['از دشمنی با حق و خودخواهی دوری کنم','با حق دشمنی کنم و به خودخواهی ادامه دهم'],
+'112':['خداوند را یکتا و بی‌نیاز بدانم و برای او شریکی قائل نشوم','برای خداوند شریک و همانندی قرار دهم'],
+'113':['از خداوند در برابر بدی‌ها و حسادت پناه بخواهم','از یاد خدا و پناه خواستن در برابر بدی‌ها غافل شوم'],
+'114':['هنگام وسوسه‌های نادرست به خدا پناه ببرم و کار درست را انتخاب کنم','به وسوسه‌های نادرست عمل کنم و از یاد خدا دور شوم']
+};
+function makeExamQuestion(q,correct,distractors){const opts=shuf([correct,...distractors.filter(x=>x!==correct).slice(0,3)]);return {q,o:opts.map(t=>({t,c:t===correct}))};}
+function buildSupplementalExamQuestions(sid,verses){
+ const meta=juz30Surahs.find(x=>String(x.id)===String(sid)),edu=educationalContent[sid],story=surahStories[sid],actions=examLearningActions[sid];
+ const themes=juz30Surahs.map(x=>surahStories[String(x.id)]?.theme).filter(Boolean);
+ const messages=juz30Surahs.map(x=>educationalContent[String(x.id)]?.msg).filter(Boolean);
+ const actionChoices=Object.entries(examLearningActions).filter(([id])=>id!==String(sid)).map(([,a])=>a[0]);
+ const contraryActions=Object.entries(examLearningActions).filter(([id])=>id!==String(sid)).map(([,a])=>a[1]);
+ const otherThemes=shuf(themes.filter(x=>x!==story.theme));
+ const otherMessages=shuf(messages.filter(x=>x!==edu.msg));
+ const recognition=[
+  makeExamQuestion(`موضوع اصلی سورهٔ ${meta.nameFa} چیست؟`,story.theme,otherThemes),
+  makeExamQuestion(`سورهٔ ${meta.nameFa} چند آیه دارد؟`,String(meta.versesCount),[String(meta.versesCount+1),String(meta.versesCount-1),String(meta.versesCount+2)])
+ ];
+ const understanding=[
+  makeExamQuestion(`داستان «${story.title}» کدام پیام را یادآوری می‌کند؟`,story.theme,otherThemes),
+  makeExamQuestion(`کدام جمله پیام آموزشی سورهٔ ${meta.nameFa} را بهتر بیان می‌کند؟`,edu.msg,otherMessages)
+ ];
+ const behavior=[
+  makeExamQuestion(`اگر بخواهی پیام سورهٔ ${meta.nameFa} را در زندگی اجرا کنی، کدام کار مناسب‌تر است؟`,actions[0],shuf(contraryActions)),
+  makeExamQuestion(`کدام رفتار با پیام سورهٔ ${meta.nameFa} ناسازگار است؟`,actions[1],shuf(actionChoices))
+ ];
+ // سؤال‌های حفظ فقط از متن واقعی آیات همین سوره ساخته می‌شوند؛ بسم‌اللهِ آغاز سوره‌های غیر از فاتحه و توبه، جزو آیهٔ اول نیست و باید کنار گذاشته شود.
+ const clean=t=>String(t||'').replace(/[۞۩]/g,'').replace(/[،؛۔,.!?؟]/g,'').trim();
+ const sourceVerses=Array.isArray(verses)?verses:[];
+ const preparedVerses=sourceVerses.map((v,i)=>({...v,text:(i===0&&String(sid)!=='1'&&String(sid)!=='9')?stripBasmala(v?.text):String(v?.text||'')}));
+ const eligible=preparedVerses.map((v,i)=>({v,i,text:clean(v.text),words:clean(v.text).split(/\s+/).map((word,originalIndex)=>({word,originalIndex})).filter(x=>x.word.length>2)})).filter(x=>x.words.length>=3);
+ // بانک گزینه‌های غلط نیز از کلمات خود همین سوره ساخته می‌شود و بسم‌الله در آن حضور ندارد.
+ const pool=[...new Set(preparedVerses.flatMap(v=>clean(v.text).split(/\s+/)).filter(w=>w.length>2))];
+ const memory=[];
+ if(eligible.length){
+  const chosenPositions=[0,Math.floor((eligible.length-1)/2),eligible.length-1];
+  const chosen=[...new Set(chosenPositions)].map(i=>eligible[i]).filter(Boolean);
+  chosen.forEach((item,k)=>{
+   const {v,i,words,text}=item;
+   const answerIndex=k===0?1:k===1?Math.floor(words.length/2):Math.max(0,words.length-2);
+   const selectedWord=words[answerIndex];
+   if(!selectedWord)return;
+   const answer=selectedWord.word, originalIndex=selectedWord.originalIndex;
+   const distractors=shuf(pool.filter(w=>w!==answer));
+   if(distractors.length<3)return;
+   // جای خالی با اندیس واژه در متن اصلی تعیین می‌شود، نه اندیس فهرست پالایش‌شده.
+   const displayWords=text.split(/\s+/);
+   displayWords[originalIndex]='□□□□';
+   const display=displayWords.join(' ');
+   memory.push(makeExamQuestion(`جای خالی آیهٔ ${v.numberInSurah||i+1} سورهٔ ${meta.nameFa} را کامل کن:\n${display}`,answer,distractors));
+  });
+ }
+ // اگر به هر دلیل فقط یک یا دو سؤال قابل ساخت بود، همان سؤال‌های معتبر حفظ می‌شوند؛ آزمون متوقف نمی‌شود.
+ if(!memory.length)throw new Error('متن آیات برای ساخت سؤال حفظ کافی نیست. اتصال اینترنت را بررسی کن و دوباره تلاش کن.');
+ return {recognition,understanding,behavior,memory};
+}
+async function startExam(){
+ if(examState) return;
+ const sid = document.getElementById('exam-surah').value;
+ const code = document.getElementById('exam-code').value.trim();
+ const sessionWord = (document.getElementById('exam-session-word')?.value || '').trim();
+ const box = document.getElementById('exam-box');
+ const startBtn = document.getElementById('exam-start-btn');
+
+ if(!isFullAudioDone(sid)){
+   box.innerHTML = '<div class="notice error">🔒 اول باید صوت کامل این سوره را تا آخر گوش کنی.</div>';
+   refreshExamGate();
+   return;
+ }
+ userProgress.exams = userProgress.exams || {};
+ if(userProgress.exams[sid]){
+   box.innerHTML = '<div class="notice error">برای این سوره قبلاً آزمون داده‌ای؛ فقط یک بار مجاز است.</div>';
+   return;
+ }
+ if(!sessionWord || sessionWord.length < 3){
+   box.innerHTML = '<div class="notice error">کلمه جلسه را هم وارد کن (همان کلمه‌ای که معلم اعلام کرده).</div>';
+   return;
+ }
+
+ // اعتبارسنجی روی سرور
+ let codeOk = false;
+ try {
+   const { data, error } = await supabaseClient
+     .from('exam_codes')
+     .select('id')
+     .eq('surah_id', Number(sid))
+     .eq('code', code)
+     .eq('session_word', normSessionWord(sessionWord))
+     .eq('valid_date', examDayISO())
+     .limit(1);
+   if(error) throw error;
+   codeOk = Array.isArray(data) && data.length > 0;
+ } catch(e){
+   console.warn('server code check failed, fallback local:', e);
+   // پشتیبان آفلاین: محاسبه محلی
+   codeOk = [1,2,3,4,5].some(n => code === examCode(sid, n, sessionWord));
+ }
+
+ if(!codeOk){
+   box.innerHTML = '<div class="notice error">کد یا کلمه جلسه درست نیست (یا برای امروز نیست). از معلم بپرس.</div>';
+   return;
+ }
+
+ if(startBtn) startBtn.disabled = true;
+ box.innerHTML = '<div class="notice">در حال آماده‌سازی سؤال‌های آزمون، از جمله سؤال‌های حفظ آیات…</div>';
+ try{
+  let verses = getCachedSurah(sid, 'uthmani');
+  if(!verses || !Array.isArray(verses) || !verses.length){
+    const res = await fetch(`https://api.alquran.cloud/v1/surah/${sid}/quran-uthmani`);
+    if(!res.ok) throw new Error('دریافت متن آیات ممکن نشد. اتصال اینترنت را بررسی کن.');
+    const payload = await res.json();
+    verses = payload?.data?.ayahs || payload?.data?.verses;
+    if(payload.code !== 200 || !Array.isArray(verses) || !verses.length) throw new Error('متن آیات این سوره دریافت نشد.');
+    setCachedSurah(sid, 'uthmani', verses);
+  }
+  const legacy=shuf(examBank(sid));
+  const extra=buildSupplementalExamQuestions(sid,verses);
+  // آزمون ۵ سؤالی، متوازن است: یک سؤال از بانک قبلی و یک سؤال از هر محور جدید.
+  const selected=[legacy[0],shuf(extra.recognition)[0],shuf(extra.understanding)[0],shuf(extra.behavior)[0],shuf(extra.memory)[0]];
+  const qs=shuf(selected).map(q=>({q:q.q,o:shuf(q.o)}));
+  const at=new Date().toISOString();
+  // نتیجه فقط پس از پایان واقعی آزمون ثبت می‌شود؛ آزمون نیمه‌کاره رکورد تکمیل‌شده نمی‌سازد.
+  examState={sid,at,qs,i:0,score:0,res:[],viol:0,t:null,left:EXAM_SECONDS};
+  document.getElementById('mode-tabs').classList.add('hidden');document.querySelector('#exam-view .controls-panel').classList.add('hidden');showExamQ();
+ }catch(e){box.innerHTML=`<div class="notice error">${escapeHtml(e.message||'آماده‌سازی آزمون ناموفق بود. دوباره تلاش کن.')}</div>`;if(startBtn)startBtn.disabled=false;}
+}
+function showExamQ(){const s=examState,box=document.getElementById('exam-box');if(s.i>=s.qs.length){finishExam('completed');return;}const q=s.qs[s.i];s.left=EXAM_SECONDS;
+ box.innerHTML=`<section class="quiz-section"><div style="display:flex;justify-content:space-between;font-weight:700"><span>سؤال ${s.i+1} از ${s.qs.length}</span><span>⏱️ <b id="exam-timer">${s.left}</b> ثانیه</span></div><h4 class="quiz-title">${escapeHtml(q.q)}</h4><div class="options-grid">${q.o.map((x,j)=>`<button type="button" class="btn-opt" onclick="examAnswer(${j})">${escapeHtml(x.t)}</button>`).join('')}</div><button type="button" class="retry-btn" style="margin-top:16px;background:#b91c1c" onclick="confirmExamExit()">پایان آزمون و ثبت نمره</button></section>`;
+ clearInterval(s.t);s.t=setInterval(()=>{s.left--;const el=document.getElementById('exam-timer');if(el)el.textContent=s.left;if(s.left<=0)examAnswer(-1);},1000);}
+function examAnswer(j){const s=examState;if(!s)return;clearInterval(s.t);const ok=j>=0&&s.qs[s.i].o[j].c;if(ok)s.score+=20;s.res.push(ok);s.i++;showExamQ();}
+function confirmExamExit(){if(!examState)return;if(confirm('با پایان آزمون موافقی؟ سؤال‌های بی‌پاسخ نادرست ثبت می‌شوند و امکان شرکت دوباره در این آزمون وجود نخواهد داشت.'))finishExam('abandoned');}
+window.confirmExamExit=confirmExamExit;
+async function finishExam(reason='completed'){
+  const s = examState;
+  if(!s) return;
+  clearInterval(s.t);
+  const interrupted = reason !== 'completed';
+  const answered = s.res.length;
+  if(interrupted){
+    while(s.i < s.qs.length){ s.res.push(false); s.i++; }
+  }
+  const at = s.at, score = s.score;
+  userProgress.exams = userProgress.exams || {};
+  userProgress.exams[s.sid] = {
+    score, at,
+    sig: examSig(userProgress.name, s.sid, score, at),
+    status: 'completed',
+    interrupted, answered,
+    results: [...s.res]
+  };
+  examState = null;
+
+  // ذخیره محلی
+  await saveUserData();
+
+  // ذخیره روی سرور (امن)
+  let serverOk = false;
+  if(userProgress.studentId){
+    serverOk = await saveExamResultToServer(
+      userProgress.studentId, s.sid, score, interrupted, answered, s.res, at
+    );
+  }
+
+  const tabs = document.getElementById('mode-tabs');
+  const controls = document.querySelector('#exam-view .controls-panel');
+  if(tabs) tabs.classList.remove('hidden');
+  if(controls) controls.classList.remove('hidden');
+
+  const box = document.getElementById('exam-box');
+  if(box){
+    const serverMsg = serverOk
+      ? '<br><small style="color:#166534">✓ نمره روی سرور هم ثبت شد (امن)</small>'
+      : '<br><small style="color:#b45309">⚠ ذخیره روی سرور ممکن نشد؛ فقط روی این دستگاه ثبت شد</small>';
+    box.innerHTML = `<div class="notice">${interrupted ? '⚠️ آزمون به دلیل خروج نیمه‌کاره پایان یافت' : '🎉 آزمون تمام شد'}<br>نمره: <strong>${score} از 100</strong><br>${s.res.map(r => r ? '✅' : '❌').join(' ')}${serverMsg}<br><small>امکان شرکت دوباره در این آزمون وجود ندارد.</small></div>`;
+  }
+}
+document.addEventListener('visibilitychange',()=>{if(examState&&document.hidden){finishExam('abandoned');}});
+window.addEventListener('beforeunload',()=>{if(examState)finishExam('abandoned');});
+window.addEventListener('pagehide',()=>{if(examState)finishExam('abandoned');});
+const TEACHER_REPORTS_KEY='boostanTeacherReports_v2';
+let importedTeacherReports = [];
+function saveImportedTeacherReports(){try{localStorage.setItem(TEACHER_REPORTS_KEY,JSON.stringify(importedTeacherReports));return true;}catch(e){console.warn('Teacher report persistence failed',e);return false;}}
+function loadImportedTeacherReports(){try{const x=JSON.parse(localStorage.getItem(TEACHER_REPORTS_KEY)||'[]');importedTeacherReports=Array.isArray(x)?x:[];}catch(e){importedTeacherReports=[];}}
+/* ===== ورود امن معلم: رمز فقط به‌صورت هش PBKDF2 در برنامه است، نه خود رمز ===== */
+const TEACHER_AUTH={salt:'b7e7cd5d2eea45face4aa4b05dbb48f9',iter:600000,hash:'63a86d38de1e594bb80368d02080db8f6ba5bf733c39d7a8d64f3216fd5f623a'};
+const EXAM_CODE_KEY='163685213abe48d39ec79131';
+const TEACHER_IDLE_MS=10*60*1000,LOCK_KEY='boostanTeacherLock_v1';
+let teacherTimer=null;
+function hexToBytes(h){return Uint8Array.from(h.match(/../g).map(x=>parseInt(x,16)));}
+function bytesToHex(b){return [...new Uint8Array(b)].map(x=>x.toString(16).padStart(2,'0')).join('');}
+async function pbkdf2Hex(pw,saltHex,iter){const key=await crypto.subtle.importKey('raw',new TextEncoder().encode(String(pw).normalize('NFKC')),'PBKDF2',false,['deriveBits']);return bytesToHex(await crypto.subtle.deriveBits({name:'PBKDF2',hash:'SHA-256',salt:hexToBytes(saltHex),iterations:iter},key,256));}
+function safeEq(a,b){if(a.length!==b.length)return false;let d=0;for(let i=0;i<a.length;i++)d|=a.charCodeAt(i)^b.charCodeAt(i);return d===0;}
+function getLock(){try{return JSON.parse(localStorage.getItem(LOCK_KEY)||'{}')||{};}catch(e){return{};}}
+function setLock(o){try{localStorage.setItem(LOCK_KEY,JSON.stringify(o));}catch(e){}}
+function teacherLoginMsg(t,err){const m=document.getElementById('teacher-login-msg');if(m){m.textContent=t;m.style.color=err?'#991b1b':'#166534';}}
+function teacherOK(){return currentRole==='teacher-local';}
+function bumpTeacherSession(){if(!teacherOK())return;clearTimeout(teacherTimer);teacherTimer=setTimeout(()=>logoutTeacher(true),TEACHER_IDLE_MS);}
+['click','keydown','touchstart'].forEach(ev=>document.addEventListener(ev,bumpTeacherSession,{passive:true}));
+
+async function logoutTeacher(expired){
+  clearTimeout(teacherTimer);
+  importedTeacherReports = [];
+  currentRole = 'student';
+  try { await supabaseClient.auth.signOut(); } catch(e){ console.warn(e); }
+  const f = document.getElementById('teacher-report-files'); if(f) f.value = '';
+  const r = document.getElementById('issue-result'); if(r) r.textContent = '';
+  const c = document.getElementById('teacher-report-content'); if(c) c.textContent = '';
+  showOnly('auth-panel');
+  if(expired) authMessage('⏱️ به‌دلیل بی‌فعالیتی از بخش معلم خارج شدی. دوباره با ایمیل و رمز وارد شو.');
+}
+
+function openLocalTeacherReport(){
+  document.getElementById('teacher-login-box').classList.remove('hidden');
+  const email = document.getElementById('teacher-email');
+  const pass = document.getElementById('teacher-pass');
+  if(pass) pass.value = '';
+  teacherLoginMsg('');
+  if(email) email.focus();
+}
+
+function closeTeacherLogin(){
+  const email = document.getElementById('teacher-email');
+  const pass = document.getElementById('teacher-pass');
+  if(email) email.value = '';
+  if(pass) pass.value = '';
+  document.getElementById('teacher-login-box').classList.add('hidden');
+}
+
+async function submitTeacherLogin(){
+  const lock = getLock();
+  const emailEl = document.getElementById('teacher-email');
+  const inp = document.getElementById('teacher-pass');
+  const btn = document.getElementById('teacher-login-btn');
+  if(lock.until && Date.now() < lock.until){
+    teacherLoginMsg('⛔ چند بار ورود ناموفق. ' + Math.ceil((lock.until - Date.now())/1000).toLocaleString('fa-IR') + ' ثانیه صبر کن.', true);
+    return;
+  }
+  const email = (emailEl?.value || '').trim();
+  const pw = inp?.value || '';
+  if(!email || !pw){
+    teacherLoginMsg('ایمیل و رمز را وارد کن.', true);
+    return;
+  }
+  btn.disabled = true;
+  teacherLoginMsg('در حال ورود امن…');
+  try {
+    const { data, error } = await supabaseClient.auth.signInWithPassword({ email, password: pw });
+    if(error || !data?.session){
+      const fails = (lock.fails || 0) + 1;
+      const wait = fails >= 3 ? Math.min(3600, 30 * 2 ** (fails - 3)) : 0;
+      setLock({ fails, until: wait ? Date.now() + wait * 1000 : 0 });
+      teacherLoginMsg(
+        wait
+          ? '❌ ورود ناموفق. برای ' + wait.toLocaleString('fa-IR') + ' ثانیه قفل شد.'
+          : '❌ ایمیل یا رمز نادرست است. (' + (3 - fails).toLocaleString('fa-IR') + ' تلاش تا قفل موقت)',
+        true
+      );
+      return;
+    }
+    setLock({});
+    if(inp) inp.value = '';
+    closeTeacherLogin();
+    currentRole = 'teacher-local';
+    showOnly('teacher-panel');
+    loadImportedTeacherReports();
+    renderTeacherReports();
+    bumpTeacherSession();
+    await loadReportsFromServer();
+  } catch(e){
+    console.error(e);
+    teacherLoginMsg('خطا در اتصال به سرور احراز هویت. اینترنت را بررسی کن.', true);
+  } finally {
+    btn.disabled = false;
+  }
+}
+async function makeTeacherHash(){
+ if(!teacherOK())return;const p=document.getElementById('new-teacher-pass').value,out=document.getElementById('new-teacher-hash');
+ if(p.length<10){out.value='رمز باید دست‌کم ۱۰ نویسه باشد.';return;}
+ const salt=bytesToHex(crypto.getRandomValues(new Uint8Array(16))),iter=600000;
+ out.value="const TEACHER_AUTH={salt:'"+salt+"',iter:"+iter+",hash:'"+await pbkdf2Hex(p,salt,iter)+"'};";document.getElementById('new-teacher-pass').value='';
+}
+function backToStudentLogin(){logoutTeacher(false);}
+async function importTeacherReports(){if(!teacherOK())return;
+ const input=document.getElementById('teacher-report-files'),target=document.getElementById('teacher-report-content');
+ const files=Array.from(input.files||[]);
+ if(!files.length){target.textContent='لطفاً ابتدا یک یا چند فایل کارنامه را انتخاب کنید.';return;}
+ const valid=[];
+ for(const file of files){
+  try{
+   const data=JSON.parse(await file.text());
+   if(!data||typeof data!=='object'||!('studentName' in data)||!('score' in data)){throw new Error('ساختار کارنامه معتبر نیست');}
+   const name=String(data.studentName||'دانش‌آموز'),v=verifyExams(data.exams,name);valid.push({studentName:name,score:v.sum,exams:data.exams||{},bad:v.bad,completedSurahs:completedExamCount(data.exams,name),registeredExams:registeredExamCount(data.exams,name),solved:data.solved||{},learn:data.learn||{},learnMem:data.learnMem||{},learnScore:verifyLearn(data.learn,data.learnMem,name).sum,learnBad:verifyLearn(data.learn,data.learnMem,name).bad,heardVerses:data.heardVerses||{},fullAudio:data.fullAudio||{},exportedAt:data.exportedAt||null,fileName:file.name});
+  }catch(e){console.warn('Invalid report',file.name,e);alert('فایل «'+file.name+'» کارنامهٔ معتبر بوستان قرآن نیست و نادیده گرفته شد.');}
+ }
+ // یک گزارش برای هر دانش‌آموز؛ نسخهٔ جدیدتر در صورت تکرار جایگزین می‌شود.
+ for(const report of valid){
+  const index=importedTeacherReports.findIndex(x=>x.studentName.trim().toLocaleLowerCase('fa-IR')===report.studentName.trim().toLocaleLowerCase('fa-IR'));
+  if(index<0){importedTeacherReports.push(report);continue;}
+  const old=importedTeacherReports[index],ex={},dup=[...(old.dup||[])];
+  const newer=(!old.exportedAt||(report.exportedAt&&report.exportedAt>=old.exportedAt))?report:old;
+  for(const sid of new Set([...Object.keys(old.exams||{}),...Object.keys(report.exams||{})])){const a=old.exams?.[sid],b=report.exams?.[sid];if(a&&b&&a.at!==b.at){if(!dup.includes(sid))dup.push(sid);ex[sid]=String(a.at)<String(b.at)?a:b;}else ex[sid]=a||b;}
+  const v=verifyExams(ex,newer.studentName);
+  const mergedHeard={...(old.heardVerses||{}),...(report.heardVerses||{})};for(const k of new Set([...Object.keys(old.heardVerses||{}),...Object.keys(report.heardVerses||{})]))mergedHeard[k]=[...new Set([...(old.heardVerses?.[k]||[]),...(report.heardVerses?.[k]||[])])];
+  const mergedFull={...(old.fullAudio||{}),...(report.fullAudio||{})};const mergedSolved={...(old.solved||{}),...(report.solved||{})};
+  const ml=mergeLearnRecs(old.learn,report.learn,'q'),mm=mergeLearnRecs(old.learnMem,report.learnMem,'mem'),lvm=verifyLearn(ml,mm,newer.studentName);importedTeacherReports[index]={...newer,learn:ml,learnMem:mm,learnScore:lvm.sum,learnBad:lvm.bad,exams:ex,score:v.sum,bad:v.bad,dup,heardVerses:mergedHeard,fullAudio:mergedFull,solved:mergedSolved,completedSurahs:completedExamCount(ex,newer.studentName),registeredExams:registeredExamCount(ex,newer.studentName)};
+ }
+ importedTeacherReports.sort((a,b)=>b.score-a.score||a.studentName.localeCompare(b.studentName,'fa'));
+ saveImportedTeacherReports();renderTeacherReports();
+}
+/** بارگذاری همه نمرات از سرور Supabase */
+async function loadReportsFromServer(){
+  if(!teacherOK()) return;
+  const target = document.getElementById('teacher-report-content');
+  if(target) target.innerHTML = '<p style="color:#854d0e">⏳ در حال دریافت نمرات از سرور...</p>';
+
+  try {
+    // همه دانش‌آموزان
+    const { data: students, error: sErr } = await supabaseClient
+      .from('students')
+      .select('id, name, created_at')
+      .order('name');
+    if(sErr) throw sErr;
+
+    if(!students || !students.length){
+      importedTeacherReports = [];
+      if(target) target.innerHTML = '<p>هنوز هیچ دانش‌آموزی روی سرور ثبت نشده است.</p>';
+      return;
+    }
+
+    // همه نتایج آزمون
+    const { data: exams, error: eErr } = await supabaseClient
+      .from('exam_results')
+      .select('*');
+    if(eErr) throw eErr;
+
+    // همه پیشرفت صوت
+    const { data: audios, error: aErr } = await supabaseClient
+      .from('full_audio_progress')
+      .select('*');
+    if(aErr) throw aErr;
+
+    // ساخت ساختار مشابه importedTeacherReports
+    const reports = students.map(st => {
+      const studentExams = {};
+      (exams || []).filter(e => e.student_id === st.id).forEach(e => {
+        studentExams[String(e.surah_id)] = {
+          score: e.score,
+          at: e.taken_at,
+          status: 'completed',
+          interrupted: e.interrupted,
+          answered: e.answered,
+          results: e.results || [],
+          fromServer: true
+        };
+      });
+
+      const studentAudio = {};
+      (audios || []).filter(a => a.student_id === st.id).forEach(a => {
+        studentAudio[String(a.surah_id)] = {
+          done: a.done,
+          at: a.completed_at
+        };
+      });
+
+      const v = verifyExams(studentExams, st.name);
+      const prev = importedTeacherReports.find(x => normName(x.studentName) === normName(st.name));
+      return {
+        studentName: st.name,
+        score: v.sum,
+        exams: studentExams,
+        bad: v.bad,
+        fullAudio: studentAudio,
+        heardVerses: {},
+        solved: {},
+        learn: prev?.learn || {},
+        learnMem: prev?.learnMem || {},
+        learnScore: prev?.learnScore || 0,
+        learnBad: prev?.learnBad || 0,
+        completedSurahs: completedExamCount(studentExams, st.name),
+        registeredExams: registeredExamCount(studentExams, st.name),
+        exportedAt: st.created_at,
+        fromServer: true
+      };
+    });
+
+    // فقط کسانی که حداقل یک آزمون یا صوت دارند را اولویت بده، بقیه هم نمایش داده شوند
+    reports.sort((a, b) => b.score - a.score || a.studentName.localeCompare(b.studentName, 'fa'));
+    importedTeacherReports = reports;
+    saveImportedTeacherReports();
+    renderTeacherReports();
+
+    if(target){
+      const note = document.createElement('p');
+      note.style.cssText = 'color:#166534;font-weight:600;margin-bottom:8px';
+      note.textContent = '✓ آخرین نمرات از سرور بارگذاری شد (' + new Date().toLocaleString('fa-IR') + ')';
+      target.prepend(note);
+    }
+  } catch(e){
+    console.error('loadReportsFromServer:', e);
+    if(target) target.innerHTML = '<p style="color:#b91c1c">خطا در دریافت از سرور: ' + escapeHtml(e.message || String(e)) + '</p>';
+  }
+}
+window.loadReportsFromServer = loadReportsFromServer;
+
+function renderTeacherReports(){
+ const target=document.getElementById('teacher-report-content');
+ if(!importedTeacherReports.length){target.textContent='هنوز نمره‌ای بارگذاری نشده است. دکمه «بارگذاری نمرات از سرور» را بزنید.';return;}
+ let html='<p>تعداد دانش‌آموزان: '+importedTeacherReports.length+'</p><div style="overflow:auto"><table><thead><tr><th>ردیف</th><th>نام دانش‌آموز</th><th>مجموع امتیاز آزمون‌ها</th><th>امتیاز آموزش (جدا از آزمون)</th><th>آزمون کامل</th><th>آزمون ثبت‌شده</th><th>سوره با صوت کامل</th><th>آیات شنیده‌شده</th><th>تاریخ کارنامه</th></tr></thead><tbody>';
+ importedTeacherReports.forEach((r,i)=>{
+  const completed=completedExamCount(r.exams,r.studentName),registered=registeredExamCount(r.exams,r.studentName),audio=fullAudioCount(r.fullAudio),lv=verifyLearn(r.learn,r.learnMem,r.studentName),hasLearn=Object.keys(r.learn||{}).length+Object.keys(r.learnMem||{}).length>0;
+  const heard=Object.values(r.heardVerses||{}).reduce((n,a)=>n+(Array.isArray(a)?new Set(a).size:0),0);
+  html+='<tr><td>'+(i+1)+'</td><td>'+escapeHtml(r.studentName)+'</td><td><strong>'+r.score+'</strong>'+statusBadge(r)+'</td><td>'+(hasLearn?'<strong>'+lv.sum+'</strong>'+(lv.bad?' <span style="color:#b91c1c">⚠️ مشکوک ('+lv.bad+')</span>':''):'—')+'</td><td>'+completed+' از 37</td><td>'+registered+' (شامل آزمون نیمه‌کاره)</td><td>'+audio+' از 37</td><td>'+heard+'</td><td>'+(r.exportedAt?new Date(r.exportedAt).toLocaleString('fa-IR'):'—')+'</td></tr>';
+ });
+ html+='</tbody></table></div><h3 style="margin-top:22px">جزئیات آزمون‌ها</h3>';
+ importedTeacherReports.forEach(r=>{
+  const entries=Object.entries(r.exams||{}).filter(([sid,e])=>isValidCompletedExam(e,r.studentName));
+  html+='<details style="border:1px solid #d1d5db;border-radius:10px;padding:10px;margin:8px 0"><summary><strong>'+escapeHtml(r.studentName)+'</strong> — '+entries.length+' آزمون ثبت‌شده</summary>';
+  if(!entries.length)html+='<p>هنوز آزمون معتبری ثبت نشده است.</p>';
+  else{html+='<div style="overflow:auto"><table><thead><tr><th>سوره</th><th>نمره</th><th>وضعیت</th><th>پاسخ‌های ثبت‌شده</th><th>تاریخ</th></tr></thead><tbody>';
+   entries.sort((a,b)=>Number(a[0])-Number(b[0])).forEach(([sid,e])=>{const meta=juz30Surahs.find(x=>String(x.id)===String(sid));const answers=Array.isArray(e.results)?e.results.map((x,j)=>(j+1)+': '+(x?'درست':'نادرست')).join('، '):'جزئیات پاسخ در این کارنامه موجود نیست';html+='<tr><td>'+escapeHtml(meta?.nameFa||('سوره '+sid))+'</td><td>'+Number(e.score)+'</td><td>'+(e.interrupted?'نیمه‌کاره/خروج':'تکمیل‌شده')+'</td><td>'+escapeHtml(answers)+'</td><td>'+new Date(e.at).toLocaleString('fa-IR')+'</td></tr>';});
+   html+='</tbody></table></div>';}
+  const aud=Object.entries(r.fullAudio||{}).filter(([,x])=>x&&x.done).map(([sid])=>juz30Surahs.find(x=>String(x.id)===String(sid))?.nameFa||sid);
+  {const lv2=verifyLearn(r.learn,r.learnMem,r.studentName);if(Object.keys(r.learn||{}).length+Object.keys(r.learnMem||{}).length)html+='<p><strong>امتیاز آموزش (جدا از آزمون رسمی):</strong> '+lv2.sum+' — سؤال‌های سوره: '+lv2.quiz+' ('+lv2.count+' سؤال)، آزمون حفظ: '+lv2.memo+'</p>';}
+  html+='<p><strong>سوره‌هایی که صوت کاملشان ثبت شده:</strong> '+(aud.length?escapeHtml(aud.join('، ')):'هیچ‌کدام')+'</p></details>';
+ });
+ target.innerHTML=html;
+}
+function clearTeacherReports(){if(!confirm('گزارش‌های ذخیره‌شدهٔ معلم از همین مرورگر پاک شوند؟'))return;importedTeacherReports=[];try{localStorage.removeItem(TEACHER_REPORTS_KEY);}catch(e){}document.getElementById('teacher-report-files').value='';renderTeacherReports();}
+function downloadTeacherCsv(){if(!teacherOK())return;
+ if(!importedTeacherReports.length){alert('ابتدا فایل‌های کارنامه را وارد کنید.');return;}
+ const rows=[['نام دانش‌آموز','مجموع امتیاز آزمون‌ها','مجموع امتیاز آموزش (جدا از آزمون)','آزمون کامل','آزمون ثبت‌شده','سوره با صوت کامل','آیات شنیده‌شده','تاریخ کارنامه']];
+ importedTeacherReports.forEach(r=>rows.push([r.studentName,r.score,verifyLearn(r.learn,r.learnMem,r.studentName).sum,completedExamCount(r.exams,r.studentName),registeredExamCount(r.exams,r.studentName),fullAudioCount(r.fullAudio),Object.values(r.heardVerses||{}).reduce((n,a)=>n+(Array.isArray(a)?new Set(a).size:0),0),r.exportedAt||'']));
+ const csv='\uFEFF'+rows.map(row=>row.map(v=>'"'+(/^[=+\-@\t\r]/.test(String(v))?"'":'')+String(v).replace(/"/g,'""')+'"').join(',')).join('\r\n');
+ const blob=new Blob([csv],{type:'text/csv;charset=utf-8;'}),url=URL.createObjectURL(blob),a=document.createElement('a');
+ a.href=url;a.download='گزارش-نمرات-بوستان-قرآن.csv';document.body.appendChild(a);a.click();a.remove();setTimeout(()=>URL.revokeObjectURL(url),1000);
+}
+
+async function resetHeardVersesForCurrentSurah(){
+  if(!confirm('آیا مطمئن هستید که پیشرفت شنیدن صوت این سوره پاک شود؟ (آزمون دوباره قفل می‌شود)')) return;
+  const sid = String(currentSurahId);
+  if(userProgress.heardVerses) delete userProgress.heardVerses[sid];
+  await saveUserData();
+  fetchSurahData(currentSurahId);
+  alert('پیشرفت شنیدن این سوره پاک شد. دوباره آیات را گوش کنید.');
+}
+window.resetHeardVersesForCurrentSurah = resetHeardVersesForCurrentSurah;
+
+window.openLocalTeacherReport=openLocalTeacherReport;
+window.importTeacherReports=importTeacherReports;
+window.downloadTeacherCsv=downloadTeacherCsv;
+window.clearTeacherReports=clearTeacherReports;
+window.backToStudentLogin=backToStudentLogin;window.submitTeacherLogin=submitTeacherLogin;window.closeTeacherLogin=closeTeacherLogin;window.makeTeacherHash=makeTeacherHash;
+function escapeHtml(v){return String(v).replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));}
+document.addEventListener('DOMContentLoaded', () => {
+ window.__quranAppBooted = true;
+ fillExamSelects();
+ document.addEventListener('keydown',e=>{if(e.key==='Escape')closeReportModal();});
+ document.getElementById('exam-surah').addEventListener('change',()=>{stopFullAudio();document.getElementById('exam-box').innerHTML='';refreshExamGate();});
+ showOnly('auth-panel');
+ authMessage('نسخهٔ ذخیرهٔ محلی فعال است. امتیازها روی همین گوشی و همین مرورگر می‌مانند؛ برای تحویل به معلم، دکمهٔ «دانلود کارنامه برای معلم» را بزنید.');
+ document.querySelectorAll('.btn-tab[data-grade]').forEach(btn=>btn.addEventListener('click',e=>{
+  const selected=e.currentTarget;
+  document.querySelectorAll('.btn-tab[data-grade]').forEach(b=>{b.classList.remove('active');b.setAttribute('aria-pressed','false');});
+  selected.classList.add('active');
+  selected.setAttribute('aria-pressed','true');
+  populateSelect(selected.getAttribute('data-grade'));
+  fetchSurahData(currentSurahId);
+ }));
+ document.getElementById('surah-select').addEventListener('change',e=>{currentSurahId=parseInt(e.target.value,10);fetchSurahData(currentSurahId);});
+ initMemorizationSelect();
+ window.loadMemorization=loadMemorization;
+ window.playMemorizationAudio=playMemorizationAudio;
+ window.repeatMemorizationAudio=repeatMemorizationAudio;
+ window.hideMemorizationText=hideMemorizationText;
+ window.showMemorizationText=showMemorizationText;
+ window.startMemorizationQuiz=startMemorizationQuiz;
+ window.answerMemoryQuiz=answerMemoryQuiz;
+});
+</script>
+<footer id="app-credits-footer" class="app-credits-footer" aria-label="اطلاعات پدیدآورنده و حقوق نرم‌افزار">
+  <div class="app-credits-card">
+    <div class="app-credits-title">بوستان قرآن | نرم‌افزار آموزشی قرآن کریم</div>
+    <p>طراح و پدیدآورندهٔ پروژه: <strong>مصطفی ولدی</strong></p>
+    <details class="app-credits-details">
+      <summary>دربارهٔ برنامه و حقوق اثر</summary>
+      <p>نرم‌افزار «بوستان قرآن» حاصل ایده‌پردازی، طراحی و توسعهٔ یک پروژهٔ آموزشی با هدف تسهیل یادگیری قرآن کریم است.</p>
+      <p>حقوق مربوط به بخش‌های اختصاصی این نرم‌افزار، از جمله طراحی، ساختار آموزشی و محتوای تولیدشده توسط پدیدآورنده، در حدود قوانین قابل‌اعمال متعلق به پدیدآورنده است. هرگونه استفاده، بازنشر یا بهره‌برداری از بخش‌های اختصاصی اثر، تابع حقوق قانونی مربوط خواهد بود.</p>
+    </details>
+    <p style="font-size:.85rem">متن قرآن و ترجمهٔ انصاریان از سرویس AlQuran Cloud و صوت تلاوت با صدای مشاری راشد العفاسی از Islamic Network دریافت می‌شود.</p>
+    <div class="app-credits-copyright">© ۱۴۰۵ — مصطفی ولدی. کلیهٔ حقوق قانونی مربوط به بخش‌های اختصاصی اثر محفوظ است.</div>
+  </div>
+</footer>
+</body>
+</html>
